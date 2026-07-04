@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>xSoTec | Custom School-Wide Data Systems</title>
+    <style>
+        :root {
+            --bg-color: #0D1117;
+            --card-bg: #161B22;
+            --border-color: #30363D;
+            --accent-blue: #0055FF;
+            --accent-gold: #F2C94C;
+            --text-white: #FFFFFF;
+            --text-muted: #8B949E;
+        }
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-white);
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+        }
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        header {
+            padding: 30px 0;
+            border-bottom: 1px solid var(--border-color);
+        }
+        .logo {
+            font-size: 24px;
+            font-weight: 800;
+            letter-spacing: -0.5px;
+        }
+        .hero {
+            padding: 100px 0 60px 0;
+            text-align: center;
+            max-width: 850px;
+            margin: 0 auto;
+        }
+        h1 {
+            font-size: 46px;
+            font-weight: 800;
+            line-height: 1.2;
+            letter-spacing: -1px;
+            margin-bottom: 24px;
+        }
+        .hero p {
+            font-size: 19px;
+            color: var(--text-muted);
+            margin-bottom: 40px;
+        }
+        .cta-btn {
+            background-color: var(--accent-blue);
+            color: var(--text-white);
+            padding: 14px 30px;
+            text-decoration: none;
+            border-radius: 6px;
+            font-weight: bold;
+            font-size: 16px;
+            display: inline-block;
+            transition: background 0.2s;
+        }
+        .cta-btn:hover { background-color: #1a66ff; }
+        
+        h2 {
+            font-size: 32px;
+            font-weight: 700;
+            text-align: center;
+            margin-bottom: 40px;
+        }
+        .section-padding { padding: 80px 0; }
+        
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 24px;
+        }
+        .card {
+            background-color: var(--card-bg);
+            border: 1px solid var(--border-color);
+            padding: 32px;
+            border-radius: 12px;
+        }
+        .card h3 {
+            margin-top: 0;
+            font-size: 20px;
+            color: var(--text-white);
+        }
+        .card p {
+            color: var(--text-muted);
+            font-size: 15px;
+            margin-bottom: 0;
+        }
+        .tech-tag {
+            font-family: monospace;
+            color: var(--accent-gold);
+            font-size: 14px;
+            font-weight: bold;
+            display: block;
+            margin-bottom: 8px;
+        }
+        .form-wrapper {
+            background-color: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 16px;
+            padding: 10px;
+            max-width: 760px;
+            margin: 0 auto;
+            overflow: hidden;
+        }
+        iframe {
+            width: 100%;
+            background: transparent;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container">
+            <div class="logo">xSoTec</div>
+        </div>
+    </header>
+
+    <main class="container">
+        <section class="hero">
+            <h1>Transform Ordinary Google Spreadsheets into School-Wide Data Infrastructures</h1>
+            <p>For educational communities that consider themselves innovation leaders and have reporting needs for which standard software solutions simply don't exist. We build customizable data ecosystems natively inside your own Google Account—with zero ongoing hosting or seat licensing fees.</p>
+            <a href="#apply" class="cta-btn">Join the Next Cohort</a>
+        </section>
+
+        <section class="section-padding" style="border-top: 1px solid var(--border-color);">
+            <h2>Bespoke Implementations</h2>
+            <div class="grid">
+                <div class="card">
+                    <h3>Personalized Learner Dashboards</h3>
+                    <p>Combine data from entirely disparate academic, attendance, state testing, and student internship tracking systems into a centralized, real-time visual landscape for teachers, parents, and students.</p>
+                </div>
+                <div class="card">
+                    <h3>Innovative Competency Systems</h3>
+                    <p>Move far past rigid, traditional letter grading structures. Track real competency-based growth, specific academic standards, and graduation pathways tailored uniquely to your curriculum.</p>
+                </div>
+                <div class="card">
+                    <h3>Restorative Culture Trackers</h3>
+                    <p>Re-engineer traditional punitive tracking into dynamic behavioral environments packed with student affirmations, peer-to-peer shout-outs, and guided restorative learning processes.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="section-padding" style="border-top: 1px solid var(--border-color);">
+            <h2>The Developer Suite & Optimization Core</h2>
+            <div class="grid">
+                <div class="card">
+                    <span class="tech-tag">foundation / loopSheet</span>
+                    <h3>loopSheet Library</h3>
+                    <p>Engineered to bypass structural IMPORTRANGE drops. Handles programmatic processing row-by-row with built-in awareness of spreadsheet filtering, native exception handling, and auto-mitigation against system timeouts.</p>
+                </div>
+                <div class="card">
+                    <span class="tech-tag">utility / spreadsheetManager</span>
+                    <h3>spreadsheetManager</h3>
+                    <p>A UI-driven engine built to mass-manage configuration arrays and user access permissions across hundreds of independent student and teacher spreadsheets simultaneously from a single template canvas.</p>
+                </div>
+                <div class="card">
+                    <span class="tech-tag">engine / copyScripts</span>
+                    <h3>copyScripts Module</h3>
+                    <p>Operates silently on background triggers to parse, clean, isolate, and securely stream target metrics from core student information system data exports into personalized stakeholder dashboards.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="apply" class="section-padding" style="border-top: 1px solid var(--border-color);">
+            <h2 style="margin-bottom: 12px;">Apply for the Next Cohort</h2>
+            <p style="text-align: center; color: var(--text-muted); max-width: 600px; margin: 0 auto 40px auto;">We are accepting our next cohort of 5 innovative institutions. Drop your details below to schedule a direct system architecture demo.</p>
+            
+            <div class="form-wrapper">
+                <p style="text-align: center; padding: 40px; color: var(--text-muted);">[Google Form Placeholder - We will embed your real form script here in a later step!]</p>
+            </div>
+        </section>
+    </main>
+
+</body>
+</html>
