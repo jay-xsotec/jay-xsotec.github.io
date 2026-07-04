@@ -14,6 +14,12 @@
             --text-white: #FFFFFF;
             --text-muted: #8B949E;
         }
+        
+        /* Smooth Scrolling Configuration */
+        html {
+            scroll-behavior: smooth;
+        }
+        
         body {
             background-color: var(--bg-color);
             color: var(--text-white);
@@ -27,17 +33,64 @@
             margin: 0 auto;
             padding: 0 20px;
         }
+        
+        /* Sticky Navigation Architecture */
         header {
-            padding: 30px 0;
+            position: sticky;
+            top: 0;
+            background-color: rgba(13, 17, 23, 0.9);
+            backdrop-filter: blur(8px);
+            -webkit-backdrop-filter: blur(8px);
             border-bottom: 1px solid var(--border-color);
+            z-index: 1000;
+        }
+        .nav-wrapper {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 0;
         }
         .logo {
             font-size: 24px;
             font-weight: 800;
             letter-spacing: -0.5px;
+            color: var(--text-white);
+            text-decoration: none;
         }
+        nav {
+            display: flex;
+            align-items: center;
+            gap: 32px;
+        }
+        .nav-link {
+            color: var(--text-muted);
+            text-decoration: none;
+            font-size: 15px;
+            font-weight: 500;
+            transition: color 0.2s;
+        }
+        .nav-link:hover {
+            color: var(--text-white);
+        }
+        .nav-btn {
+            background-color: transparent;
+            color: var(--accent-gold);
+            border: 1px solid var(--accent-gold);
+            padding: 8px 16px;
+            text-decoration: none;
+            border-radius: 6px;
+            font-weight: 600;
+            font-size: 14px;
+            transition: all 0.2s;
+        }
+        .nav-btn:hover {
+            background-color: var(--accent-gold);
+            color: var(--bg-color);
+        }
+        
+        /* Layout Structure Adjustments */
         .hero {
-            padding: 100px 0 60px 0;
+            padding: 140px 0 80px 0; /* Adjusted for navigation offset */
             text-align: center;
             max-width: 850px;
             margin: 0 auto;
@@ -73,7 +126,12 @@
             text-align: center;
             margin-bottom: 40px;
         }
-        .section-padding { padding: 80px 0; }
+        
+        /* Added padding offset for scroll target alignments */
+        .section-padding { 
+            padding: 100px 0; 
+            scroll-margin-top: 80px; 
+        }
         
         .grid {
             display: grid;
@@ -117,13 +175,26 @@
             width: 100%;
             display: block;
         }
+        
+        /* Mobile Responsive Menu Patch */
+        @media (max-width: 600px) {
+            .nav-wrapper { flex-direction: column; gap: 16px; }
+            nav { gap: 16px; }
+            .hero { padding: 80px 0 40px 0; }
+            h1 { font-size: 32px; }
+        }
     </style>
 </head>
 <body>
 
-    <header>
-        <div class="container">
-            <div class="logo">xSoTec</div>
+    <header id="top">
+        <div class="container nav-wrapper">
+            <a href="#top" class="logo">xSoTec</a>
+            <nav>
+                <a href="#solutions" class="nav-link">Bespoke Solutions</a>
+                <a href="#suite" class="nav-link">The Suite</a>
+                <a href="#apply" class="nav-btn">Join Cohort</a>
+            </nav>
         </div>
     </header>
 
@@ -134,8 +205,8 @@
             <a href="#apply" class="cta-btn">Join the Next Cohort</a>
         </section>
 
-        <section class="section-padding" style="border-top: 1px solid var(--border-color);">
-            <h2>Bespoke Implementations</h2>
+        <section id="solutions" class="section-padding" style="border-top: 1px solid var(--border-color);">
+            <h2>Bespoke Solutions</h2>
             <div class="grid">
                 <div class="card">
                     <h3>Personalized Learner Dashboards</h3>
@@ -152,7 +223,7 @@
             </div>
         </section>
 
-        <section class="section-padding" style="border-top: 1px solid var(--border-color);">
+        <section id="suite" class="section-padding" style="border-top: 1px solid var(--border-color);">
             <h2>The Developer Suite & Optimization Core</h2>
             <div class="grid">
                 <div class="card">
