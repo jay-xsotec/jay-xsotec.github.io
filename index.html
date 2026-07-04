@@ -15,7 +15,6 @@
             --text-muted: #8B949E;
         }
         
-        /* Smooth Scrolling Configuration */
         html {
             scroll-behavior: smooth;
         }
@@ -34,7 +33,6 @@
             padding: 0 20px;
         }
         
-        /* Sticky Navigation Architecture */
         header {
             position: sticky;
             top: 0;
@@ -88,9 +86,8 @@
             color: var(--bg-color);
         }
         
-        /* Layout Structure Adjustments */
         .hero {
-            padding: 140px 0 80px 0; /* Adjusted for navigation offset */
+            padding: 140px 0 60px 0;
             text-align: center;
             max-width: 850px;
             margin: 0 auto;
@@ -127,10 +124,33 @@
             margin-bottom: 40px;
         }
         
-        /* Added padding offset for scroll target alignments */
         .section-padding { 
             padding: 100px 0; 
             scroll-margin-top: 80px; 
+        }
+        
+        /* Video Container Architecture */
+        .video-container {
+            max-width: 800px;
+            margin: 40px auto 0 auto;
+            border-radius: 16px;
+            border: 1px solid var(--border-color);
+            overflow: hidden;
+            background-color: var(--card-bg);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.5);
+        }
+        .video-ratio {
+            position: relative;
+            padding-bottom: 56.25%; /* 16:9 Aspect Ratio */
+            height: 0;
+        }
+        .video-ratio iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: 0;
         }
         
         .grid {
@@ -171,12 +191,11 @@
             overflow: hidden;
             padding: 15px 0;
         }
-        iframe {
+        .form-wrapper iframe {
             width: 100%;
             display: block;
         }
         
-        /* Mobile Responsive Menu Patch */
         @media (max-width: 600px) {
             .nav-wrapper { flex-direction: column; gap: 16px; }
             nav { gap: 16px; }
@@ -203,6 +222,15 @@
             <h1>Transform Ordinary Google Spreadsheets into School-Wide Data Infrastructures</h1>
             <p>For educational communities that consider themselves innovation leaders and have reporting needs for which standard software solutions simply don't exist. We build customizable data ecosystems natively inside your own Google Account—with zero ongoing hosting or seat licensing fees.</p>
             <a href="#apply" class="cta-btn">Join the Next Cohort</a>
+            
+            <div class="video-container">
+                <div class="video-ratio">
+                    <iframe src="https://www.youtube.com/embed?listType=user_uploads&list=xSoTec" 
+                            title="xSoTec System Platform Overview" 
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                            allowfullscreen></iframe>
+                </div>
+            </div>
         </section>
 
         <section id="solutions" class="section-padding" style="border-top: 1px solid var(--border-color);">
@@ -229,34 +257,4 @@
                 <div class="card">
                     <span class="tech-tag">foundation / loopSheet</span>
                     <h3>loopSheet Library</h3>
-                    <p>Engineered to bypass structural IMPORTRANGE drops. Handles programmatic processing row-by-row with built-in awareness of spreadsheet filtering, native exception handling, and auto-mitigation against system timeouts.</p>
-                </div>
-                <div class="card">
-                    <span class="tech-tag">utility / spreadsheetManager</span>
-                    <h3>spreadsheetManager</h3>
-                    <p>A UI-driven engine built to mass-manage configuration arrays and user access permissions across hundreds of independent student and teacher spreadsheets simultaneously from a single template canvas.</p>
-                </div>
-                <div class="card">
-                    <span class="tech-tag">engine / copyScripts</span>
-                    <h3>copyScripts Module</h3>
-                    <p>Operates silently on background triggers to parse, clean, isolate, and securely stream target metrics from core student information system data exports into personalized stakeholder dashboards.</p>
-                </div>
-            </div>
-        </section>
-
-        <section id="apply" class="section-padding" style="border-top: 1px solid var(--border-color);">
-            <h2 style="margin-bottom: 12px;">Apply for the Next Cohort</h2>
-            <p style="text-align: center; color: var(--text-muted); max-width: 600px; margin: 0 auto 40px auto;">We are accepting our next cohort of 5 innovative institutions. Drop your details below to schedule a direct system architecture demo.</p>
-            
-            <div class="form-wrapper">
-                <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSdozbA7ZrxWcyiOT0e2wW9YORURVoRwBCuIYq5Xxd67nRKplQ/viewform?embedded=true" 
-                        height="1400" 
-                        frameborder="0" 
-                        marginheight="0" 
-                        marginwidth="0">Loading…</iframe>
-            </div>
-        </section>
-    </main>
-
-</body>
-</html>
+                    <p>Engineered to bypass structural IMPORTRANGE drops. Handles programmatic processing row-by-row with built-in awareness of spreadsheet filtering, native exception handling, and auto-mitigation against
