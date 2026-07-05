@@ -19,7 +19,7 @@ body {
 .text-center { text-align: center; }
 
 /* ==========================================================================
-   Navigation Bar (Bigger Logo & Integrated Partner Badge Container)
+   Navigation Bar (50% Bigger Logo & Proportional Partner Badge Alignment)
    ========================================================================== */
 .navbar {
     background-color: #ffffff;
@@ -38,28 +38,27 @@ body {
     align-items: center;
 }
 
-/* Flex group aligning logo and partner badge adjacent to one another */
 .logo-group {
     display: flex;
     align-items: center;
-    gap: 16px;
+    gap: 20px;
 }
 
 .nav-logo-img {
     height: auto;
-    max-height: 76px; /* Scaled up to make the primary corporate emblem noticeably bigger */
+    max-height: 114px; /* Increased by 50% for high-impact presence */
     display: block;
 }
 
 .header-divider {
     width: 1px;
-    height: 36px;
+    height: 48px;
     background-color: #cbd5e1;
 }
 
 .nav-partner-img {
     height: auto;
-    max-height: 36px; /* Proportionally aligned next to the primary emblem */
+    max-height: 56px; /* Positioned slightly smaller than your primary emblem scale */
     display: block;
 }
 
@@ -311,7 +310,7 @@ body {
 }
 
 /* ==========================================================================
-   Commercial Vertical Layout Split
+   Commercial Layout Configuration
    ========================================================================== */
 .commercial-section { padding: 100px 4%; }
 
@@ -348,7 +347,7 @@ body {
 
 /* ==========================================================================
    Matrix Grid Presentation
-   ========================================================================= */
+   ========================================================================== */
 .capabilities-section { padding: 100px 4%; background-color: #000b14; }
 
 .matrix-layout {
@@ -372,116 +371,4 @@ body {
     font-size: 14px;
     font-weight: 600;
     background-color: rgba(255, 255, 255, 0.04);
-    border: 1px solid rgba(255, 255, 255, 0.08);
-    padding: 10px 20px;
-    border-radius: 30px;
-    color: #e2e8f0;
-}
-
-/* ==========================================================================
-   Our Story Formatting
-   ========================================================================== */
-.story-section { padding: 120px 4%; }
-.story-content { max-width: 850px; margin: 0 auto; }
-.story-eyebrow { display: block; font-size: 11px; font-weight: 700; color: #00f0ff; text-transform: uppercase; letter-spacing: 2px; margin-bottom: 16px; }
-.story-content h2 { font-size: 40px; font-weight: 800; margin-bottom: 24px; }
-.lead-text { font-size: 22px; font-weight: 500; margin-bottom: 28px; color: #ffffff; line-height: 1.5; }
-.story-content p { font-size: 16px; color: #94a3b8; line-height: 1.7; }
-
-/* ==========================================================================
-   Premium Testimonial Panel Elements
-   ========================================================================== */
-.testimonial-section { padding: 100px 4%; background-color: #000b14; }
-.testimonial-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 50px; max-width: 1200px; }
-
-.testimonial-card-premium {
-    background: rgba(255,255,255,0.02);
-    border: 1px solid rgba(255,255,255,0.05);
-    padding: 45px;
-    border-radius: 12px;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-}
-
-.testimonial-quote { font-size: 19px; line-height: 1.65; color: #e2e8f0; font-style: italic; margin-bottom: 30px; }
-.testimonial-embed-img { width: 100%; height: auto; max-width: 380px; border-radius: 6px; margin-bottom: 24px; border: 1px solid rgba(255,255,255,0.08); }
-
-.testimonial-author { display: flex; flex-direction: column; }
-.author-name { font-size: 15px; font-weight: 700; color: #ffffff; }
-.author-title { font-size: 12px; font-weight: 600; color: #00f0ff; text-transform: uppercase; letter-spacing: 0.5px; margin-top: 2px; }
-
-/* ==========================================================================
-   Direct Action Footer Component
-   ========================================================================== */
-.site-footer { padding: 120px 4% 60px 4%; text-align: center; }
-.footer-badge-cta { display: inline-block; font-size: 11px; font-weight: 800; color: #00f0ff; letter-spacing: 2px; text-transform: uppercase; margin-bottom: 16px; }
-.site-footer h2 { font-size: 44px; font-weight: 800; margin-bottom: 20px; letter-spacing: -1px; }
-.site-footer p { color: #94a3b8; font-size: 18px; max-width: 700px; margin: 0 auto 48px auto; line-height: 1.6; }
-
-.contact-details {
-    display: flex;
-    justify-content: center;
-    gap: 30px;
-    max-width: 800px;
-    margin: 0 auto 50px auto;
-}
-
-.contact-card {
-    background-color: rgba(255,255,255,0.02);
-    border: 1px solid rgba(255,255,255,0.05);
-    padding: 16px 30px;
-    border-radius: 8px;
-    font-size: 15px;
-    color: #ffffff;
-}
-
-.contact-card strong { display: block; font-size: 11px; color: #94a3b8; text-transform: uppercase; margin-bottom: 4px; letter-spacing: 0.5px; }
-
-.btn-primary-neon {
-    display: inline-block;
-    background-color: #ffffff;
-    color: #001220;
-    text-decoration: none;
-    padding: 18px 44px;
-    font-weight: 700;
-    font-size: 15px;
-    border-radius: 6px;
-    transition: background-color 0.2s ease, transform 0.2s ease;
-}
-
-.btn-primary-neon:hover {
-    background-color: #00f0ff;
-    transform: translateY(-2px);
-}
-
-.footer-bottom { margin-top: 120px; padding-top: 40px; border-top: 1px solid rgba(255, 255, 255, 0.06); font-size: 14px; color: #64748b; }
-.sub-footer { font-size: 12px; margin-top: 8px; }
-
-/* ==========================================================================
-   Responsive Breakpoints
-   ========================================================================== */
-@media screen and (max-width: 960px) {
-    .diagram-card-wrapper, .matrix-layout, .testimonial-grid {
-        grid-template-columns: 1fr;
-        gap: 40px;
-    }
-    .diagram-card-wrapper { padding: 40px 24px; }
-    .hero-title-bold { font-size: 46px; letter-spacing: -2px; }
-    .matrix-layout, .diagram-card-wrapper { text-align: center; }
-    .matrix-pills { justify-content: center; }
-    .contact-details { flex-direction: column; gap: 14px; }
-}
-
-@media screen and (max-width: 768px) {
-    .nav-container { flex-direction: column; gap: 16px; }
-    .logo-group { flex-direction: column; gap: 8px; }
-    .header-divider { display: none; }
-    .nav-links { flex-direction: column; width: 100%; gap: 4px; }
-    .nav-links > a, .dropdown .dropbtn { margin-left: 0; padding: 10px 0; width: 100%; justify-content: center; }
-    .nav-links .btn-cta { margin-left: 0; margin-top: 10px; width: 100%; text-align: center; }
-    .dropdown-content { position: relative; transform: none; left: 0; box-shadow: none; border: none; background: #f8fafc; width: 100%; }
-    .dropdown-content a { text-align: center; padding: 12px; }
-    .metrics-container { flex-direction: column; gap: 24px; }
-    .metric-divider { display: none; }
-}
+    border: 1px solid rgba(255, 255, 2
