@@ -9,7 +9,7 @@
 
 body {
     font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-    background-color: #001220; /* Deepest Midnight Space Blue */
+    background-color: #001220; 
     color: #ffffff;            
     line-height: 1.6;
     -webkit-font-smoothing: antialiased;
@@ -19,7 +19,7 @@ body {
 .text-center { text-align: center; }
 
 /* ==========================================================================
-   Navigation Bar Overhaul
+   Navigation Bar (Bigger Logo Custom Scaling)
    ========================================================================== */
 .navbar {
     background-color: #ffffff;
@@ -32,7 +32,7 @@ body {
 .nav-container {
     max-width: 1200px;
     margin: 0 auto;
-    padding: 14px 4%; 
+    padding: 16px 4%; 
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -40,7 +40,7 @@ body {
 
 .nav-logo-img {
     height: auto;
-    max-height: 42px; 
+    max-height: 64px; /* Increased from 42px to make the corporate emblem prominently bigger */
     display: block;
 }
 
@@ -123,73 +123,62 @@ body {
 }
 
 /* ==========================================================================
-   Asymmetric Split Hero Layout
+   Heavyweight Centered Typography Hero Section
    ========================================================================== */
 .hero-section {
-    background: linear-gradient(135deg, #001220 0%, #002B49 50%, #001f36 100%);
-    padding: 100px 4% 120px 4%;
+    background: linear-gradient(180deg, #001220 0%, #002B49 100%);
+    padding: 140px 4% 140px 4%; /* Added expansive breathing room padding */
+    text-align: center;
     border-bottom: 1px solid rgba(255, 255, 255, 0.05);
 }
 
-.hero-split-container {
-    max-width: 1200px;
+.hero-container {
+    max-width: 1000px; /* Widened layout container to support structural emphasis weights */
     margin: 0 auto;
-    display: grid;
-    grid-template-columns: 1.1fr 0.9fr;
-    gap: 60px;
-    align-items: center;
 }
 
 .partner-badge-img {
     height: auto;
-    max-height: 42px;
-    margin-bottom: 24px;
+    max-height: 46px;
+    margin: 0 auto 32px auto;
     display: block;
 }
 
 .hero-badge {
     display: inline-block;
-    font-size: 11px;
+    font-size: 12px;
     text-transform: uppercase;
     letter-spacing: 2px;
     font-weight: 700;
-    color: #00f0ff; /* Vivid Neon Cyan Accent */
+    color: #00f0ff; 
     background: rgba(0, 240, 255, 0.08);
-    padding: 6px 14px;
+    padding: 6px 16px;
     border-radius: 20px;
-    margin-bottom: 24px;
+    margin-bottom: 32px;
     border: 1px solid rgba(0, 240, 255, 0.15);
 }
 
-.hero-text-side h1 {
-    font-size: 54px;
-    font-weight: 800;
-    line-height: 1.15;
-    letter-spacing: -2px;
-    margin-bottom: 24px;
-}
-
-.hero-text-side p {
-    font-size: 18px;
-    color: #cbd5e1;
+/* Transformational Text Configuration */
+.hero-title-bold {
+    font-size: 72px; /* Cranked font weight and scaling metrics up to ultra-bold display size */
+    font-weight: 900;
+    line-height: 1.1;
+    letter-spacing: -3.5px;
     margin-bottom: 36px;
-    line-height: 1.6;
+    color: #ffffff;
 }
 
-.video-wrapper {
-    position: relative;
-    padding-bottom: 56.25%; 
-    height: 0;
-    overflow: hidden;
-    background: #000;
-    border-radius: 12px;
-    box-shadow: 0 30px 60px rgba(0,0,0,0.4);
-    border: 1px solid rgba(255,255,255,0.1);
+.text-glow {
+    color: #ffffff;
+    text-shadow: 0 0 40px rgba(0, 240, 255, 0.25);
 }
 
-.video-wrapper iframe, .video-wrapper-small iframe, .video-wrapper-vertical iframe {
-    position: absolute;
-    top: 0; left: 0; width: 100%; height: 100%;
+.hero-subtitle {
+    font-size: 21px;
+    color: #cbd5e1;
+    max-width: 800px;
+    margin: 0 auto 48px auto;
+    line-height: 1.65;
 }
 
 .btn-primary {
@@ -197,25 +186,25 @@ body {
     background-color: #00f0ff;
     color: #001220;
     text-decoration: none;
-    padding: 16px 36px;
+    padding: 18px 44px;
     font-weight: 700;
-    font-size: 15px;
+    font-size: 16px;
     border-radius: 6px;
-    box-shadow: 0 4px 20px rgba(0, 240, 255, 0.2);
+    box-shadow: 0 4px 25px rgba(0, 240, 255, 0.25);
     transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
 .btn-primary:hover {
     transform: translateY(-2px);
-    box-shadow: 0 8px 30px rgba(0, 240, 255, 0.4);
+    box-shadow: 0 8px 35px rgba(0, 240, 255, 0.45);
 }
 
 /* ==========================================================================
-   Enterprise Metrics Section
+   Enterprise Metrics Banner
    ========================================================================== */
 .metrics-banner {
     background-color: #000b14;
-    padding: 40px 4%;
+    padding: 45px 4%;
     border-bottom: 1px solid rgba(255, 255, 255, 0.05);
 }
 
@@ -228,7 +217,7 @@ body {
 }
 
 .metric-item { text-align: center; flex: 1; }
-.metric-number { display: block; font-size: 36px; font-weight: 800; color: #ffffff; margin-bottom: 4px; }
+.metric-number { display: block; font-size: 38px; font-weight: 800; color: #ffffff; margin-bottom: 4px; }
 .metric-label { font-size: 13px; font-weight: 600; color: #94a3b8; text-transform: uppercase; letter-spacing: 1px; }
 .metric-divider { width: 1px; height: 40px; background-color: rgba(255,255,255,0.1); }
 
@@ -247,4 +236,59 @@ body {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 60px;
+    align-items: center;
+    text-align: left;
+}
 
+.diagram-text h2 { font-size: 36px; font-weight: 800; margin-bottom: 20px; }
+.diagram-text p { font-size: 17px; color: #94a3b8; line-height: 1.65; }
+.diagram-media { display: flex; justify-content: center; }
+.venn-diagram-img { max-width: 280px; height: auto; }
+
+/* ==========================================================================
+   Modern Frosted Feature Framework Grid
+   ========================================================================== */
+.features-section {
+    padding: 100px 4%;
+    background-color: #000b14;
+}
+
+.section-container { max-width: 1200px; margin: 0 auto; }
+.section-title { font-size: 40px; font-weight: 800; margin-bottom: 60px; }
+
+.features-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+    gap: 40px;
+}
+
+.feature-card {
+    background: linear-gradient(180deg, rgba(255,255,255,0.04) 0%, rgba(255,255,255,0.01) 100%);
+    border: 1px solid rgba(255, 255, 255, 0.07);
+    padding: 44px;
+    border-radius: 12px;
+    transition: border-color 0.25s ease, transform 0.25s ease;
+}
+
+.feature-card:hover {
+    border-color: rgba(0, 240, 255, 0.3);
+    transform: translateY(-4px);
+}
+
+.card-accent-tag {
+    display: inline-block;
+    font-size: 10px;
+    font-weight: 800;
+    color: #00f0ff;
+    letter-spacing: 1.5px;
+    margin-bottom: 18px;
+}
+
+.feature-card h3 { font-size: 24px; font-weight: 700; margin-bottom: 16px; }
+.feature-card p { color: #94a3b8; font-size: 15px; margin-bottom: 28px; line-height: 1.65; }
+
+/* Fixed link styling rule format to support clean rendering calls */
+.card-link-action {
+    color: #00f0ff;
+    text-decoration: none;
+    font-weight: 7
