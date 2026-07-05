@@ -1,5 +1,5 @@
 /* -------------------------------------
-   Global Reset & xSoTec Styling Constants
+   Global Reset & xSoTec Dark Blue Brand Theme
 ------------------------------------- */
 * {
     margin: 0;
@@ -8,31 +8,32 @@
 }
 
 :root {
-    --bg-main: #ffffff;
-    --bg-alt: #fcfcfc;
-    --text-primary: #111111;
-    --text-secondary: #4a4a4a;
-    --text-light: #666666;
-    --border-subtle: #ebebeb;
+    --brand-blue: #002B49;      /* Deep rich Squarespace-style background blue */
+    --brand-blue-dark: #001f36; /* Extra deep midnight blue for buttons/footers */
+    --accent-blue: #0046ff;     /* Interactive pop blue */
+    --text-light: #ffffff;      /* Crisp white text over dark backgrounds */
+    --text-muted: #b0c4de;      /* Light slate grey for secondary text */
+    --text-dark: #111111;       /* Jet black text for high-contrast focus */
+    --border-light: rgba(255, 255, 255, 0.15);
     --font-sans: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
 }
 
 body {
     font-family: var(--font-sans);
-    background-color: var(--bg-main);
-    color: var(--text-primary);
-    line-height: 1.6;
+    background-color: var(--brand-blue); /* Sets total default background to blue */
+    color: var(--text-light);            /* Sets universal text to white */
+    line-height: 1.65;
     -webkit-font-smoothing: antialiased;
 }
 
 .text-center { text-align: center; }
 
 /* -------------------------------------
-   Navigation Bar 
+   Navigation Bar (White Bar / Black Text Accent)
 ------------------------------------- */
 .navbar {
-    background-color: var(--bg-main);
-    border-bottom: 1px solid var(--border-subtle);
+    background-color: #ffffff;
+    border-bottom: 1px solid #e5e5e5;
     position: sticky;
     top: 0;
     z-index: 1000;
@@ -41,7 +42,7 @@ body {
 .nav-container {
     max-width: 1140px;
     margin: 0 auto;
-    padding: 28px 4%;
+    padding: 24px 4%;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -51,18 +52,13 @@ body {
     font-size: 26px;
     font-weight: 700;
     letter-spacing: -0.5px;
-    color: var(--text-primary);
+    color: var(--text-dark); /* Jet black logo text */
     text-decoration: none;
-}
-
-.nav-links {
-    display: flex;
-    align-items: center;
 }
 
 .nav-links a {
     text-decoration: none;
-    color: var(--text-secondary);
+    color: #444444;
     font-weight: 500;
     font-size: 15px;
     margin-left: 36px;
@@ -70,29 +66,28 @@ body {
 }
 
 .nav-links a:hover, .nav-links a.active {
-    color: var(--text-primary);
+    color: var(--text-dark);
 }
 
 .nav-links .btn-cta {
-    background-color: var(--text-primary);
-    color: var(--bg-main);
+    background-color: var(--text-dark); /* Black button accent */
+    color: #ffffff;
     padding: 12px 24px;
-    border-radius: 2px; /* Crisp Squarespace-style edges */
-    font-weight: 500;
+    border-radius: 2px;
+    font-weight: 600;
     font-size: 14px;
-    transition: opacity 0.2s ease;
 }
 
 .nav-links .btn-cta:hover {
-    opacity: 0.85;
-    color: var(--bg-main);
+    background-color: var(--accent-blue);
+    color: #ffffff;
 }
 
 /* -------------------------------------
-   Hero Layout
+   Hero Layout (Blue Canvas + White Text)
 ------------------------------------- */
 .hero-section {
-    background-color: var(--bg-main);
+    background-color: var(--brand-blue);
     padding: 140px 4% 100px 4%;
     text-align: center;
 }
@@ -104,44 +99,45 @@ body {
 
 .hero-badge {
     display: block;
-    font-size: 14px;
+    font-size: 13px;
     text-transform: uppercase;
     letter-spacing: 2px;
     font-weight: 600;
-    color: var(--text-light);
-    margin-bottom: 28px;
+    color: var(--text-muted);
+    margin-bottom: 24px;
 }
 
 .hero-section h1 {
     font-size: 52px;
     font-weight: 700;
-    line-height: 1.15;
+    line-height: 1.2;
     letter-spacing: -1.5px;
-    color: var(--text-primary);
+    color: var(--text-light);
     margin-bottom: 32px;
 }
 
 .hero-section p {
     font-size: 19px;
-    color: var(--text-secondary);
-    line-height: 1.65;
+    color: var(--text-muted);
     margin-bottom: 48px;
 }
 
+/* White Button over Dark Blue */
 .btn-primary {
     display: inline-block;
-    background-color: var(--text-primary);
-    color: var(--bg-main);
+    background-color: #ffffff;
+    color: var(--text-dark);
     text-decoration: none;
     padding: 16px 36px;
     font-weight: 600;
     font-size: 15px;
     border-radius: 2px;
-    transition: opacity 0.2s ease;
+    transition: background-color 0.2s ease, color 0.2s ease;
 }
 
 .btn-primary:hover {
-    opacity: 0.85;
+    background-color: var(--accent-blue);
+    color: #ffffff;
 }
 
 /* -------------------------------------
@@ -149,7 +145,8 @@ body {
 ------------------------------------- */
 .features-section {
     padding: 100px 4%;
-    background-color: var(--bg-main);
+    background-color: var(--brand-blue);
+    border-top: 1px solid var(--border-light);
 }
 
 .section-container {
@@ -164,38 +161,34 @@ body {
 }
 
 .feature-card {
-    background: var(--bg-main);
-    text-align: left;
+    background: transparent;
 }
 
 .feature-card h3 {
     font-size: 24px;
     font-weight: 600;
     margin-bottom: 20px;
-    letter-spacing: -0.5px;
-    line-height: 1.25;
-    color: var(--text-primary);
+    color: var(--text-light);
 }
 
 .feature-card p {
-    color: var(--text-secondary);
+    color: var(--text-muted);
     font-size: 16px;
-    line-height: 1.65;
     margin-bottom: 24px;
 }
 
 .card-link {
-    color: var(--text-primary);
+    color: #ffffff;
     text-decoration: none;
     font-weight: 600;
     font-size: 15px;
-    border-bottom: 1px solid var(--text-primary);
+    border-bottom: 1px solid #ffffff;
     padding-bottom: 2px;
-    transition: opacity 0.15s ease;
 }
 
 .card-link:hover {
-    opacity: 0.6;
+    color: var(--text-muted);
+    border-bottom-color: var(--text-muted);
 }
 
 /* -------------------------------------
@@ -203,17 +196,16 @@ body {
 ------------------------------------- */
 .capabilities-section {
     padding: 120px 4%;
-    background-color: var(--bg-alt);
-    border-top: 1px solid var(--border-subtle);
-    border-bottom: 1px solid var(--border-subtle);
+    background-color: var(--brand-blue-dark);
+    border-top: 1px solid var(--border-light);
+    border-bottom: 1px solid var(--border-light);
 }
 
 .capabilities-section h2 {
     font-size: 32px;
     font-weight: 700;
     margin-bottom: 48px;
-    letter-spacing: -1px;
-    color: var(--text-primary);
+    color: var(--text-light);
 }
 
 .capability-list {
@@ -229,7 +221,10 @@ body {
 .capability-list li {
     font-size: 20px;
     font-weight: 500;
-    color: var(--text-secondary);
+    color: #ffffff;
+    background-color: rgba(255, 255, 255, 0.05);
+    padding: 10px 20px;
+    border-radius: 4px;
 }
 
 /* -------------------------------------
@@ -237,7 +232,7 @@ body {
 ------------------------------------- */
 .testimonial-section {
     padding: 140px 4%;
-    background-color: var(--bg-main);
+    background-color: var(--brand-blue);
     text-align: center;
 }
 
@@ -245,10 +240,7 @@ body {
     max-width: 850px;
     margin: 0 auto;
     font-size: 24px;
-    font-weight: 400;
-    color: var(--text-primary);
-    line-height: 1.6;
-    letter-spacing: -0.5px;
+    color: var(--text-light);
 }
 
 .testimonial-quote cite {
@@ -259,38 +251,46 @@ body {
     font-style: normal;
     text-transform: uppercase;
     letter-spacing: 1.5px;
-    color: var(--text-light);
+    color: var(--text-muted);
 }
 
 /* -------------------------------------
    Footer
 ------------------------------------- */
 .site-footer {
-    background-color: var(--bg-main);
+    background-color: var(--brand-blue-dark);
     padding: 100px 4% 60px 4%;
     text-align: center;
-    border-top: 1px solid var(--border-subtle);
 }
 
 .site-footer h2 {
     font-size: 36px;
-    font-weight: 700;
-    letter-spacing: -1px;
     margin-bottom: 16px;
 }
 
 .site-footer p {
-    color: var(--text-secondary);
+    color: var(--text-muted);
     font-size: 17px;
     margin-bottom: 32px;
+}
+
+.site-footer .btn-primary {
+    background-color: transparent;
+    border: 2px solid #ffffff;
+    color: #ffffff;
+}
+
+.site-footer .btn-primary:hover {
+    background-color: #ffffff;
+    color: var(--brand-blue-dark);
 }
 
 .footer-bottom {
     margin-top: 100px;
     padding-top: 32px;
-    border-top: 1px solid var(--border-subtle);
+    border-top: 1px solid var(--border-light);
     font-size: 14px;
-    color: var(--text-light);
+    color: var(--text-muted);
 }
 
 .sub-footer {
@@ -302,9 +302,6 @@ body {
 @media(max-width: 768px) {
     .nav-container { flex-direction: column; gap: 20px; padding: 20px 4%; }
     .nav-links a { margin: 0 14px; font-size: 14px; }
-    .hero-section { padding: 80px 4% 60px 4%; }
     .hero-section h1 { font-size: 36px; }
-    .hero-section p { font-size: 17px; }
-    .features-grid { gap: 40px; }
-    .testimonial-quote { font-size: 20px; }
+    .capability-list { flex-direction: column; align-items: center; }
 }
