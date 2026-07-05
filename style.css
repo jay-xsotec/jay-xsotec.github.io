@@ -1,27 +1,16 @@
-/* -------------------------------------
+/* ==========================================================================
    Global Reset & xSoTec Dark Blue Brand Theme
-------------------------------------- */
+   ========================================================================== */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-:root {
-    --brand-blue: #002B49;      
-    --brand-blue-dark: #001f36; 
-    --accent-blue: #0046ff;     
-    --text-light: #ffffff;      
-    --text-muted: #b0c4de;      
-    --text-dark: #111111;       
-    --border-light: rgba(255, 255, 255, 0.15);
-    --font-sans: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-}
-
 body {
-    font-family: var(--font-sans);
-    background-color: var(--brand-blue); 
-    color: var(--text-light);            
+    font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    background-color: #002B49; 
+    color: #ffffff;            
     line-height: 1.65;
     -webkit-font-smoothing: antialiased;
     scroll-behavior: smooth;
@@ -29,9 +18,9 @@ body {
 
 .text-center { text-align: center; }
 
-/* -------------------------------------
-   Fixed Navigation Bar
-------------------------------------- */
+/* ==========================================================================
+   Fixed Navigation Bar Layout
+   ========================================================================== */
 .navbar {
     background-color: #ffffff;
     border-bottom: 1px solid #e5e5e5;
@@ -86,7 +75,7 @@ body {
 .nav-links > a:hover, 
 .dropdown:hover .dropbtn, 
 .nav-links a.active {
-    color: var(--text-dark);
+    color: #111111;
 }
 
 .dropdown {
@@ -124,7 +113,7 @@ body {
 
 .dropdown-content a:hover {
     background-color: #f4f7fa;
-    color: var(--text-dark);
+    color: #111111;
 }
 
 .dropdown:hover .dropdown-content {
@@ -132,7 +121,7 @@ body {
 }
 
 .nav-links .btn-cta {
-    background-color: var(--text-dark); 
+    background-color: #111111; 
     color: #ffffff;
     padding: 10px 20px;
     border-radius: 4px;
@@ -142,14 +131,14 @@ body {
 }
 
 .nav-links .btn-cta:hover {
-    background-color: var(--accent-blue);
+    background-color: #0046ff;
 }
 
-/* -------------------------------------
-   Hero Section Media Formatting
-------------------------------------- */
+/* ==========================================================================
+   Hero Section & Responsive Video Framework
+   ========================================================================== */
 .hero-section {
-    background-color: var(--brand-blue);
+    background-color: #002B49;
     padding: 100px 4% 100px 4%;
     text-align: center;
 }
@@ -172,7 +161,7 @@ body {
     text-transform: uppercase;
     letter-spacing: 2px;
     font-weight: 600;
-    color: var(--text-muted);
+    color: #b0c4de;
     margin-bottom: 24px;
 }
 
@@ -186,7 +175,7 @@ body {
 
 .hero-section p {
     font-size: 19px;
-    color: var(--text-muted);
+    color: #b0c4de;
     margin-bottom: 40px;
 }
 
@@ -196,7 +185,7 @@ body {
     height: 0;
     overflow: hidden;
     max-width: 100%;
-    background: #000;
+    background: #000000;
     margin: 0 auto 40px auto;
     border-radius: 6px;
     box-shadow: 0 20px 40px rgba(0,0,0,0.3);
@@ -204,7 +193,10 @@ body {
 
 .video-wrapper iframe, .video-wrapper-small iframe, .video-wrapper-vertical iframe {
     position: absolute;
-    top: 0; left: 0; width: 100%; height: 100%;
+    top: 0; 
+    left: 0; 
+    width: 100%; 
+    height: 100%;
 }
 
 .media-highlight-block {
@@ -221,7 +213,7 @@ body {
 .btn-primary {
     display: inline-block;
     background-color: #ffffff;
-    color: var(--text-dark);
+    color: #111111;
     text-decoration: none;
     padding: 16px 36px;
     font-weight: 600;
@@ -229,13 +221,13 @@ body {
     border-radius: 2px;
 }
 
-/* -------------------------------------
-   Features Sections
-------------------------------------- */
+/* ==========================================================================
+   Features Grid Content Sections
+   ========================================================================== */
 .features-section {
     padding: 100px 4%;
-    background-color: var(--brand-blue);
-    border-top: 1px solid var(--border-light);
+    background-color: #002B49;
+    border-top: 1px solid rgba(255, 255, 255, 0.15);
 }
 
 .section-container {
@@ -261,7 +253,7 @@ body {
 }
 
 .feature-card p {
-    color: var(--text-muted);
+    color: #b0c4de;
     font-size: 16px;
     margin-bottom: 24px;
 }
@@ -273,7 +265,7 @@ body {
     overflow: hidden;
     margin-bottom: 20px;
     border-radius: 4px;
-    background: #000;
+    background: #000000;
     box-shadow: 0 8px 16px rgba(0,0,0,0.2);
 }
 
@@ -286,13 +278,13 @@ body {
     padding-bottom: 2px;
 }
 
-/* -------------------------------------
-   Commercial Segment 2-Column Split
-------------------------------------- */
+/* ==========================================================================
+   Commercial Cross-Industry Layout Block
+   ========================================================================== */
 .commercial-section {
     padding: 80px 4%;
-    background-color: var(--brand-blue-dark);
-    border-top: 1px solid var(--border-light);
+    background-color: #001f36;
+    border-top: 1px solid rgba(255, 255, 255, 0.15);
 }
 
 .commercial-box-grid {
@@ -301,7 +293,7 @@ body {
     background: rgba(255, 255, 255, 0.03);
     padding: 50px;
     border-radius: 6px;
-    border: 1px solid var(--border-light);
+    border: 1px solid rgba(255, 255, 255, 0.15);
     display: grid;
     grid-template-columns: 1.2fr 0.8fr;
     gap: 40px;
@@ -309,7 +301,7 @@ body {
 }
 
 .commercial-text-content h2 { font-size: 32px; margin-bottom: 20px; }
-.commercial-text-content p { font-size: 17px; color: var(--text-muted); margin-bottom: 30px; }
+.commercial-text-content p { font-size: 17px; color: #b0c4de; margin-bottom: 30px; }
 
 .video-wrapper-vertical {
     position: relative;
@@ -319,18 +311,18 @@ body {
     max-width: 280px;
     margin: 0 auto;
     border-radius: 8px;
-    background: #000;
+    background: #000000;
     box-shadow: 0 12px 24px rgba(0,0,0,0.4);
 }
 
-/* -------------------------------------
-   Capabilities List Section
-------------------------------------- */
+/* ==========================================================================
+   Capabilities Checklist Panels
+   ========================================================================== */
 .capabilities-section {
     padding: 100px 4%;
-    background-color: var(--brand-blue);
-    border-top: 1px solid var(--border-light);
-    border-bottom: 1px solid var(--border-light);
+    background-color: #002B49;
+    border-top: 1px solid rgba(255, 255, 255, 0.15);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.15);
 }
 
 .sis-challenge-img {
@@ -364,26 +356,26 @@ body {
     border-radius: 4px;
 }
 
-/* -------------------------------------
-   Our Story
-------------------------------------- */
+/* ==========================================================================
+   Corporate History Narrative ("Our Story")
+   ========================================================================== */
 .story-section {
     padding: 120px 4%;
-    background-color: var(--brand-blue-dark);
+    background-color: #001f36;
 }
 
 .story-content { max-width: 800px; margin: 0 auto; }
 .story-content h2 { font-size: 36px; margin-bottom: 24px; }
 .lead-text { font-size: 22px; font-weight: 500; margin-bottom: 24px; }
-.story-content p { font-size: 16px; color: var(--text-muted); }
+.story-content p { font-size: 16px; color: #b0c4de; }
 
-/* -------------------------------------
-   Testimonials
-------------------------------------- */
+/* ==========================================================================
+   Testimonial Displays
+   ========================================================================== */
 .testimonial-section {
     padding: 120px 4%;
-    background-color: var(--brand-blue);
-    border-top: 1px solid var(--border-light);
+    background-color: #002B49;
+    border-top: 1px solid rgba(255, 255, 255, 0.15);
 }
 
 .testimonial-grid {
@@ -402,7 +394,7 @@ body {
     display: block;
     margin-bottom: 16px;
     border-radius: 4px;
-    border: 1px solid var(--border-light);
+    border: 1px solid rgba(255, 255, 255, 0.15);
 }
 
 .testimonial-quote cite {
@@ -411,30 +403,30 @@ body {
     font-weight: 600;
     text-transform: uppercase;
     letter-spacing: 1.5px;
-    color: var(--text-muted);
+    color: #b0c4de;
 }
 
-/* -------------------------------------
-   Footer
-------------------------------------- */
+/* ==========================================================================
+   Footer Component Links
+   ========================================================================== */
 .site-footer {
-    background-color: var(--brand-blue-dark);
+    background-color: #001f36;
     padding: 100px 4% 60px 4%;
     text-align: center;
 }
 
 .site-footer h2 { font-size: 36px; margin-bottom: 16px; }
-.site-footer p { color: var(--text-muted); font-size: 17px; margin-bottom: 32px; }
+.site-footer p { color: #b0c4de; font-size: 17px; margin-bottom: 32px; }
 .contact-details { margin-bottom: 40px; }
 .contact-details p { margin-bottom: 8px !important; font-size: 16px; }
 .site-footer .btn-primary { background-color: transparent; border: 2px solid #ffffff; color: #ffffff; }
-.site-footer .btn-primary:hover { background-color: #ffffff; color: var(--brand-blue-dark); }
-.footer-bottom { margin-top: 100px; padding-top: 32px; border-top: 1px solid var(--border-light); font-size: 14px; color: var(--text-muted); }
+.site-footer .btn-primary:hover { background-color: #ffffff; color: #001f36; }
+.footer-bottom { margin-top: 100px; padding-top: 32px; border-top: 1px solid rgba(255, 255, 255, 0.15); font-size: 14px; color: #b0c4de; }
 .sub-footer { font-size: 13px; margin-top: 6px; }
 
-/* -------------------------------------
-   Fluid Mobile Adjustments
-------------------------------------- */
+/* ==========================================================================
+   Fluid Mobile System Overrides
+   ========================================================================== */
 @media screen and (max-width: 768px) {
     .nav-container { flex-direction: column; gap: 16px; }
     .nav-links { flex-direction: column; width: 100%; text-align: center; gap: 6px; }
