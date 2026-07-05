@@ -1,5 +1,5 @@
 /* -------------------------------------
-   Global Reset & xSoTec Dark Blue Brand Theme
+   Global Reset & xSoTec Blue Brand Theme
 ------------------------------------- */
 * {
     margin: 0;
@@ -8,20 +8,20 @@
 }
 
 :root {
-    --brand-blue: #002B49;      /* Deep rich Squarespace-style background blue */
-    --brand-blue-dark: #001f36; /* Extra deep midnight blue for buttons/footers */
-    --accent-blue: #0046ff;     /* Interactive pop blue */
-    --text-light: #ffffff;      /* Crisp white text over dark backgrounds */
-    --text-muted: #b0c4de;      /* Light slate grey for secondary text */
-    --text-dark: #111111;       /* Jet black text for high-contrast focus */
-    --border-light: rgba(255, 255, 255, 0.15);
-    --font-sans: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    --brand-blue: #002B49;      /* Deep rich background blue */
+    --brand-blue-dark: #001f36; /* Extra dark midnight blue for list blocks/footers */
+    --accent-blue: #0046ff;     /* Interactive pop highlight color */
+    --text-light: #ffffff;      /* Primary layout font white */
+    --text-muted: #b0c4de;      /* Secondary text slate grey */
+    --text-dark: #111111;       /* Navigation typography jet black */
+    --border-light: rgba(255, 255, 255, 0.12);
+    --font-sans: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
 }
 
 body {
     font-family: var(--font-sans);
-    background-color: var(--brand-blue); /* Sets total default background to blue */
-    color: var(--text-light);            /* Sets universal text to white */
+    background-color: var(--brand-blue);
+    color: var(--text-light);
     line-height: 1.65;
     -webkit-font-smoothing: antialiased;
 }
@@ -52,7 +52,7 @@ body {
     font-size: 26px;
     font-weight: 700;
     letter-spacing: -0.5px;
-    color: var(--text-dark); /* Jet black logo text */
+    color: var(--text-dark);
     text-decoration: none;
 }
 
@@ -70,7 +70,7 @@ body {
 }
 
 .nav-links .btn-cta {
-    background-color: var(--text-dark); /* Black button accent */
+    background-color: var(--text-dark);
     color: #ffffff;
     padding: 12px 24px;
     border-radius: 2px;
@@ -80,11 +80,10 @@ body {
 
 .nav-links .btn-cta:hover {
     background-color: var(--accent-blue);
-    color: #ffffff;
 }
 
 /* -------------------------------------
-   Hero Layout (Blue Canvas + White Text)
+   Hero Layout
 ------------------------------------- */
 .hero-section {
     background-color: var(--brand-blue);
@@ -93,7 +92,7 @@ body {
 }
 
 .hero-container {
-    max-width: 800px;
+    max-width: 840px;
     margin: 0 auto;
 }
 
@@ -112,7 +111,6 @@ body {
     font-weight: 700;
     line-height: 1.2;
     letter-spacing: -1.5px;
-    color: var(--text-light);
     margin-bottom: 32px;
 }
 
@@ -122,7 +120,6 @@ body {
     margin-bottom: 48px;
 }
 
-/* White Button over Dark Blue */
 .btn-primary {
     display: inline-block;
     background-color: #ffffff;
@@ -141,7 +138,7 @@ body {
 }
 
 /* -------------------------------------
-   Features Grid Section
+   Features Grid (Balanced for 4 pillars)
 ------------------------------------- */
 .features-section {
     padding: 100px 4%;
@@ -154,58 +151,44 @@ body {
     margin: 0 auto;
 }
 
-.features-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 60px;
+.section-title {
+    font-size: 32px;
+    margin-bottom: 60px;
+    font-weight: 700;
 }
 
-.feature-card {
-    background: transparent;
+.features-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 40px;
 }
 
 .feature-card h3 {
-    font-size: 24px;
+    font-size: 22px;
     font-weight: 600;
-    margin-bottom: 20px;
+    margin-bottom: 16px;
     color: var(--text-light);
 }
 
 .feature-card p {
     color: var(--text-muted);
-    font-size: 16px;
-    margin-bottom: 24px;
-}
-
-.card-link {
-    color: #ffffff;
-    text-decoration: none;
-    font-weight: 600;
     font-size: 15px;
-    border-bottom: 1px solid #ffffff;
-    padding-bottom: 2px;
-}
-
-.card-link:hover {
-    color: var(--text-muted);
-    border-bottom-color: var(--text-muted);
+    line-height: 1.6;
 }
 
 /* -------------------------------------
    Capabilities List Section
 ------------------------------------- */
 .capabilities-section {
-    padding: 120px 4%;
+    padding: 100px 4%;
     background-color: var(--brand-blue-dark);
     border-top: 1px solid var(--border-light);
     border-bottom: 1px solid var(--border-light);
 }
 
 .capabilities-section h2 {
-    font-size: 32px;
-    font-weight: 700;
-    margin-bottom: 48px;
-    color: var(--text-light);
+    font-size: 28px;
+    margin-bottom: 40px;
 }
 
 .capability-list {
@@ -213,54 +196,84 @@ body {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    gap: 20px 40px;
+    gap: 16px 24px;
     max-width: 960px;
     margin: 0 auto;
 }
 
 .capability-list li {
-    font-size: 20px;
+    font-size: 18px;
     font-weight: 500;
-    color: #ffffff;
-    background-color: rgba(255, 255, 255, 0.05);
+    background-color: rgba(255, 255, 255, 0.04);
     padding: 10px 20px;
     border-radius: 4px;
+}
+
+/* -------------------------------------
+   Story / About Section
+------------------------------------- */
+.story-section {
+    padding: 120px 4%;
+    background-color: var(--brand-blue);
+}
+
+.story-content {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.story-content h2 {
+    font-size: 36px;
+    margin-bottom: 24px;
+}
+
+.lead-text {
+    font-size: 22px;
+    font-weight: 500;
+    line-height: 1.5;
+    margin-bottom: 24px;
+    color: #ffffff;
+}
+
+.story-content p {
+    font-size: 16px;
+    color: var(--text-muted);
+    margin-bottom: 20px;
 }
 
 /* -------------------------------------
    Testimonial Section
 ------------------------------------- */
 .testimonial-section {
-    padding: 140px 4%;
-    background-color: var(--brand-blue);
-    text-align: center;
+    padding: 120px 4%;
+    background-color: var(--brand-blue-dark);
 }
 
 .testimonial-quote {
     max-width: 850px;
     margin: 0 auto;
-    font-size: 24px;
-    color: var(--text-light);
+    font-size: 22px;
+    text-align: center;
 }
 
 .testimonial-quote cite {
     display: block;
-    margin-top: 28px;
+    margin-top: 24px;
     font-size: 14px;
     font-weight: 600;
     font-style: normal;
     text-transform: uppercase;
-    letter-spacing: 1.5px;
     color: var(--text-muted);
 }
 
 /* -------------------------------------
-   Footer
+   Footer & Contact Info
 ------------------------------------- */
 .site-footer {
     background-color: var(--brand-blue-dark);
     padding: 100px 4% 60px 4%;
     text-align: center;
+    border-top: 1px solid var(--border-light);
 }
 
 .site-footer h2 {
@@ -271,7 +284,16 @@ body {
 .site-footer p {
     color: var(--text-muted);
     font-size: 17px;
-    margin-bottom: 32px;
+    margin-bottom: 24px;
+}
+
+.contact-details {
+    margin-bottom: 40px;
+}
+
+.contact-details p {
+    margin-bottom: 8px !important;
+    font-size: 16px;
 }
 
 .site-footer .btn-primary {
@@ -289,19 +311,19 @@ body {
     margin-top: 100px;
     padding-top: 32px;
     border-top: 1px solid var(--border-light);
-    font-size: 14px;
+    font-size: 13px;
     color: var(--text-muted);
 }
 
 .sub-footer {
-    font-size: 13px;
+    font-size: 12px;
     margin-top: 6px;
 }
 
-/* Responsive adjustments */
+/* Responsive configurations */
 @media(max-width: 768px) {
-    .nav-container { flex-direction: column; gap: 20px; padding: 20px 4%; }
-    .nav-links a { margin: 0 14px; font-size: 14px; }
+    .nav-container { flex-direction: column; gap: 20px; }
+    .nav-links a { margin: 0 12px; font-size: 14px; }
     .hero-section h1 { font-size: 36px; }
     .capability-list { flex-direction: column; align-items: center; }
 }
