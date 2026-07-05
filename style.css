@@ -190,7 +190,6 @@ body {
     margin-bottom: 40px;
 }
 
-/* Primary Video Player Container (16:9 Landscape) */
 .video-wrapper {
     position: relative;
     padding-bottom: 56.25%; 
@@ -267,7 +266,6 @@ body {
     margin-bottom: 24px;
 }
 
-/* Secondary Feature Video Elements */
 .video-wrapper-small {
     position: relative;
     padding-bottom: 56.25%;
@@ -313,10 +311,9 @@ body {
 .commercial-text-content h2 { font-size: 32px; margin-bottom: 20px; }
 .commercial-text-content p { font-size: 17px; color: var(--text-muted); margin-bottom: 30px; }
 
-/* 9:16 Vertical Shorts Responsive Ratio Configuration */
 .video-wrapper-vertical {
     position: relative;
-    padding-bottom: 177.77%; /* 9:16 portrait video standard ratio */
+    padding-bottom: 177.77%; 
     height: 0;
     overflow: hidden;
     max-width: 280px;
@@ -435,8 +432,10 @@ body {
 .footer-bottom { margin-top: 100px; padding-top: 32px; border-top: 1px solid var(--border-light); font-size: 14px; color: var(--text-muted); }
 .sub-footer { font-size: 13px; margin-top: 6px; }
 
-/* Mobile Formatting */
-@media(max-width: 768px) {
+/* -------------------------------------
+   Fluid Mobile Adjustments
+------------------------------------- */
+@media screen and (max-width: 768px) {
     .nav-container { flex-direction: column; gap: 16px; }
     .nav-links { flex-direction: column; width: 100%; text-align: center; gap: 6px; }
     .nav-links > a, .dropdown .dropbtn { margin-left: 0; padding: 10px 0; width: 100%; justify-content: center; }
