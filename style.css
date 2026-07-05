@@ -1,5 +1,5 @@
 /* -------------------------------------
-   Global Reset & xSoTec Light Theme (.org Color Scheme)
+   Global Reset & xSoTec Dark Blue Brand Theme
 ------------------------------------- */
 * {
     margin: 0;
@@ -8,19 +8,20 @@
 }
 
 :root {
-    --bg-main: #ffffff;         /* Pure crisp white canvas background */
-    --bg-alt: #fafafa;          /* Soft layout gray separation panels */
-    --text-primary: #111111;    /* Jet black header text */
-    --text-secondary: #444444;  /* Deep charcoal copy text */
-    --text-light: #777777;      /* Subtle layout element labels */
-    --border-color: #ebebeb;    /* Minimalist section divider line color */
+    --brand-blue: #002B49;      /* Deep rich Squarespace-style background blue */
+    --brand-blue-dark: #001f36; /* Extra deep midnight blue for buttons/footers */
+    --accent-blue: #0046ff;     /* Interactive pop blue */
+    --text-light: #ffffff;      /* Crisp white text over dark backgrounds */
+    --text-muted: #b0c4de;      /* Light slate grey for secondary text */
+    --text-dark: #111111;       /* Jet black text for high-contrast focus */
+    --border-light: rgba(255, 255, 255, 0.15);
     --font-sans: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
 }
 
 body {
     font-family: var(--font-sans);
-    background-color: var(--bg-main);
-    color: var(--text-secondary);
+    background-color: var(--brand-blue); /* Keeps the background dark blue */
+    color: var(--text-light);            /* Keeps text white */
     line-height: 1.65;
     -webkit-font-smoothing: antialiased;
 }
@@ -28,11 +29,11 @@ body {
 .text-center { text-align: center; }
 
 /* -------------------------------------
-   Navigation Bar 
+   Navigation Bar (White Bar / Black Text Accent)
 ------------------------------------- */
 .navbar {
-    background-color: var(--bg-main);
-    border-bottom: 1px solid var(--border-color);
+    background-color: #ffffff;
+    border-bottom: 1px solid #e5e5e5;
     position: sticky;
     top: 0;
     z-index: 1000;
@@ -41,7 +42,7 @@ body {
 .nav-container {
     max-width: 1140px;
     margin: 0 auto;
-    padding: 16px 4%; /* Sightly lowered padding to account for the image height */
+    padding: 16px 4%; /* Adjusted spacing for the image height */
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -53,7 +54,7 @@ body {
     text-decoration: none;
 }
 
-/* Constrains your 1980x1486 logo to a crisp header size */
+/* Constrains your large uploaded logo to sit perfectly in the menu bar */
 .nav-logo-img {
     height: auto;
     max-height: 45px; 
@@ -62,7 +63,7 @@ body {
 
 .nav-links a {
     text-decoration: none;
-    color: var(--text-secondary);
+    color: #444444;
     font-weight: 500;
     font-size: 15px;
     margin-left: 36px;
@@ -70,11 +71,11 @@ body {
 }
 
 .nav-links a:hover, .nav-links a.active {
-    color: var(--text-primary);
+    color: var(--text-dark);
 }
 
 .nav-links .btn-cta {
-    background-color: var(--text-primary);
+    background-color: var(--text-dark); /* Black button accent */
     color: #ffffff;
     padding: 12px 24px;
     border-radius: 2px;
@@ -83,20 +84,21 @@ body {
 }
 
 .nav-links .btn-cta:hover {
-    opacity: 0.85;
+    background-color: var(--accent-blue);
+    color: #ffffff;
 }
 
 /* -------------------------------------
-   Hero Layout
+   Hero Layout (Blue Canvas + White Text)
 ------------------------------------- */
 .hero-section {
-    background-color: var(--bg-main);
+    background-color: var(--brand-blue);
     padding: 140px 4% 100px 4%;
     text-align: center;
 }
 
 .hero-container {
-    max-width: 840px;
+    max-width: 800px;
     margin: 0 auto;
 }
 
@@ -106,7 +108,7 @@ body {
     text-transform: uppercase;
     letter-spacing: 2px;
     font-weight: 600;
-    color: var(--text-light);
+    color: var(--text-muted);
     margin-bottom: 24px;
 }
 
@@ -115,30 +117,32 @@ body {
     font-weight: 700;
     line-height: 1.2;
     letter-spacing: -1.5px;
-    color: var(--text-primary);
+    color: var(--text-light);
     margin-bottom: 32px;
 }
 
 .hero-section p {
     font-size: 19px;
-    color: var(--text-secondary);
+    color: var(--text-muted);
     margin-bottom: 48px;
 }
 
+/* White Button over Dark Blue */
 .btn-primary {
     display: inline-block;
-    background-color: var(--text-primary);
-    color: #ffffff;
+    background-color: #ffffff;
+    color: var(--text-dark);
     text-decoration: none;
     padding: 16px 36px;
     font-weight: 600;
     font-size: 15px;
     border-radius: 2px;
-    transition: opacity 0.2s ease;
+    transition: background-color 0.2s ease, color 0.2s ease;
 }
 
 .btn-primary:hover {
-    opacity: 0.85;
+    background-color: var(--accent-blue);
+    color: #ffffff;
 }
 
 /* -------------------------------------
@@ -146,8 +150,8 @@ body {
 ------------------------------------- */
 .features-section {
     padding: 100px 4%;
-    background-color: var(--bg-main);
-    border-top: 1px solid var(--border-color);
+    background-color: var(--brand-blue);
+    border-top: 1px solid var(--border-light);
 }
 
 .section-container {
@@ -161,46 +165,52 @@ body {
     gap: 60px;
 }
 
+.feature-card {
+    background: transparent;
+}
+
 .feature-card h3 {
     font-size: 24px;
     font-weight: 600;
     margin-bottom: 20px;
-    color: var(--text-primary);
+    color: var(--text-light);
 }
 
 .feature-card p {
-    color: var(--text-secondary);
+    color: var(--text-muted);
     font-size: 16px;
     margin-bottom: 24px;
 }
 
 .card-link {
-    color: var(--text-primary);
+    color: #ffffff;
     text-decoration: none;
     font-weight: 600;
     font-size: 15px;
-    border-bottom: 1px solid var(--text-primary);
+    border-bottom: 1px solid #ffffff;
     padding-bottom: 2px;
 }
 
 .card-link:hover {
-    opacity: 0.6;
+    color: var(--text-muted);
+    border-bottom-color: var(--text-muted);
 }
 
 /* -------------------------------------
    Capabilities List Section
 ------------------------------------- */
 .capabilities-section {
-    padding: 100px 4%;
-    background-color: var(--bg-alt);
-    border-top: 1px solid var(--border-color);
-    border-bottom: 1px solid var(--border-color);
+    padding: 120px 4%;
+    background-color: var(--brand-blue-dark);
+    border-top: 1px solid var(--border-light);
+    border-bottom: 1px solid var(--border-light);
 }
 
 .capabilities-section h2 {
-    font-size: 28px;
-    margin-bottom: 40px;
-    color: var(--text-primary);
+    font-size: 32px;
+    font-weight: 700;
+    margin-bottom: 48px;
+    color: var(--text-light);
 }
 
 .capability-list {
@@ -208,17 +218,16 @@ body {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    gap: 16px 24px;
+    gap: 20px 40px;
     max-width: 960px;
     margin: 0 auto;
 }
 
 .capability-list li {
-    font-size: 18px;
+    font-size: 20px;
     font-weight: 500;
-    color: var(--text-secondary);
-    background-color: #ffffff;
-    border: 1px solid var(--border-color);
+    color: #ffffff;
+    background-color: rgba(255, 255, 255, 0.05);
     padding: 10px 20px;
     border-radius: 4px;
 }
@@ -228,7 +237,7 @@ body {
 ------------------------------------- */
 .story-section {
     padding: 120px 4%;
-    background-color: var(--bg-main);
+    background-color: var(--brand-blue);
 }
 
 .story-content {
@@ -239,7 +248,7 @@ body {
 .story-content h2 {
     font-size: 36px;
     margin-bottom: 24px;
-    color: var(--text-primary);
+    color: var(--text-light);
 }
 
 .lead-text {
@@ -247,91 +256,93 @@ body {
     font-weight: 500;
     line-height: 1.5;
     margin-bottom: 24px;
-    color: var(--text-primary);
+    color: #ffffff;
 }
 
 .story-content p {
     font-size: 16px;
-    color: var(--text-secondary);
+    color: var(--text-muted);
 }
 
 /* -------------------------------------
    Testimonial Section
 ------------------------------------- */
 .testimonial-section {
-    padding: 120px 4%;
-    background-color: var(--bg-alt);
-    border-top: 1px solid var(--border-color);
+    padding: 140px 4%;
+    background-color: var(--brand-blue);
+    text-align: center;
 }
 
 .testimonial-quote {
     max-width: 850px;
     margin: 0 auto;
-    font-size: 22px;
-    text-align: center;
-    color: var(--text-primary);
-    font-style: italic;
+    font-size: 24px;
+    color: var(--text-light);
 }
 
 .testimonial-quote cite {
     display: block;
-    margin-top: 24px;
+    margin-top: 28px;
     font-size: 14px;
     font-weight: 600;
     font-style: normal;
     text-transform: uppercase;
-    color: var(--text-light);
+    letter-spacing: 1.5px;
+    color: var(--text-muted);
 }
 
 /* -------------------------------------
-   Footer & Contact Info
+   Footer
 ------------------------------------- */
 .site-footer {
-    background-color: var(--bg-main);
+    background-color: var(--brand-blue-dark);
     padding: 100px 4% 60px 4%;
     text-align: center;
-    border-top: 1px solid var(--border-color);
 }
 
 .site-footer h2 {
     font-size: 36px;
     margin-bottom: 16px;
-    color: var(--text-primary);
 }
 
 .site-footer p {
-    color: var(--text-secondary);
+    color: var(--text-muted);
     font-size: 17px;
-    margin-bottom: 24px;
+    margin-bottom: 32px;
 }
 
-.contact-details {
-    margin-bottom: 40px;
+.site-footer .btn-primary {
+    background-color: transparent;
+    border: 2px solid #ffffff;
+    color: #ffffff;
 }
 
-.contact-details p {
-    margin-bottom: 8px !important;
-    font-size: 16px;
-    color: var(--text-secondary);
+.site-footer .btn-primary:hover {
+    background-color: #ffffff;
+    color: var(--brand-blue-dark);
 }
 
 .footer-bottom {
     margin-top: 100px;
     padding-top: 32px;
-    border-top: 1px solid var(--border-color);
-    font-size: 13px;
-    color: var(--text-light);
+    border-top: 1px solid var(--border-light);
+    font-size: 14px;
+    color: var(--text-muted);
 }
 
 .sub-footer {
-    font-size: 12px;
+    font-size: 13px;
     margin-top: 6px;
 }
 
-/* Responsive configurations */
+/* Responsive adjustments */
 @media(max-width: 768px) {
-    .nav-container { flex-direction: column; gap: 20px; }
-    .nav-links a { margin: 0 12px; font-size: 14px; }
+    .nav-container { flex-direction: column; gap: 20px; padding: 20px 4%; }
+    .nav-links a { margin: 0 14px; font-size: 14px; }
+    .hero-section { padding: 80px 4% 60px 4%; }
     .hero-section h1 { font-size: 36px; }
+    .hero-section p { font-size: 17px; }
+    .features-grid { gap: 40px; }
+    .testimonial-quote { font-size: 20px; }
     .capability-list { flex-direction: column; align-items: center; }
 }
