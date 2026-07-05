@@ -1,210 +1,501 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>xSoTec | Enterprise Data Solutions</title>
-    <link rel="stylesheet" href="style.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-</head>
-<body>
+/* ==========================================================================
+   Global Reset & Bold Corporate Dark Theme
+   ========================================================================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 
-    <header class="navbar">
-        <div class="nav-container">
-            <a href="index.html" class="logo">
-                <img src="media/cropped-xSoTec-Logo-w-Name-1980x1486.png" alt="xSoTec Logo" class="nav-logo-img">
-            </a>
-            <nav class="nav-links">
-                <a href="index.html" class="active">Platform</a>
-                <div class="dropdown">
-                    <button class="dropbtn">Capabilities</button>
-                    <div class="dropdown-content">
-                        <a href="#infrastructure">Core Infrastructure</a>
-                        <a href="#commercial">Cross-Industry Scaling</a>
-                        <a href="#matrix">Systems Matrix</a>
-                    </div>
-                </div>
-                <a href="#story">Our Story</a>
-                <a href="#contact" class="btn-cta">Request A Demo</a>
-            </nav>
-        </div>
-    </header>
+body {
+    font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    background-color: #001220; /* Deepest Midnight Space Blue */
+    color: #ffffff;            
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+    scroll-behavior: smooth;
+}
 
-    <section class="hero-section">
-        <div class="hero-split-container">
-            <div class="hero-text-side">
-                <img src="media/Partner-Google-for-Education-4-300x104.png" alt="Partner Badge" class="partner-badge-img">
-                <span class="hero-badge">Next-Generation Data Architecture</span>
-                <h1>Transforming Spreadsheets into Enterprise Engines.</h1>
-                <p>Iterate and deploy production-grade custom applications in weeks instead of years. xSoTec builds highly scalable, custom data management systems directly on top of the Google ecosystem—giving your organization complete data sovereignty with zero platform licensing overhead.</p>
-                <div class="hero-actions">
-                    <a href="#contact" class="btn-primary">Explore Platform Capabilities</a>
-                </div>
-            </div>
-            <div class="hero-video-side">
-                <div class="video-wrapper">
-                    <iframe src="https://www.youtube.com/embed/Hz509Z8AuE4" title="xSoTec System Demo" frameborder="0" allowfullscreen></iframe>
-                </div>
-            </div>
-        </div>
-    </section>
+.text-center { text-align: center; }
 
-    <section class="metrics-banner">
-        <div class="metrics-container">
-            <div class="metric-item">
-                <span class="metric-number">100%</span>
-                <span class="metric-label">Custom Architecture</span>
-            </div>
-            <div class="metric-divider"></div>
-            <div class="metric-item">
-                <span class="metric-number">&lt; 3 Weeks</span>
-                <span class="metric-label">Rapid Prototyping</span>
-            </div>
-            <div class="metric-divider"></div>
-            <div class="metric-item">
-                <span class="metric-number">10x</span>
-                <span class="metric-label">Workflow Automation</span>
-            </div>
-        </div>
-    </section>
+/* ==========================================================================
+   Navigation Bar Overhaul
+   ========================================================================== */
+.navbar {
+    background-color: #ffffff;
+    border-bottom: 1px solid #e2e8f0;
+    position: sticky;
+    top: 0;
+    z-index: 3000;
+}
 
-    <section class="diagram-insight-section">
-        <div class="section-container text-center">
-            <div class="diagram-card-wrapper">
-                <div class="diagram-text">
-                    <h2>The Agile Development Advantage</h2>
-                    <p>Traditional software locks you into rigid features and multi-year contract renewals. xSoTec maps directly to your custom nomenclature, rules, and workflows by unlocking the true backend script potential of Google Workspace environments.</p>
-                </div>
-                <div class="diagram-media">
-                    <img src="media/xSoTec-Venndiagram-300x275.png" alt="Ecosystem Diagram" class="venn-diagram-img">
-                </div>
-            </div>
-        </div>
-    </section>
+.nav-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 14px 4%; 
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
 
-    <section id="infrastructure" class="features-section">
-        <div class="section-container">
-            <h2 class="section-title text-center">The Framework Infrastructure</h2>
-            <div class="features-grid">
-                <div class="feature-card">
-                    <span class="card-accent-tag">DEPLOY</span>
-                    <h3>Innovative Learning Ecosystems</h3>
-                    <p>Craft bespoke environments for charter, private, and public districts. Break free from restrictive out-of-the-box platforms with custom competency structures, behavior management trackers, and multi-tiered gradebooks built for modern instruction.</p>
-                    <div class="video-wrapper-small">
-                        <iframe src="https://www.youtube.com/embed/Shr4EYU5izY" title="Learning Environments" frameborder="0" allowfullscreen></iframe>
-                    </div>
-                </div>
-                <div class="feature-card">
-                    <span class="card-accent-tag">AUTOMATE</span>
-                    <h3>Legacy Sheet Modernization</h3>
-                    <p>Stop wrestling with brittle, broken spreadsheets. xSoTec refactors your existing layouts into secure, automated database environments. Retain your historic data models while introducing strict authorization controls and stability.</p>
-                    <div class="video-wrapper-small">
-                        <iframe src="https://www.youtube.com/embed/Yn7Ns2HEHqY" title="Spreadsheet Automation" frameborder="0" allowfullscreen></iframe>
-                    </div>
-                </div>
-                <div class="feature-card">
-                    <span class="card-accent-tag">ITERATE</span>
-                    <h3>Bespoke Pilot Prototyping</h3>
-                    <p>Test, gather feedback, and evolve frameworks seamlessly. xSoTec delivers fully operational system prototypes within days, allowing administrators to gather feedback, run sandbox pilots, and refine operational rules in real time.</p>
-                    <div class="video-wrapper-small">
-                        <iframe src="https://www.youtube.com/embed/nYFihBLvxu0" title="Prototype and Iterate" frameborder="0" allowfullscreen></iframe>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+.nav-logo-img {
+    height: auto;
+    max-height: 42px; 
+    display: block;
+}
 
-    <section id="commercial" class="commercial-section">
-        <div class="section-container">
-            <div class="commercial-box-grid">
-                <div class="commercial-text-content">
-                    <span class="commercial-badge">Commercial Vertical Scaling</span>
-                    <h2>Cross-Industry Data Engines.</h2>
-                    <p>The core computational power of xSoTec is industry-agnostic. Our proprietary scripts and multi-sheet relational architectures scale across complex enterprise operations. We bridge separate departments, consolidate messy data streams, and turn isolated files into a secure, centralized data center.</p>
-                    <a href="#contact" class="btn-secondary-outline">Analyze Your Use Case &rarr;</a>
-                </div>
-                <div class="commercial-video-content">
-                    <div class="video-wrapper-vertical">
-                        <iframe src="https://www.youtube.com/embed/Nd479Ahfij4" title="Overview Summary" frameborder="0" allowfullscreen></iframe>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+.nav-links {
+    display: flex;
+    align-items: center;
+}
 
-    <section id="matrix" class="capabilities-section">
-        <div class="section-container text-center">
-            <div class="matrix-layout">
-                <div class="matrix-image-wrapper">
-                    <img src="media/xSoTec-Does-300x206.png" alt="SIS Challenge" class="sis-challenge-img">
-                </div>
-                <div class="matrix-content-wrapper">
-                    <h2>Enterprise Deployments</h2>
-                    <p class="matrix-subtitle">We actively build, secure, and maintain custom cloud solutions for:</p>
-                    <div class="matrix-pills">
-                        <span class="matrix-pill">Restorative Behavior Systems</span>
-                        <span class="matrix-pill">Dynamic Enrollment Hubs</span>
-                        <span class="matrix-pill">Alternative Attendance Models</span>
-                        <span class="matrix-pill">Competency Grading Frameworks</span>
-                        <span class="matrix-pill">Personalized Learning Dashboards</span>
-                        <span class="matrix-pill">Multi-Sheet Commercial Databases</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+.nav-links > a, 
+.dropdown .dropbtn {
+    text-decoration: none;
+    color: #475569;
+    font-weight: 600;
+    font-size: 14px;
+    margin-left: 36px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-family: inherit;
+    padding: 6px 0;
+    display: flex;
+    align-items: center;
+    transition: color 0.15s ease;
+}
 
-    <section id="story" class="story-section">
-        <div class="section-container">
-            <div class="story-content">
-                <span class="story-eyebrow">Established Infrastructure</span>
-                <h2>Our Story</h2>
-                <p class="lead-text">An architecture-focused information systems start-up leveraging specialized engine frameworks to optimize institutional operations at scale.</p>
-                <p>Following extensive tenures analyzing institutional technical gaps with the School District of Philadelphia, founder Jay Cohen established xSoTec to deliver powerful, lower-overhead data options to schools and enterprises. By engineering proprietary backend script toolkits—including our main open-source assets adminConsole and copyScripts—our specialized team can instantly deploy micro-architectures that translate directly into massive operational efficiency, empowering users all over the world.</p>
-            </div>
-        </div>
-    </section>
+.nav-links > a:hover, 
+.dropdown:hover .dropbtn, 
+.nav-links a.active {
+    color: #0f172a;
+}
 
-    <section class="testimonial-section">
-        <div class="section-container testimonial-grid">
-            <div class="testimonial-card-premium">
-                <blockquote class="testimonial-quote">
-                    "True educators innovate for the benefit of students. At xSoTec you are in good hands to innovate and create products that are great for students to evaluate their own data to become the critical thinkers this world needs."
-                </blockquote>
-                <div class="testimonial-author">
-                    <span class="author-name">Samuel Abrams</span>
-                    <span class="author-title">Principal</span>
-                </div>
-            </div>
-            <div class="testimonial-card-premium">
-                <img src="media/Thomas-Gaffey-1.png" alt="Testimonial Data" class="testimonial-embed-img">
-                <div class="testimonial-author">
-                    <span class="author-name">Thomas Gaffey</span>
-                    <span class="author-title">Chief Instructional Technologist</span>
-                </div>
-            </div>
-        </div>
-    </section>
+.dropdown { position: relative; display: inline-block; }
 
-    <footer id="contact" class="site-footer">
-        <div class="section-container">
-            <span class="footer-badge-cta">Get Started</span>
-            <h2>Initiate an Architecture Review</h2>
-            <p>Connect with a systems engineer to audit your workflows, build custom functional mockups, and evaluate your scaling roadmap.</p>
-            <div class="contact-details">
-                <div class="contact-card"><strong>Email</strong>media@xsotec.com</div>
-                <div class="contact-card"><strong>Phone</strong>(267) 908-4462</div>
-                <div class="contact-card"><strong>Location</strong>Philadelphia, PA</div>
-            </div>
-            <a href="mailto:media@xsotec.com" class="btn-primary-neon">Request Engineering Consultation</a>
-            <div class="footer-bottom">
-                <p>&copy; 2026 xSoTec | connecting society and technology. All rights reserved.</p>
-                <p class="sub-footer">xSoTec, LLC. is part of PhillyParents, LLC.</p>
-            </div>
-        </div>
-    </footer>
+.dropdown-content {
+    display: none;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%); 
+    background-color: #ffffff;
+    min-width: 240px;
+    box-shadow: 0px 12px 30px rgba(15, 23, 42, 0.08);
+    z-index: 3050;
+    border-radius: 8px;
+    margin-top: 10px;
+    border: 1px solid #e2e8f0;
+    padding: 8px 0;
+}
 
-</body>
-</html>
+.dropdown-content a {
+    color: #475569;
+    padding: 12px 20px;
+    text-decoration: none;
+    display: block;
+    font-size: 14px;
+    font-weight: 500;
+    text-align: left;
+    transition: background-color 0.15s ease, color 0.15s ease;
+}
+
+.dropdown-content a:hover {
+    background-color: #f8fafc;
+    color: #0f172a;
+}
+
+.dropdown:hover .dropdown-content { display: block; }
+
+.nav-links .btn-cta {
+    background-color: #002B49; 
+    color: #ffffff;
+    padding: 10px 22px;
+    border-radius: 6px;
+    font-weight: 700;
+    font-size: 13px;
+    margin-left: 36px;
+    letter-spacing: 0.3px;
+}
+
+.nav-links .btn-cta:hover {
+    background-color: #0046ff;
+}
+
+/* ==========================================================================
+   Asymmetric Split Hero Layout
+   ========================================================================== */
+.hero-section {
+    background: linear-gradient(135deg, #001220 0%, #002B49 50%, #001f36 100%);
+    padding: 100px 4% 120px 4%;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.hero-split-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1.1fr 0.9fr;
+    gap: 60px;
+    align-items: center;
+}
+
+.partner-badge-img {
+    height: auto;
+    max-height: 42px;
+    margin-bottom: 24px;
+    display: block;
+}
+
+.hero-badge {
+    display: inline-block;
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-weight: 700;
+    color: #00f0ff; /* Vivid Neon Cyan Accent */
+    background: rgba(0, 240, 255, 0.08);
+    padding: 6px 14px;
+    border-radius: 20px;
+    margin-bottom: 24px;
+    border: 1px solid rgba(0, 240, 255, 0.15);
+}
+
+.hero-text-side h1 {
+    font-size: 54px;
+    font-weight: 800;
+    line-height: 1.15;
+    letter-spacing: -2px;
+    margin-bottom: 24px;
+}
+
+.hero-text-side p {
+    font-size: 18px;
+    color: #cbd5e1;
+    margin-bottom: 36px;
+    line-height: 1.6;
+}
+
+.video-wrapper {
+    position: relative;
+    padding-bottom: 56.25%; 
+    height: 0;
+    overflow: hidden;
+    background: #000;
+    border-radius: 12px;
+    box-shadow: 0 30px 60px rgba(0,0,0,0.4);
+    border: 1px solid rgba(255,255,255,0.1);
+}
+
+.video-wrapper iframe, .video-wrapper-small iframe, .video-wrapper-vertical iframe {
+    position: absolute;
+    top: 0; left: 0; width: 100%; height: 100%;
+}
+
+.btn-primary {
+    display: inline-block;
+    background-color: #00f0ff;
+    color: #001220;
+    text-decoration: none;
+    padding: 16px 36px;
+    font-weight: 700;
+    font-size: 15px;
+    border-radius: 6px;
+    box-shadow: 0 4px 20px rgba(0, 240, 255, 0.2);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 30px rgba(0, 240, 255, 0.4);
+}
+
+/* ==========================================================================
+   Enterprise Metrics Section
+   ========================================================================== */
+.metrics-banner {
+    background-color: #000b14;
+    padding: 40px 4%;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.metrics-container {
+    max-width: 1100px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.metric-item { text-align: center; flex: 1; }
+.metric-number { display: block; font-size: 36px; font-weight: 800; color: #ffffff; margin-bottom: 4px; }
+.metric-label { font-size: 13px; font-weight: 600; color: #94a3b8; text-transform: uppercase; letter-spacing: 1px; }
+.metric-divider { width: 1px; height: 40px; background-color: rgba(255,255,255,0.1); }
+
+/* ==========================================================================
+   Insight Section Diagram Presentation
+   ========================================================================== */
+.diagram-insight-section { padding: 100px 4%; }
+
+.diagram-card-wrapper {
+    max-width: 1140px;
+    margin: 0 auto;
+    background: rgba(255, 255, 255, 0.02);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    border-radius: 16px;
+    padding: 60px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    align-items: center;
+    text-align: left;
+}
+
+.diagram-text h2 { font-size: 36px; font-weight: 800; margin-bottom: 20px; }
+.diagram-text p { font-size: 17px; color: #94a3b8; line-height: 1.65; }
+.diagram-media { display: flex; justify-content: center; }
+.venn-diagram-img { max-width: 280px; height: auto; }
+
+/* ==========================================================================
+   Modern Frosted Feature Framework Grid
+   ========================================================================== */
+.features-section {
+    padding: 100px 4%;
+    background-color: #000b14;
+}
+
+.section-container { max-width: 1200px; margin: 0 auto; }
+.section-title { font-size: 40px; font-weight: 800; margin-bottom: 60px; }
+
+.features-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+    gap: 40px;
+}
+
+/* Glassmorphism Panel Setup */
+.feature-card {
+    background: linear-gradient(180deg, rgba(255,255,255,0.04) 0%, rgba(255,255,255,0.01) 100%);
+    border: 1px solid rgba(255, 255, 255, 0.07);
+    padding: 40px;
+    border-radius: 12px;
+    transition: border-color 0.25s ease, transform 0.25s ease;
+}
+
+.feature-card:hover {
+    border-color: rgba(0, 240, 255, 0.3);
+    transform: translateY(-4px);
+}
+
+.card-accent-tag {
+    display: inline-block;
+    font-size: 10px;
+    font-weight: 800;
+    color: #00f0ff;
+    letter-spacing: 1.5px;
+    margin-bottom: 16px;
+}
+
+.feature-card h3 { font-size: 22px; font-weight: 700; margin-bottom: 16px; }
+.feature-card p { color: #94a3b8; font-size: 15px; margin-bottom: 24px; line-height: 1.6; }
+
+.video-wrapper-small {
+    position: relative;
+    padding-bottom: 56.25%;
+    height: 0;
+    overflow: hidden;
+    border-radius: 6px;
+    background: #000;
+    border: 1px solid rgba(255,255,255,0.05);
+}
+
+/* ==========================================================================
+   Commercial Vertical Layout Split
+   ========================================================================== */
+.commercial-section { padding: 100px 4%; }
+
+.commercial-box-grid {
+    max-width: 1200px;
+    margin: 0 auto;
+    background: linear-gradient(90deg, #001f36 0%, #002B49 100%);
+    padding: 60px;
+    border-radius: 16px;
+    border: 1px solid rgba(255, 255, 255, 0.06);
+    display: grid;
+    grid-template-columns: 1.2fr 0.8fr;
+    gap: 50px;
+    align-items: center;
+}
+
+.commercial-badge { display: inline-block; font-size: 11px; font-weight: 700; color: #00f0ff; text-transform: uppercase; letter-spacing: 1.5px; margin-bottom: 16px; }
+.commercial-text-content h2 { font-size: 38px; font-weight: 800; margin-bottom: 20px; }
+.commercial-text-content p { font-size: 17px; color: #cbd5e1; margin-bottom: 32px; line-height: 1.65; }
+
+.btn-secondary-outline {
+    display: inline-block;
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 15px;
+    border: 2px solid rgba(255,255,255,0.2);
+    padding: 12px 28px;
+    border-radius: 6px;
+    transition: background-color 0.2s ease, border-color 0.2s ease;
+}
+
+.btn-secondary-outline:hover {
+    background-color: rgba(255,255,255,0.05);
+    border-color: #ffffff;
+}
+
+.video-wrapper-vertical {
+    position: relative;
+    padding-bottom: 177.77%; 
+    height: 0;
+    overflow: hidden;
+    max-width: 260px;
+    margin: 0 auto;
+    border-radius: 12px;
+    border: 1px solid rgba(255,255,255,0.1);
+    box-shadow: 0 20px 45px rgba(0,0,0,0.4);
+}
+
+/* ==========================================================================
+   Matrix Grid Presentation
+   ========================================================================== */
+.capabilities-section { padding: 100px 4%; background-color: #000b14; }
+
+.matrix-layout {
+    max-width: 1140px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 0.8fr 1.2fr;
+    gap: 60px;
+    align-items: center;
+    text-align: left;
+}
+
+.matrix-image-wrapper { display: flex; justify-content: center; }
+.sis-challenge-img { max-width: 280px; height: auto; border-radius: 8px; box-shadow: 0 15px 35px rgba(0,0,0,0.3); }
+
+.matrix-content-wrapper h2 { font-size: 36px; font-weight: 800; margin-bottom: 12px; }
+.matrix-subtitle { font-size: 16px; color: #94a3b8; margin-bottom: 32px; }
+
+.matrix-pills { display: flex; flex-wrap: wrap; gap: 14px; }
+.matrix-pill {
+    font-size: 14px;
+    font-weight: 600;
+    background-color: rgba(255, 255, 255, 0.04);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    padding: 10px 20px;
+    border-radius: 30px;
+    color: #e2e8f0;
+}
+
+/* ==========================================================================
+   Our Story Formatting
+   ========================================================================== */
+.story-section { padding: 120px 4%; }
+.story-content { max-width: 850px; margin: 0 auto; }
+.story-eyebrow { display: block; font-size: 11px; font-weight: 700; color: #00f0ff; text-transform: uppercase; letter-spacing: 2px; margin-bottom: 16px; }
+.story-content h2 { font-size: 40px; font-weight: 800; margin-bottom: 24px; }
+.lead-text { font-size: 22px; font-weight: 500; margin-bottom: 28px; color: #ffffff; line-height: 1.5; }
+.story-content p { font-size: 16px; color: #94a3b8; line-height: 1.7; }
+
+/* ==========================================================================
+   Premium Testimonial Panel Elements
+   ========================================================================== */
+.testimonial-section { padding: 100px 4%; background-color: #000b14; }
+.testimonial-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 50px; max-width: 1200px; }
+
+.testimonial-card-premium {
+    background: rgba(255,255,255,0.02);
+    border: 1px solid rgba(255,255,255,0.05);
+    padding: 45px;
+    border-radius: 12px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.testimonial-quote { font-size: 19px; line-height: 1.65; color: #e2e8f0; font-style: italic; margin-bottom: 30px; }
+.testimonial-embed-img { width: 100%; height: auto; max-width: 380px; border-radius: 6px; margin-bottom: 24px; border: 1px solid rgba(255,255,255,0.08); }
+
+.testimonial-author { display: flex; flex-direction: column; }
+.author-name { font-size: 15px; font-weight: 700; color: #ffffff; }
+.author-title { font-size: 12px; font-weight: 600; color: #00f0ff; text-transform: uppercase; letter-spacing: 0.5px; margin-top: 2px; }
+
+/* ==========================================================================
+   Direct Action Footer Component
+   ========================================================================== */
+.site-footer { padding: 120px 4% 60px 4%; text-align: center; }
+.footer-badge-cta { display: inline-block; font-size: 11px; font-weight: 800; color: #00f0ff; letter-spacing: 2px; text-transform: uppercase; margin-bottom: 16px; }
+.site-footer h2 { font-size: 44px; font-weight: 800; margin-bottom: 20px; letter-spacing: -1px; }
+.site-footer p { color: #94a3b8; font-size: 18px; max-width: 700px; margin: 0 auto 48px auto; line-height: 1.6; }
+
+.contact-details {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    max-width: 800px;
+    margin: 0 auto 50px auto;
+}
+
+.contact-card {
+    background-color: rgba(255,255,255,0.02);
+    border: 1px solid rgba(255,255,255,0.05);
+    padding: 16px 30px;
+    border-radius: 8px;
+    font-size: 15px;
+    color: #ffffff;
+}
+
+.contact-card strong { display: block; font-size: 11px; color: #94a3b8; text-transform: uppercase; margin-bottom: 4px; letter-spacing: 0.5px; }
+
+.btn-primary-neon {
+    display: inline-block;
+    background-color: #ffffff;
+    color: #001220;
+    text-decoration: none;
+    padding: 18px 44px;
+    font-weight: 700;
+    font-size: 15px;
+    border-radius: 6px;
+    transition: background-color 0.2s ease, transform 0.2s ease;
+}
+
+.btn-primary-neon:hover {
+    background-color: #00f0ff;
+    transform: translateY(-2px);
+}
+
+.footer-bottom { margin-top: 120px; padding-top: 40px; border-top: 1px solid rgba(255, 255, 255, 0.06); font-size: 14px; color: #64748b; }
+.sub-footer { font-size: 12px; margin-top: 8px; }
+
+/* ==========================================================================
+   Responsive Breakpoints
+   ========================================================================== */
+@media screen and (max-width: 960px) {
+    .hero-split-container, .diagram-card-wrapper, .commercial-box-grid, .matrix-layout, .testimonial-grid {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+    .diagram-card-wrapper, .commercial-box-grid { padding: 40px 24px; }
+    .hero-text-side { text-align: center; }
+    .partner-badge-img { margin: 0 auto 24px auto; }
+    .hero-text-side h1 { font-size: 38px; }
+    .matrix-layout, .diagram-card-wrapper { text-align: center; }
+    .matrix-pills { justify-content: center; }
+    .contact-details { flex-direction: column; gap: 14px; }
+}
+
+@media screen and (max-width: 768px) {
+    .nav-container { flex-direction: column; gap: 16px; }
+    .nav-links { flex-direction: column; width: 100%; gap: 4px; }
+    .nav-links > a, .dropdown .dropbtn { margin-left: 0; padding: 10px 0; width: 100%; justify-content: center; }
+    .nav-links .btn-cta { margin-left: 0; margin-top: 10px; width: 100%; text-align: center; }
+    .dropdown-content { position: relative; transform: none; left: 0; box-shadow: none; border: none; background: #f8fafc; width: 100%; }
+    .dropdown-content a { text-align: center; padding: 12px; }
+    .metrics-container { flex-direction: column; gap: 24px; }
+    .metric-divider { display: none; }
+}
