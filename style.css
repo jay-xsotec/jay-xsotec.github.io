@@ -1,5 +1,5 @@
 /* -------------------------------------
-   Global Reset & xSoTec Blue Brand Theme
+   Global Reset & xSoTec Light Theme (.org Color Scheme)
 ------------------------------------- */
 * {
     margin: 0;
@@ -8,20 +8,19 @@
 }
 
 :root {
-    --brand-blue: #002B49;      /* Deep rich background blue */
-    --brand-blue-dark: #001f36; /* Extra dark midnight blue for list blocks/footers */
-    --accent-blue: #0046ff;     /* Interactive pop highlight color */
-    --text-light: #ffffff;      /* Primary layout font white */
-    --text-muted: #b0c4de;      /* Secondary text slate grey */
-    --text-dark: #111111;       /* Navigation typography jet black */
-    --border-light: rgba(255, 255, 255, 0.12);
-    --font-sans: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+    --bg-main: #ffffff;         /* Pure crisp white canvas background */
+    --bg-alt: #fafafa;          /* Soft layout gray separation panels */
+    --text-primary: #111111;    /* Jet black header text */
+    --text-secondary: #444444;  /* Deep charcoal copy text */
+    --text-light: #777777;      /* Subtle layout element labels */
+    --border-color: #ebebeb;    /* Minimalist section divider line color */
+    --font-sans: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
 }
 
 body {
     font-family: var(--font-sans);
-    background-color: var(--brand-blue);
-    color: var(--text-light);
+    background-color: var(--bg-main);
+    color: var(--text-secondary);
     line-height: 1.65;
     -webkit-font-smoothing: antialiased;
 }
@@ -29,11 +28,11 @@ body {
 .text-center { text-align: center; }
 
 /* -------------------------------------
-   Navigation Bar (White Bar / Black Text Accent)
+   Navigation Bar 
 ------------------------------------- */
 .navbar {
-    background-color: #ffffff;
-    border-bottom: 1px solid #e5e5e5;
+    background-color: var(--bg-main);
+    border-bottom: 1px solid var(--border-color);
     position: sticky;
     top: 0;
     z-index: 1000;
@@ -52,13 +51,13 @@ body {
     font-size: 26px;
     font-weight: 700;
     letter-spacing: -0.5px;
-    color: var(--text-dark);
+    color: var(--text-primary);
     text-decoration: none;
 }
 
 .nav-links a {
     text-decoration: none;
-    color: #444444;
+    color: var(--text-secondary);
     font-weight: 500;
     font-size: 15px;
     margin-left: 36px;
@@ -66,11 +65,11 @@ body {
 }
 
 .nav-links a:hover, .nav-links a.active {
-    color: var(--text-dark);
+    color: var(--text-primary);
 }
 
 .nav-links .btn-cta {
-    background-color: var(--text-dark);
+    background-color: var(--text-primary);
     color: #ffffff;
     padding: 12px 24px;
     border-radius: 2px;
@@ -79,14 +78,14 @@ body {
 }
 
 .nav-links .btn-cta:hover {
-    background-color: var(--accent-blue);
+    opacity: 0.85;
 }
 
 /* -------------------------------------
    Hero Layout
 ------------------------------------- */
 .hero-section {
-    background-color: var(--brand-blue);
+    background-color: var(--bg-main);
     padding: 140px 4% 100px 4%;
     text-align: center;
 }
@@ -102,7 +101,7 @@ body {
     text-transform: uppercase;
     letter-spacing: 2px;
     font-weight: 600;
-    color: var(--text-muted);
+    color: var(--text-light);
     margin-bottom: 24px;
 }
 
@@ -111,39 +110,39 @@ body {
     font-weight: 700;
     line-height: 1.2;
     letter-spacing: -1.5px;
+    color: var(--text-primary);
     margin-bottom: 32px;
 }
 
 .hero-section p {
     font-size: 19px;
-    color: var(--text-muted);
+    color: var(--text-secondary);
     margin-bottom: 48px;
 }
 
 .btn-primary {
     display: inline-block;
-    background-color: #ffffff;
-    color: var(--text-dark);
+    background-color: var(--text-primary);
+    color: #ffffff;
     text-decoration: none;
     padding: 16px 36px;
     font-weight: 600;
     font-size: 15px;
     border-radius: 2px;
-    transition: background-color 0.2s ease, color 0.2s ease;
+    transition: opacity 0.2s ease;
 }
 
 .btn-primary:hover {
-    background-color: var(--accent-blue);
-    color: #ffffff;
+    opacity: 0.85;
 }
 
 /* -------------------------------------
-   Features Grid (Balanced for 4 pillars)
+   Features Grid Section
 ------------------------------------- */
 .features-section {
     padding: 100px 4%;
-    background-color: var(--brand-blue);
-    border-top: 1px solid var(--border-light);
+    background-color: var(--bg-main);
+    border-top: 1px solid var(--border-color);
 }
 
 .section-container {
@@ -151,29 +150,36 @@ body {
     margin: 0 auto;
 }
 
-.section-title {
-    font-size: 32px;
-    margin-bottom: 60px;
-    font-weight: 700;
-}
-
 .features-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 40px;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 60px;
 }
 
 .feature-card h3 {
-    font-size: 22px;
+    font-size: 24px;
     font-weight: 600;
-    margin-bottom: 16px;
-    color: var(--text-light);
+    margin-bottom: 20px;
+    color: var(--text-primary);
 }
 
 .feature-card p {
-    color: var(--text-muted);
+    color: var(--text-secondary);
+    font-size: 16px;
+    margin-bottom: 24px;
+}
+
+.card-link {
+    color: var(--text-primary);
+    text-decoration: none;
+    font-weight: 600;
     font-size: 15px;
-    line-height: 1.6;
+    border-bottom: 1px solid var(--text-primary);
+    padding-bottom: 2px;
+}
+
+.card-link:hover {
+    opacity: 0.6;
 }
 
 /* -------------------------------------
@@ -181,14 +187,15 @@ body {
 ------------------------------------- */
 .capabilities-section {
     padding: 100px 4%;
-    background-color: var(--brand-blue-dark);
-    border-top: 1px solid var(--border-light);
-    border-bottom: 1px solid var(--border-light);
+    background-color: var(--bg-alt);
+    border-top: 1px solid var(--border-color);
+    border-bottom: 1px solid var(--border-color);
 }
 
 .capabilities-section h2 {
     font-size: 28px;
     margin-bottom: 40px;
+    color: var(--text-primary);
 }
 
 .capability-list {
@@ -204,17 +211,19 @@ body {
 .capability-list li {
     font-size: 18px;
     font-weight: 500;
-    background-color: rgba(255, 255, 255, 0.04);
+    color: var(--text-secondary);
+    background-color: #ffffff;
+    border: 1px solid var(--border-color);
     padding: 10px 20px;
     border-radius: 4px;
 }
 
 /* -------------------------------------
-   Story / About Section
+   Our Story Section
 ------------------------------------- */
 .story-section {
     padding: 120px 4%;
-    background-color: var(--brand-blue);
+    background-color: var(--bg-main);
 }
 
 .story-content {
@@ -225,6 +234,7 @@ body {
 .story-content h2 {
     font-size: 36px;
     margin-bottom: 24px;
+    color: var(--text-primary);
 }
 
 .lead-text {
@@ -232,13 +242,12 @@ body {
     font-weight: 500;
     line-height: 1.5;
     margin-bottom: 24px;
-    color: #ffffff;
+    color: var(--text-primary);
 }
 
 .story-content p {
     font-size: 16px;
-    color: var(--text-muted);
-    margin-bottom: 20px;
+    color: var(--text-secondary);
 }
 
 /* -------------------------------------
@@ -246,7 +255,8 @@ body {
 ------------------------------------- */
 .testimonial-section {
     padding: 120px 4%;
-    background-color: var(--brand-blue-dark);
+    background-color: var(--bg-alt);
+    border-top: 1px solid var(--border-color);
 }
 
 .testimonial-quote {
@@ -254,6 +264,8 @@ body {
     margin: 0 auto;
     font-size: 22px;
     text-align: center;
+    color: var(--text-primary);
+    font-style: italic;
 }
 
 .testimonial-quote cite {
@@ -263,26 +275,27 @@ body {
     font-weight: 600;
     font-style: normal;
     text-transform: uppercase;
-    color: var(--text-muted);
+    color: var(--text-light);
 }
 
 /* -------------------------------------
    Footer & Contact Info
 ------------------------------------- */
 .site-footer {
-    background-color: var(--brand-blue-dark);
+    background-color: var(--bg-main);
     padding: 100px 4% 60px 4%;
     text-align: center;
-    border-top: 1px solid var(--border-light);
+    border-top: 1px solid var(--border-color);
 }
 
 .site-footer h2 {
     font-size: 36px;
     margin-bottom: 16px;
+    color: var(--text-primary);
 }
 
 .site-footer p {
-    color: var(--text-muted);
+    color: var(--text-secondary);
     font-size: 17px;
     margin-bottom: 24px;
 }
@@ -294,25 +307,15 @@ body {
 .contact-details p {
     margin-bottom: 8px !important;
     font-size: 16px;
-}
-
-.site-footer .btn-primary {
-    background-color: transparent;
-    border: 2px solid #ffffff;
-    color: #ffffff;
-}
-
-.site-footer .btn-primary:hover {
-    background-color: #ffffff;
-    color: var(--brand-blue-dark);
+    color: var(--text-secondary);
 }
 
 .footer-bottom {
     margin-top: 100px;
     padding-top: 32px;
-    border-top: 1px solid var(--border-light);
+    border-top: 1px solid var(--border-color);
     font-size: 13px;
-    color: var(--text-muted);
+    color: var(--text-light);
 }
 
 .sub-footer {
