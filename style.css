@@ -232,28 +232,158 @@ body {
 .metric-divider { width: 1px; height: 40px; background-color: rgba(255,255,255,0.1); }
 
 /* ==========================================================================
-   Insight Section Diagram Presentation
+   Classy & Code-Based Engine Architecture Section (Pure CSS Layout)
    ========================================================================== */
-.diagram-insight-section { padding: 100px 4%; }
-
-.diagram-card-wrapper {
-    max-width: 1140px;
-    margin: 0 auto;
-    background: rgba(255, 255, 255, 0.02);
-    border: 1px solid rgba(255, 255, 255, 0.05);
-    border-radius: 16px;
-    padding: 60px;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 60px;
-    align-items: center;
-    text-align: left;
+.architecture-section {
+    padding: 100px 4%;
+    background-color: #001220;
 }
 
-.diagram-text h2 { font-size: 36px; font-weight: 800; margin-bottom: 20px; }
-.diagram-text p { font-size: 17px; color: #94a3b8; line-height: 1.65; }
-.diagram-media { display: flex; justify-content: center; }
-.venn-diagram-img { max-width: 280px; height: auto; }
+.architecture-diagram {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 30px;
+    margin: 40px auto;
+    max-width: 1200px;
+}
+
+.diagram-column {
+    background: rgba(255, 255, 255, 0.02);
+    border: 1px solid rgba(255, 255, 255, 0.06);
+    border-radius: 12px;
+    padding: 35px 25px;
+    flex: 1;
+    min-height: 420px;
+}
+
+.column-header {
+    text-align: center;
+    margin-bottom: 24px;
+}
+
+.diagram-logo-element {
+    max-height: 45px;
+    width: auto;
+    display: block;
+    margin: 0 auto 10px auto;
+}
+
+.column-eyebrow {
+    display: block;
+    font-size: 14px;
+    font-weight: 700;
+    color: #94a3b8;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.google-sheet-main-title {
+    display: block;
+    font-size: 20px;
+    font-weight: 800;
+    color: #ffffff;
+    padding: 10px 0;
+    border-bottom: 2px solid #22c55e;
+    letter-spacing: 0.5px;
+}
+
+.tool-list {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.tool-item {
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    padding: 14px;
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: 600;
+    color: #e2e8f0;
+    text-align: center;
+    letter-spacing: 0.3px;
+}
+
+.tool-item.sub-tool {
+    border-left: 3px solid rgba(34, 197, 94, 0.4);
+}
+
+.diagram-arrow {
+    font-size: 36px;
+    color: #64748b;
+    font-weight: 300;
+    user-select: none;
+}
+
+.diagram-arrow.transformation-arrow {
+    color: #00f0ff;
+    font-weight: 700;
+}
+
+/* Premium Right-hand Engine Column block */
+.engine-column {
+    background: linear-gradient(135deg, rgba(0, 43, 73, 0.3) 0%, rgba(0, 11, 20, 0.5) 100%);
+    border: 1px solid rgba(0, 240, 255, 0.25);
+    box-shadow: 0 0 40px rgba(0, 240, 255, 0.04);
+}
+
+.engine-center-title {
+    font-size: 24px;
+    font-weight: 900;
+    color: #00f0ff;
+    text-align: center;
+    margin-bottom: 28px;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+}
+
+.engine-outputs-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: center;
+}
+
+.engine-output-pill {
+    background: rgba(0, 240, 255, 0.06);
+    border: 1px solid rgba(0, 240, 255, 0.15);
+    padding: 9px 16px;
+    border-radius: 30px;
+    font-size: 13px;
+    font-weight: 600;
+    color: #ffffff;
+}
+
+.engine-output-pill.emphasis-pill {
+    background: transparent;
+    border-color: transparent;
+    color: #64748b;
+    font-style: italic;
+}
+
+/* Strategic Value Matrix footer row */
+.value-props-strip {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 20px;
+    margin-top: 60px;
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+    padding-top: 50px;
+}
+
+.prop-item {
+    text-align: center;
+    font-size: 14px;
+    font-weight: 700;
+    color: #94a3b8;
+    line-height: 1.5;
+    padding: 10px 15px;
+    background: rgba(255, 255, 255, 0.01);
+    border: 1px solid rgba(255, 255, 255, 0.03);
+    border-radius: 6px;
+}
 
 /* ==========================================================================
    Modern Frosted Feature Framework Grid
@@ -461,13 +591,24 @@ body {
    Responsive Breakpoints
    ========================================================================== */
 @media screen and (max-width: 960px) {
-    .diagram-card-wrapper, .matrix-layout, .testimonial-grid {
+    .architecture-diagram {
+        flex-direction: column;
+        gap: 20px;
+    }
+    .diagram-arrow {
+        transform: rotate(90deg);
+        margin: 5px 0;
+    }
+    .diagram-column {
+        width: 100%;
+        min-height: auto;
+    }
+    .matrix-layout, .testimonial-grid {
         grid-template-columns: 1fr;
         gap: 40px;
     }
-    .diagram-card-wrapper { padding: 40px 24px; }
     .hero-title-bold { font-size: 46px; letter-spacing: -2px; }
-    .matrix-layout, .diagram-card-wrapper { text-align: center; }
+    .matrix-layout { text-align: center; }
     .matrix-pills { justify-content: center; }
     .contact-details { flex-direction: column; gap: 14px; }
 }
