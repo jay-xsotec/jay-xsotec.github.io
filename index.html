@@ -1,176 +1,484 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>xSoTec - District wide solutions built on Google Sheets</title>
-    <link rel="stylesheet" href="style.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-</head>
-<body>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        const track = document.getElementById("systemsCarousel");
+        const slides = track.querySelectorAll(".carousel-slide");
 
+        const slideInterval = 3000;
+
+        function slideLeft() {
+          // Get the current first slide and calculate how far to move
+          const firstSlide = track.querySelector(".carousel-slide");
+          const slideWidth = firstSlide.offsetWidth;
+          const gap = parseInt(window.getComputedStyle(track).gap) || 0;
+          const moveDistance = slideWidth + gap;
+
+          // 1. Animate the track moving to the left
+          track.style.transition = "transform 0.6s ease-in-out";
+          track.style.transform = `translateX(-${moveDistance}px)`;
+
+          // 2. Wait for the slide animation (600ms) to finish, then move the element in the HTML
+          setTimeout(() => {
+            // Turn off the transition so we can instantly snap the track back to 0
+            track.style.transition = "none";
+
+            // Move the first HTML element to the end of the line
+            track.appendChild(firstSlide);
+
+            // Reset the track's position
+            track.style.transform = "translateX(0)";
+          }, 600); // This 600ms must match the CSS 0.6s transition above
+        }
+
+        // Run the carousel if we have more than 2 items
+        if (slides.length > 2) {
+          setInterval(slideLeft, slideInterval);
+        }
+      });
+    </script>
+  </head>
+  <body>
     <header class="navbar">
-        <div class="nav-container">
-            <a href="index.html" class="logo">
-                <img src="media/cropped-xSoTec-Logo-w-Name-1980x1486.png" alt="xSoTec Logo" class="nav-logo-img">
-            </a>
-            <nav class="nav-links">
-                <a href="index.html" class="active">Home</a>
-                
-                <div class="dropdown">
-                    <button class="dropbtn">Capabilities</button>
-                    <div class="dropdown-content">
-                        <a href="#services-education">Education Solutions</a>
-                        <a href="#services-commercial">Cross-Industry Data</a>
-                        <a href="#capabilities-list">Systems We Build</a>
-                    </div>
-                </div>
+      <div class="nav-container">
+        <a href="index.html" class="logo">
+          <img
+            src="media/cropped-xSoTec-Logo-w-Name-1980x1486.png"
+            alt="xSoTec Logo"
+            class="nav-logo-img"
+          />
+        </a>
+        <nav class="nav-links">
+          <a href="index.html" class="active">Home</a>
 
-                <a href="#about">Our Story</a>
-                <a href="#contact" class="btn-cta">Request A Demo</a>
-            </nav>
-        </div>
+          <div class="dropdown">
+            <button class="dropbtn">Capabilities</button>
+            <div class="dropdown-content">
+              <a href="#services-education">Education Solutions</a>
+              <a href="#services-commercial">Cross-Industry Data</a>
+              <a href="#capabilities-list">Systems We Build</a>
+            </div>
+          </div>
+
+          <a href="#about">Our Story</a>
+          <a href="#contact" class="btn-cta">Request A Demo</a>
+        </nav>
+      </div>
     </header>
 
-    <section class="hero-section">
-        <div class="hero-container">
-            <img src="media/Partner-Google-for-Education-4-300x104.png" alt="Google for Education Partner" class="partner-badge-img">
-            
-            <span class="hero-badge">District wide solutions built on Google Sheets</span>
-            <h1>Scalable Education and Data Solutions.<br>Built on Google Sheets.</h1>
-            <p>Whether you're looking for a custom competency-based learning system, a dashboard to visualize your existing data, or need the Google Sheets you already use transformed into a sustainable and scalable data management system, xSoTec can help. Iterate and develop ideas quickly, integrate data from anywhere, and create innovative school, district, and state-wide solutions unique to your organization.</p>
-            
-            <div class="video-wrapper">
-                <iframe src="https://www.youtube.com/embed/Hz509Z8AuE4" title="xSoTec System Demo" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-            </div>
+    <section class="architecture-section">
+      <div class="section-container">
+        <h1 class="minimal-title text-center">
+          Google Workspace + Our Tools &rarr;<br /><span class="text-glow">
+            Scalable, Automated Systems.</span
+          >
+        </h1>
 
-            <div class="media-highlight-block">
-                <img src="media/xSoTec-Venndiagram-300x275.png" alt="Integration, Data Analysis, and Speed Ecosystem" class="venn-diagram-img">
-            </div>
+        <div class="architecture-diagram">
+          <div class="ecosystem-container">
+            <div class="ecosystem-ring">
+              <img
+                src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/30/Google_Sheets_logo_%282014-2020%29.svg/1920px-Google_Sheets_logo_%282014-2020%29.svg.png"
+                alt="Google Sheets"
+                class="center-sheet-img"
+              />
 
-            <div class="hero-actions">
-                <a href="#contact" class="btn-primary">Learn More</a>
+              <div class="satellite-icon sat-docs">
+                <img
+                  src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/01/Google_Docs_logo_%282014-2020%29.svg/60px-Google_Docs_logo_%282014-2020%29.svg.png?_=20220322143607"
+                  alt="Google Docs"
+                />
+                <span>Docs</span>
+              </div>
+              <div class="satellite-icon sat-forms">
+                <img
+                  src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/5b/Google_Forms_2020_Logo.svg/500px-Google_Forms_2020_Logo.svg.png?_=20230204080501"
+                  alt="Google Forms"
+                />
+                <span>Forms</span>
+              </div>
+              <div class="satellite-icon sat-cal">
+                <img
+                  src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a5/Google_Calendar_icon_%282020%29.svg/960px-Google_Calendar_icon_%282020%29.svg.png?_=20221106121915"
+                  alt="Google Calendar"
+                />
+                <span>Calendar</span>
+              </div>
             </div>
+            <span class="column-eyebrow text-center">Google Core</span>
+          </div>
+
+          <div class="diagram-arrow">+</div>
+
+          <div class="ecosystem-container">
+            <img
+              src="media/cropped-xSoTec-Logo-w-Name-2-300x225.png"
+              alt="xSoTec Logo"
+              style="max-height: 80px; margin-bottom: 25px"
+            />
+            <span class="column-eyebrow text-center">Our Tools</span>
+          </div>
+
+          <div class="diagram-arrow transformation-arrow">&rarr;</div>
+
+          <div class="diagram-column engine-column">
+            <div class="engine-wrapper">
+              <div class="engine-center-title">Systems</div>
+
+              <div class="carousel-viewport">
+                <div class="carousel-track" id="systemsCarousel">
+                  <div class="carousel-slide">
+                    <img
+                      src="media\Example-of-Student-Dashboard-Overview-Tab-2-219x300.png"
+                      alt="Data Dashboards"
+                      class="carousel-img"
+                    />
+                    <div class="engine-output-pill">Data Dashboards</div>
+                  </div>
+
+                  <div class="carousel-slide">
+                    <img
+                      src="media/unnamed-2-300x278.png"
+                      alt="Attendance Systems"
+                      class="carousel-img"
+                    />
+                    <div class="engine-output-pill">Attendance Systems</div>
+                  </div>
+
+                  <div class="carousel-slide">
+                    <img
+                      src="media\Gibson-SS-1-300x300.png"
+                      alt="Behavior Systems"
+                      class="carousel-img"
+                    />
+                    <div class="engine-output-pill">Behavior Systems</div>
+                  </div>
+
+                  <div class="carousel-slide">
+                    <img
+                      src="media\Gibson-SS-1-300x300.png"
+                      alt="Personal Learning Plans"
+                      class="carousel-img"
+                    />
+                    <div class="engine-output-pill">
+                      Personal Learning Plans
+                    </div>
+                  </div>
+
+                  <div class="carousel-slide">
+                    <img
+                      src="media/Example-of-Student-Dashboard-Overview-Tab-2-219x300.png"
+                      alt="Gradebooks"
+                      class="carousel-img"
+                    />
+                    <div class="engine-output-pill">Gradebooks</div>
+                  </div>
+
+                  <div class="carousel-slide">
+                    <img
+                      src="media\Gibson-SS-1-300x300.png"
+                      alt="Goal Reporting"
+                      class="carousel-img"
+                    />
+                    <div class="engine-output-pill">Goal Reporting</div>
+                  </div>
+
+                  <div class="carousel-slide">
+                    <img
+                      src="media\Example-of-Project-Based-Dashboard-300x242.png"
+                      alt="Achievement Reports"
+                      class="carousel-img"
+                    />
+                    <div class="engine-output-pill">Achievement Reports</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
+
+        <div class="value-props-strip">
+          <div class="prop-item">Scalable</div>
+          <div class="prop-item">Agile Development</div>
+          <div class="prop-item">Collaborative</div>
+          <div class="prop-item">Building on what you already have</div>
+          <div class="prop-item">
+            From idea to implementation in 1/10th the time
+          </div>
+          <div class="prop-item">Cost Savings</div>
+          <div class="prop-item">No Hosting Fees</div>
+        </div>
+      </div>
+    </section>
+
+    <section class="hero-section">
+      <div class="hero-container">
+        <img
+          src="media/Partner-Google-for-Education-4-300x104.png"
+          alt="Google for Education Partner"
+          class="partner-badge-img"
+        />
+
+        <span class="hero-badge"
+          >District wide solutions built on Google Sheets</span
+        >
+        <h1>
+          Scalable Education and Data Solutions.<br />Built on Google Sheets.
+        </h1>
+        <p>
+          Whether you're looking for a custom competency-based learning system,
+          a dashboard to visualize your existing data, or need the Google Sheets
+          you already use transformed into a sustainable and scalable data
+          management system, xSoTec can help. Iterate and develop ideas quickly,
+          integrate data from anywhere, and create innovative school, district,
+          and state-wide solutions unique to your organization.
+        </p>
+
+        <div class="video-wrapper">
+          <iframe
+            src="https://www.youtube.com/embed/Hz509Z8AuE4"
+            title="xSoTec System Demo"
+            frameborder="0"
+            allow="
+              accelerometer;
+              autoplay;
+              clipboard-write;
+              encrypted-media;
+              gyroscope;
+              picture-in-picture;
+              web-share;
+            "
+            allowfullscreen
+          ></iframe>
+        </div>
+
+        <div class="media-highlight-block">
+          <img
+            src="media/xSoTec-Venndiagram-300x275.png"
+            alt="Integration, Data Analysis, and Speed Ecosystem"
+            class="venn-diagram-img"
+          />
+        </div>
+
+        <div class="hero-actions">
+          <a href="#contact" class="btn-primary">Learn More</a>
+        </div>
+      </div>
     </section>
 
     <section id="services-education" class="features-section">
-        <div class="section-container">
-            <h2 class="section-title text-center">Educational Frameworks</h2>
-            <div class="features-grid">
-                
-                <div class="feature-card">
-                    <h3>Create the innovative learning environment you need</h3>
-                    <p>xSoTec has extensive experience crafting custom technology solutions for charter, private, and public schools and districts built on free and accessible Google platforms. Whether it's a competency-based learning system, a project tracking system, or a behavior management system, xSoTec can help.</p>
-                    
-                    <div class="video-wrapper-small">
-                        <iframe src="https://www.youtube.com/embed/Shr4EYU5izY" title="Custom Learning Environments Walkthrough" frameborder="0" allowfullscreen></iframe>
-                    </div>
-                    <a href="#contact" class="card-link">Learn more &rarr;</a>
-                </div>
+      <div class="section-container">
+        <h2 class="section-title text-center">Educational Frameworks</h2>
+        <div class="features-grid">
+          <div class="feature-card">
+            <h3>Create the innovative learning environment you need</h3>
+            <p>
+              xSoTec has extensive experience crafting custom technology
+              solutions for charter, private, and public schools and districts
+              built on free and accessible Google platforms. Whether it's a
+              competency-based learning system, a project tracking system, or a
+              behavior management system, xSoTec can help.
+            </p>
 
-                <div class="feature-card">
-                    <h3>Automate and utilize your existing spreadsheets</h3>
-                    <p>xSoTec can revamp your current Google Sheets into a comprehensive and stable solution. Take advantage of the design and data you already have and turn your spreadsheets into an automated and scalable solution that anyone can use.</p>
-                    
-                    <div class="video-wrapper-small">
-                        <iframe src="https://www.youtube.com/embed/Yn7Ns2HEHqY" title="Spreadsheet Automation Walkthrough" frameborder="0" allowfullscreen></iframe>
-                    </div>
-                    <a href="#contact" class="card-link">Learn more &rarr;</a>
-                </div>
-
-                <div class="feature-card">
-                    <h3>Prototype and Iterate with xSoTec</h3>
-                    <p>Use xSoTec as a platform to test, gather feedback, and iterate on innovative educational solutions. xSoTec can deliver fully functional custom prototypes that allow your school to pilot and refine ideas in competency-based learning, restorative behavior, attendance, and more.</p>
-                    
-                    <div class="video-wrapper-small">
-                        <iframe src="https://www.youtube.com/embed/nYFihBLvxu0" title="Prototype and Iterate Walkthrough" frameborder="0" allowfullscreen></iframe>
-                    </div>
-                    <a href="#contact" class="card-link">Learn more &rarr;</a>
-                </div>
-
+            <div class="video-wrapper-small">
+              <iframe
+                src="https://www.youtube.com/embed/Shr4EYU5izY"
+                title="Custom Learning Environments Walkthrough"
+                frameborder="0"
+                allowfullscreen
+              ></iframe>
             </div>
+            <a href="#contact" class="card-link">Learn more &rarr;</a>
+          </div>
+
+          <div class="feature-card">
+            <h3>Automate and utilize your existing spreadsheets</h3>
+            <p>
+              xSoTec can revamp your current Google Sheets into a comprehensive
+              and stable solution. Take advantage of the design and data you
+              already have and turn your spreadsheets into an automated and
+              scalable solution that anyone can use.
+            </p>
+
+            <div class="video-wrapper-small">
+              <iframe
+                src="https://www.youtube.com/embed/Yn7Ns2HEHqY"
+                title="Spreadsheet Automation Walkthrough"
+                frameborder="0"
+                allowfullscreen
+              ></iframe>
+            </div>
+            <a href="#contact" class="card-link">Learn more &rarr;</a>
+          </div>
+
+          <div class="feature-card">
+            <h3>Prototype and Iterate with xSoTec</h3>
+            <p>
+              Use xSoTec as a platform to test, gather feedback, and iterate on
+              innovative educational solutions. xSoTec can deliver fully
+              functional custom prototypes that allow your school to pilot and
+              refine ideas in competency-based learning, restorative behavior,
+              attendance, and more.
+            </p>
+
+            <div class="video-wrapper-small">
+              <iframe
+                src="https://www.youtube.com/embed/nYFihBLvxu0"
+                title="Prototype and Iterate Walkthrough"
+                frameborder="0"
+                allowfullscreen
+              ></iframe>
+            </div>
+            <a href="#contact" class="card-link">Learn more &rarr;</a>
+          </div>
         </div>
+      </div>
     </section>
 
     <section id="services-commercial" class="commercial-section">
-        <div class="section-container">
-            <div class="commercial-box-grid">
-                <div class="commercial-text-content">
-                    <h2>Beyond Education: Scaling Multi-Sheet Databases</h2>
-                    <p>The power of xSoTec is not just limited to education. Our tools and backend systems can be applied fluidly across any commercial market or industry vertical. xSoTec can help capture entirely new streams of custom operational data or help consolidate, organize, and track your existing data logs by transforming separate workflows into a single, unified, multi-sheet master database environment.</p>
-                    <a href="#contact" class="card-link-white">Explore Cross-Industry Frameworks &rarr;</a>
-                </div>
-                
-                <div class="commercial-video-content">
-                    <div class="video-wrapper-vertical">
-                        <iframe src="https://www.youtube.com/embed/Nd479Ahfij4" title="xSoTec Overview Summary" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-                    </div>
-                </div>
+      <div class="section-container">
+        <div class="commercial-box-grid">
+          <div class="commercial-text-content">
+            <h2>Beyond Education: Scaling Multi-Sheet Databases</h2>
+            <p>
+              The power of xSoTec is not just limited to education. Our tools
+              and backend systems can be applied fluidly across any commercial
+              market or industry vertical. xSoTec can help capture entirely new
+              streams of custom operational data or help consolidate, organize,
+              and track your existing data logs by transforming separate
+              workflows into a single, unified, multi-sheet master database
+              environment.
+            </p>
+            <a href="#contact" class="card-link-white"
+              >Explore Cross-Industry Frameworks &rarr;</a
+            >
+          </div>
+
+          <div class="commercial-video-content">
+            <div class="video-wrapper-vertical">
+              <iframe
+                src="https://www.youtube.com/embed/Nd479Ahfij4"
+                title="xSoTec Overview Summary"
+                frameborder="0"
+                allow="
+                  accelerometer;
+                  autoplay;
+                  clipboard-write;
+                  encrypted-media;
+                  gyroscope;
+                  picture-in-picture;
+                  web-share;
+                "
+                allowfullscreen
+              ></iframe>
             </div>
+          </div>
         </div>
+      </div>
     </section>
 
     <section id="capabilities-list" class="capabilities-section">
-        <div class="section-container text-center">
-            <img src="media/xSoTec-Does-300x206.png" alt="Does your SIS support your students?" class="sis-challenge-img">
-            
-            <h2>Innovative Schools use xSoTec to Build:</h2>
-            <ul class="capability-list">
-                <li>Restorative Behavior Systems</li>
-                <li>Enrollment Systems</li>
-                <li>Attendance Systems</li>
-                <li>Competency-Based Learning Gradebooks</li>
-                <li>Personalized Learning Systems</li>
-            </ul>
-        </div>
+      <div class="section-container text-center">
+        <img
+          src="media/xSoTec-Does-300x206.png"
+          alt="Does your SIS support your students?"
+          class="sis-challenge-img"
+        />
+
+        <h2>Innovative Schools use xSoTec to Build:</h2>
+        <ul class="capability-list">
+          <li>Restorative Behavior Systems</li>
+          <li>Enrollment Systems</li>
+          <li>Attendance Systems</li>
+          <li>Competency-Based Learning Gradebooks</li>
+          <li>Personalized Learning Systems</li>
+        </ul>
+      </div>
     </section>
 
     <section id="about" class="story-section">
-        <div class="section-container">
-            <div class="story-content">
-                <h2>Our Story</h2>
-                <p class="lead-text">An information systems start-up using Google Scripts to provide schools and non-profits with accessible and low-cost data management.</p>
-                <p>Following years of work as an educational technology consultant with the School District of Philadelphia and surrounding area, founder Jay Cohen created an information systems start-up using Google Scripts to provide schools and non-profits with accessible and low-cost data management. With a small group of coders and testers, xSoTec spent years developing proprietary scripts that quickly can be applied to an organization, resulting in our two main open-source programs adminConsole and copyScripts. With these scripts, we work directly with schools to create products to help both students and educators around the world.</p>
-            </div>
+      <div class="section-container">
+        <div class="story-content">
+          <h2>Our Story</h2>
+          <p class="lead-text">
+            An information systems start-up using Google Scripts to provide
+            schools and non-profits with accessible and low-cost data
+            management.
+          </p>
+          <p>
+            Following years of work as an educational technology consultant with
+            the School District of Philadelphia and surrounding area, founder
+            Jay Cohen created an information systems start-up using Google
+            Scripts to provide schools and non-profits with accessible and
+            low-cost data management. With a small group of coders and testers,
+            xSoTec spent years developing proprietary scripts that quickly can
+            be applied to an organization, resulting in our two main open-source
+            programs adminConsole and copyScripts. With these scripts, we work
+            directly with schools to create products to help both students and
+            educators around the world.
+          </p>
         </div>
+      </div>
     </section>
 
     <section class="testimonial-section">
-        <div class="section-container testimonial-grid">
-            <blockquote class="testimonial-quote">
-                "True educators innovate for the benefit of students. At xSoTec you are in good hands to innovate and create products that are great for students to evaluate their own data to become the critical thinkers this world needs."
-                <cite>&mdash; Samuel Abrams, Principal</cite>
-            </blockquote>
-            
-            <blockquote class="testimonial-quote">
-                <img src="media/Thomas-Gaffey-1.png" alt="Thomas Gaffey Testimonial Data" class="testimonial-embed-img">
-                <cite>&mdash; Thomas Gaffey, Chief Instructional Technologist</cite>
-            </blockquote>
-        </div>
+      <div class="section-container testimonial-grid">
+        <blockquote class="testimonial-quote">
+          "True educators innovate for the benefit of students. At xSoTec you
+          are in good hands to innovate and create products that are great for
+          students to evaluate their own data to become the critical thinkers
+          this world needs."
+          <cite>&mdash; Samuel Abrams, Principal</cite>
+        </blockquote>
+
+        <blockquote class="testimonial-quote">
+          <img
+            src="media/Thomas-Gaffey-1.png"
+            alt="Thomas Gaffey Testimonial Data"
+            class="testimonial-embed-img"
+          />
+          <cite>&mdash; Thomas Gaffey, Chief Instructional Technologist</cite>
+        </blockquote>
+      </div>
     </section>
 
     <footer id="contact" class="site-footer">
-        <div class="section-container">
-            <h2>Contact Us</h2>
-            <p>Whether you have questions about features, demos, pricing, or anything else, our team is ready to answer your questions.</p>
-            
-            <div class="contact-details">
-                <p><strong>Email:</strong> media@xsotec.com</p>
-                <p><strong>Phone:</strong> (267) 908-4462</p>
-                <p><strong>Location:</strong> Philadelphia, PA</p>
-            </div>
-            
-            <a href="mailto:media@xsotec.com" class="btn-primary">Open Our Dynamic Interest Form</a>
-            
-            <div class="footer-bottom">
-                <p>&copy; 2026 xSoTec | connecting society and technology. All rights reserved.</p>
-                <p class="sub-footer">xSoTec, LLC. is part of PhillyParents, LLC.</p>
-            </div>
-        </div>
-    </footer>
+      <div class="section-container">
+        <h2>Contact Us</h2>
+        <p>
+          Whether you have questions about features, demos, pricing, or anything
+          else, our team is ready to answer your questions.
+        </p>
 
-</body>
+        <div class="contact-details">
+          <p><strong>Email:</strong> media@xsotec.com</p>
+          <p><strong>Phone:</strong> (267) 908-4462</p>
+          <p><strong>Location:</strong> Philadelphia, PA</p>
+        </div>
+
+        <a href="mailto:media@xsotec.com" class="btn-primary"
+          >Open Our Dynamic Interest Form</a
+        >
+
+        <div class="footer-bottom">
+          <p>
+            &copy; 2026 xSoTec | connecting society and technology. All rights
+            reserved.
+          </p>
+          <p class="sub-footer">xSoTec, LLC. is part of PhillyParents, LLC.</p>
+        </div>
+      </div>
+    </footer>
+  </body>
 </html>

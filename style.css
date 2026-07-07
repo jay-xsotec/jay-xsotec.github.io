@@ -440,3 +440,548 @@ body {
     .testimonial-grid { gap: 40px; }
     .capability-list { flex-direction: column; align-items: center; }
 }
+
+
+/* ==========================================================================
+   Global Reset & Bold Corporate Dark Theme
+   ========================================================================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    background-color: #001220; 
+    color: #ffffff;            
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+    scroll-behavior: smooth;
+}
+
+.text-center { text-align: center; }
+
+/* ==========================================================================
+   Navigation Bar
+   ========================================================================== */
+.navbar {
+    background-color: #ffffff;
+    border-bottom: 1px solid #e2e8f0;
+    position: sticky;
+    top: 0;
+    z-index: 3000;
+}
+
+.nav-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 12px 4%; 
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo-group {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.nav-logo-img {
+    height: auto;
+    max-height: 114px;
+    display: block;
+}
+
+.header-divider {
+    width: 1px;
+    height: 48px;
+    background-color: #cbd5e1;
+}
+
+.nav-partner-img {
+    height: auto;
+    max-height: 56px;
+    display: block;
+}
+
+.nav-links {
+    display: flex;
+    align-items: center;
+}
+
+.nav-links > a, 
+.dropdown .dropbtn {
+    text-decoration: none;
+    color: #475569;
+    font-weight: 600;
+    font-size: 14px;
+    margin-left: 36px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-family: inherit;
+    padding: 6px 0;
+    display: flex;
+    align-items: center;
+    transition: color 0.15s ease;
+}
+
+.nav-links > a:hover, 
+.dropdown:hover .dropbtn, 
+.nav-links a.active {
+    color: #0f172a;
+}
+
+.dropdown { position: relative; display: inline-block; }
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%); 
+    background-color: #ffffff;
+    min-width: 240px;
+    box-shadow: 0px 12px 30px rgba(15, 23, 42, 0.08);
+    z-index: 3050;
+    border-radius: 8px;
+    margin-top: 10px;
+    border: 1px solid #e2e8f0;
+    padding: 8px 0;
+}
+
+.dropdown-content a {
+    color: #475569;
+    padding: 12px 20px;
+    text-decoration: none;
+    display: block;
+    font-size: 14px;
+    font-weight: 500;
+    text-align: left;
+    transition: background-color 0.15s ease, color 0.15s ease;
+}
+
+.dropdown-content a:hover {
+    background-color: #f8fafc;
+    color: #0f172a;
+}
+
+.dropdown:hover .dropdown-content { display: block; }
+
+.nav-links .btn-cta {
+    background-color: #002B49; 
+    color: #ffffff;
+    padding: 10px 22px;
+    border-radius: 6px;
+    font-weight: 700;
+    font-size: 13px;
+    margin-left: 36px;
+    letter-spacing: 0.3px;
+}
+
+.nav-links .btn-cta:hover {
+    background-color: #0046ff;
+}
+
+/* ==========================================================================
+   Condensed Framework Layout (Squeezed 30% vertically)
+   ========================================================================== */
+.architecture-section {
+    padding: 45px 4% 65px 4%; /* Squeezed main block padding */
+    background-color: #001220;
+}
+
+.section-container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.minimal-title {
+    font-size: 42px;
+    font-weight: 900;
+    line-height: 1.2;
+    letter-spacing: -1.5px;
+    margin-bottom: 35px; /* Reduced subtitle baseline gap */
+    color: #ffffff;
+}
+
+.text-glow {
+    color: #00f0ff;
+    text-shadow: 0 0 40px rgba(0, 240, 255, 0.25);
+}
+
+.architecture-diagram {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 30px;
+    margin: 20px auto; /* Tighter vertical container flow */
+}
+
+.diagram-column {
+    background: rgba(255, 255, 255, 0.04);
+    border: 2px solid rgba(255, 255, 255, 0.12);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.25);
+    border-radius: 14px;
+    padding: 24px 24px; /* Reduced vertical box cushioning */
+    flex: 1;
+    min-height: 315px; /* Flattened container limits */
+    max-width: 50%;
+}
+
+.column-header {
+    text-align: center;
+    margin-bottom: 16px; /* Squeezed heading anchor padding */
+}
+
+.diagram-logo-element {
+    max-height: 42px; /* Streamlined scaling element */
+    width: auto;
+    display: block;
+    margin: 0 auto 8px auto;
+}
+
+.column-eyebrow {
+    display: block;
+    font-size: 14px;
+    font-weight: 900;
+    color: #cbd5e1;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+}
+
+.google-sheet-main-title {
+    display: block;
+    font-size: 20px;
+    font-weight: 900;
+    color: #ffffff;
+    padding: 4px 0 8px 0;
+    border-bottom: 3px solid #22c55e;
+    letter-spacing: 0.5px;
+}
+
+.tool-list {
+    display: flex;
+    flex-direction: column;
+    gap: 8px; /* Tighter item box distributions */
+}
+
+.tool-item {
+    background: rgba(255, 255, 255, 0.06);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    padding: 10px 12px; /* Shaved density layout padding */
+    border-radius: 6px;
+    font-size: 14px;
+    font-weight: 800;
+    color: #ffffff;
+    text-align: center;
+    letter-spacing: 0.4px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.tool-item.sub-tool {
+    border-left: 4px solid #22c55e;
+}
+
+.diagram-arrow {
+    font-size: 38px;
+    color: #94a3b8;
+    font-weight: 900;
+    user-select: none;
+}
+
+.diagram-arrow.transformation-arrow {
+    color: #00f0ff;
+    text-shadow: 0 0 15px rgba(0, 240, 255, 0.6);
+}
+
+/* Enterprise Engine Column styles */
+.engine-column {
+    background: linear-gradient(135deg, rgba(0, 43, 73, 0.5) 0%, rgba(0, 11, 20, 0.7) 100%);
+    border: 2px solid #00f0ff;
+    box-shadow: 0 0 50px rgba(0, 240, 255, 0.12);
+}
+
+.engine-center-title {
+    font-size: 22px;
+    font-weight: 900;
+    color: #00f0ff;
+    text-align: center;
+    margin-bottom: 18px;
+    letter-spacing: 0.8px;
+    text-transform: uppercase;
+}
+
+.engine-outputs-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px; /* Squeezed grid gap arrays */
+    justify-content: center;
+}
+
+.engine-output-pill {
+    background: rgba(0, 240, 255, 0.12);
+    border: 2px solid rgba(0, 240, 255, 0.4);
+    padding: 7px 14px; /* Flatter text bubble architecture */
+    border-radius: 30px;
+    font-size: 13px;
+    font-weight: 800;
+    color: #ffffff;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.engine-output-pill.emphasis-pill {
+    background: transparent;
+    border-color: transparent;
+    color: #94a3b8;
+    font-style: italic;
+    font-weight: 700;
+    box-shadow: none;
+    padding: 4px;
+}
+
+/* Strategic Value Matrix Strip */
+.value-props-strip {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 12px; /* Tighter flex metric boundaries */
+    margin-top: 35px;
+    border-top: 2px solid rgba(255, 255, 255, 0.1);
+    padding-top: 30px; /* Compressed footer divider whitespace */
+}
+
+.prop-item {
+    text-align: center;
+    font-size: 13px;
+    font-weight: 800;
+    color: #cbd5e1;
+    line-height: 1.4;
+    padding: 10px 12px;
+    background: rgba(255, 255, 255, 0.02);
+    border: 1px solid rgba(255, 255, 255, 0.06);
+    border-radius: 6px;
+}
+
+/* ==========================================================================
+   Minimalistic Sub-Footer
+   ========================================================================== */
+.site-footer-minimal {
+    padding: 30px 4%;
+    text-align: center;
+    background-color: #000b14;
+}
+
+.footer-bottom { 
+    font-size: 14px; 
+    color: #64748b; 
+}
+
+.sub-footer { 
+    font-size: 12px; 
+    margin-top: 8px; 
+}
+
+/* ==========================================================================
+   Responsive Breakpoints
+   ========================================================================== */
+@media screen and (max-width: 960px) {
+    .architecture-diagram {
+        flex-direction: column;
+        gap: 15px;
+    }
+    .diagram-arrow {
+        transform: rotate(90deg);
+        margin: 2px 0;
+    }
+    .diagram-column {
+        width: 100%;
+        min-height: auto;
+    }
+    .minimal-title { font-size: 32px; }
+}
+
+@media screen and (max-width: 768px) {
+    .nav-container { flex-direction: column; gap: 16px; }
+    .logo-group { flex-direction: column; gap: 12px; }
+    .header-divider { display: none; }
+    .nav-links { flex-direction: column; width: 100%; gap: 4px; }
+    .nav-links > a, .dropdown .dropbtn { margin-left: 0; padding: 10px 0; width: 100%; justify-content: center; }
+    .nav-links .btn-cta { margin-left: 0; margin-top: 10px; width: 100%; text-align: center; }
+    .dropdown-content { position: relative; transform: none; left: 0; box-shadow: none; border: none; background: #f8fafc; width: 100%; }
+    .dropdown-content a { text-align: center; padding: 12px; }
+}
+
+/* ==========================================================================
+   Ecosystem Ring (Google Workspace)
+   ========================================================================== */
+.ecosystem-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+}
+
+.ecosystem-ring {
+    position: relative;
+    width: 180px;
+    height: 180px;
+    border: 2px dashed rgba(34, 197, 94, 0.4); /* Green dashed ring matching your theme */
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 25px;
+    box-shadow: inset 0 0 40px rgba(34, 197, 94, 0.05);
+}
+
+.center-sheet-img {
+    width: 55px;
+    height: auto;
+    z-index: 5;
+    filter: drop-shadow(0 8px 16px rgba(0, 0, 0, 0.3));
+}
+
+.satellite-icon {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 6px;
+    transition: transform 0.2s ease;
+}
+
+.satellite-icon:hover {
+    transform: scale(1.1);
+}
+
+.satellite-icon img {
+    width: 28px;
+    height: auto;
+    background: #ffffff;
+    padding: 4px;
+    border-radius: 6px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.satellite-icon span {
+    font-size: 11px;
+    font-weight: 800;
+    color: #cbd5e1;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    background: #001220; /* Mask the dashed line behind text */
+    padding: 0 4px;
+}
+
+/* Orbit Positioning */
+.sat-docs { top: -15px; left: 50%; transform: translateX(-50%); }
+.sat-docs:hover { transform: translateX(-50%) scale(1.1); }
+.sat-forms { bottom: 15px; left: -15px; }
+.sat-cal { bottom: 15px; right: -15px; }
+
+/* ==========================================================================
+   Hoverable Engine Pills
+   ========================================================================== */
+.pill-hover-wrapper {
+    position: relative;
+    display: inline-block;
+}
+
+.engine-output-pill {
+    cursor: pointer;
+    transition: all 0.2s ease;
+    position: relative;
+}
+
+.engine-output-pill:hover {
+    background: rgba(0, 240, 255, 0.25);
+    border-color: #00f0ff;
+    transform: translateY(-2px);
+}
+
+.pill-preview-img {
+    position: absolute;
+    bottom: 120%; /* Pop up above the pill */
+    left: 50%;
+    transform: translateX(-50%) translateY(10px);
+    opacity: 0;
+    visibility: hidden;
+    width: 180px; 
+    height: auto;
+    border-radius: 8px;
+    border: 2px solid #00f0ff;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.5);
+    transition: all 0.3s cubic-bezier(0.2, 0.8, 0.2, 1);
+    z-index: 50;
+    pointer-events: none;
+    background: #001220;
+}
+
+/* Add a small pointer triangle to the tooltip */
+.pill-preview-img::after {
+    content: '';
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    border-width: 8px;
+    border-style: solid;
+    border-color: #00f0ff transparent transparent transparent;
+}
+
+.pill-hover-wrapper:hover .pill-preview-img {
+    opacity: 1;
+    visibility: visible;
+    transform: translateX(-50%) translateY(0);
+}
+
+/* ==========================================================================
+   Sliding Engine Carousel
+   ========================================================================== */
+.carousel-viewport {
+    width: 100%;
+    overflow: hidden; /* This hides the items as they slide off to the left */
+    position: relative;
+    padding: 10px 0;
+}
+
+.carousel-track {
+    display: flex;
+    gap: 15px; /* Space between the slides */
+    will-change: transform;
+    /* The transition is handled by JavaScript for the seamless loop */
+}
+
+.carousel-slide {
+    flex: 0 0 calc(50% - 7.5px); /* Shows exactly 2 items at a time */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+.carousel-img {
+    width: 100%;
+    object-fit: contain;
+    border-radius: 8px;
+    border: 1px solid rgba(0, 240, 255, 0.3);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+    margin-bottom: 12px;
+    flex: 1;
+    background-color: #001220; 
+}
+
+/* Adjust the pill text so it fits neatly side-by-side */
+.carousel-slide .engine-output-pill {
+    cursor: default;
+    pointer-events: none;
+    font-size: 11px;
+    padding: 6px 10px;
+    width: 100%;
+    text-align: center;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
