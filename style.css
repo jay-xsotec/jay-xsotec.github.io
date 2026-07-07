@@ -9,7 +9,7 @@
 
 body {
     font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-    background-color: #001220; 
+    background-color: #00467c; 
     color: #ffffff;            
     line-height: 1.6;
     -webkit-font-smoothing: antialiased;
@@ -142,9 +142,10 @@ body {
 }
 
 .hero-container {
-    max-width: 850px;
+    max-width: 75%;
     margin: 0 auto;
 }
+
 
 .partner-badge-img {
     height: auto;
@@ -163,12 +164,48 @@ body {
     margin-bottom: 24px;
 }
 
+/* ==========================================================================
+   Hero Body Split Layout
+   ========================================================================== */
+.hero-body {
+    display: flex;
+    align-items: center; /* Centers the text and video vertically */
+    gap: 40px; /* Adds breathing room between the text and video */
+    text-align: left; /* Overrides the hero section's center alignment */
+}
+
+/* Make the paragraph take up exactly half the space */
+.hero-body p {
+    flex: 1.5;
+    margin-bottom: 0; 
+}
+
+.hero-body .video-wrapper-small {
+    flex: 0 0 35%; /* Restricts the video to exactly 35% of the container width */
+    width: 100%; 
+    height: 50%;
+    margin-bottom: 0; 
+}
+
+/* Stack them on top of each other on mobile devices */
+@media screen and (max-width: 768px) {
+    .hero-body {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .hero-body .video-wrapper-small {
+        width: 100%;
+        margin-top: 30px;
+    }
+}
+
 .hero-section h1 {
     font-size: 52px;
     font-weight: 800;
     line-height: 1.15;
     letter-spacing: -1px;
-    margin-bottom: 32px;
+    margin-bottom: 48px;
 }
 
 .hero-section p {
@@ -215,12 +252,12 @@ body {
    ========================================================================== */
 .architecture-section {
     padding: 60px 4%; 
-    background-color: #001220;
+    background-color: #001f36;
     border-bottom: 1px solid rgba(255, 255, 255, 0.05);
 }
 
 .section-container {
-    max-width: 1200px;
+    max-width: 1500px;
     margin: 0 auto;
 }
 
@@ -273,7 +310,7 @@ body {
     color: #94a3b8;
     text-transform: uppercase;
     letter-spacing: 1.5px;
-    margin-top: 15px;
+    margin-bottom: 15px;
 }
 
 /* Ecosystem Ring (Google Workspace) Fixed Rigid Layout */
@@ -318,18 +355,7 @@ body {
     margin-top: 5px;
 }
 
-/* Hard-coded Satellite Anchors */
-.satellite-icon {
-    position: absolute;
-    width: 36px;
-    height: 36px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    transition: transform 0.2s ease;
-}
 
-.satellite-icon:hover { transform: scale(1.15); }
 
 .satellite-icon img, i {
     width: 36px;
@@ -369,15 +395,62 @@ body {
     pointer-events: none;
 }
 
-/* Orbit Exact Coordinates */
-.sat-top { top: -18px; left: 50%; margin-left: -18px; }
-.sat-left { bottom: 20px; left: -18px; }
-.sat-right { bottom: 20px; right: -18px; }
+/* ==========================================================================
+   Dynamic Satellite Orbit Positioning
+   ========================================================================== */
+.satellite-icon {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 36px;
+    height: 36px;
+    margin: -18px 0 0 -18px; /* Perfectly locks the anchor to the dead center of the ring */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* Spins out to the angle, moves out 100px, then spins back to stay upright */
+    transform: rotate(var(--angle)) translate(100px) rotate(var(--reverse-angle));
+    transition: transform 0.2s ease;
+    z-index: 10;
+    cursor: pointer;
+}
 
-/* Text Direction Formatting */
-.sat-top span { top: 45px; } /* Shoots text to the right */
-.sat-left span { top: 45px; } /* Shoots text to the left */
-.sat-right span { top: 45px; } /* Shoots text to the right */
+.satellite-icon:hover {
+    /* Keep the exact same orbit math, just scale it up */
+    transform: rotate(var(--angle)) translate(100px) rotate(var(--reverse-angle)) scale(1.15);
+}
+
+.satellite-icon img {
+    width: 36px;
+    height: 36px;
+    object-fit: contain;
+    background: #ffffff;
+    padding: 6px;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+    position: relative;
+    z-index: 2;
+}
+
+/* Position text uniformly below every icon */
+.satellite-icon span {
+    position: absolute;
+    top: 100%; /* Drops text directly below the icon */
+    left: 50%;
+    transform: translateX(-50%); /* Centers the text */
+    margin-top: 6px;
+    font-size: 11px;
+    font-weight: 700;
+    color: #cbd5e1;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    white-space: nowrap; 
+    background: rgba(0, 18, 32, 0.85); /* Dark pill background to hide the dashed ring line */
+    padding: 2px 8px;
+    border-radius: 4px;
+    pointer-events: none;
+    z-index: 1;
+}
 
 /* Enterprise Engine Column */
 .engine-column {
@@ -503,7 +576,7 @@ body {
 }
 
 .commercial-section { background-color: #000b14; }
-.story-section { background-color: #000b14; }
+.story-section { background-color: #0477d6; width: 100%}
 
 .section-title, .commercial-text-content h2, .capabilities-section h2, .story-content h2 {
     font-size: 36px;

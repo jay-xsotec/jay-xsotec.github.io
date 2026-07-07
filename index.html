@@ -15,41 +15,61 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
     />
-<script>
-  document.addEventListener("DOMContentLoaded", function () {
-    // Grab all pills except the "and much more..." one
-    const pills = document.querySelectorAll('.engine-output-pill:not(.emphasis-pill)');
-    const showcaseImg = document.getElementById('active-system-image');
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        // Grab all pills except the "and much more..." one
+        const pills = document.querySelectorAll(
+          ".engine-output-pill:not(.emphasis-pill)",
+        );
+        const showcaseImg = document.getElementById("active-system-image");
 
-    if (!showcaseImg) return; // Failsafe
+        if (!showcaseImg) return; // Failsafe
 
-    pills.forEach(pill => {
-      pill.addEventListener('click', function() {
-        
-        // 1. Remove active styling from all pills
-        pills.forEach(p => p.classList.remove('active'));
-        
-        // 2. Add active styling to the clicked pill
-        this.classList.add('active');
+        pills.forEach((pill) => {
+          pill.addEventListener("click", function () {
+            // 1. Remove active styling from all pills
+            pills.forEach((p) => p.classList.remove("active"));
 
-        // 3. Get the new image source and alt text from the HTML data attributes
-        const newSrc = this.getAttribute('data-img');
-        const newAlt = this.getAttribute('data-alt');
+            // 2. Add active styling to the clicked pill
+            this.classList.add("active");
 
-        // 4. Fade the current image out
-        showcaseImg.classList.add('fade');
-        
-        // 5. Wait for the fade (300ms to match CSS), swap the image, and fade back in
-        setTimeout(() => {
-          showcaseImg.src = newSrc;
-          showcaseImg.alt = newAlt;
-          showcaseImg.classList.remove('fade');
-        }, 300); 
+            // 3. Get the new image source and alt text from the HTML data attributes
+            const newSrc = this.getAttribute("data-img");
+            const newAlt = this.getAttribute("data-alt");
 
+            // 4. Fade the current image out
+            showcaseImg.classList.add("fade");
+
+            // 5. Wait for the fade (300ms to match CSS), swap the image, and fade back in
+            setTimeout(() => {
+              showcaseImg.src = newSrc;
+              showcaseImg.alt = newAlt;
+              showcaseImg.classList.remove("fade");
+            }, 300);
+          });
+        });
       });
-    });
-  });
-</script>
+
+      document.addEventListener("DOMContentLoaded", function () {
+        // Select all the rings on the page
+        const rings = document.querySelectorAll(".ecosystem-ring");
+
+        rings.forEach((ring) => {
+          // Find all the satellite icons within this specific ring
+          const satellites = ring.querySelectorAll(".satellite-icon");
+          const total = satellites.length;
+
+          satellites.forEach((sat, index) => {
+            // Calculate the angle. Subtract 90 degrees so the first item is always at the top
+            const angle = index * (360 / total) - 90;
+
+            // Pass the calculated angles directly into the CSS for this specific icon
+            sat.style.setProperty("--angle", `${angle}deg`);
+            sat.style.setProperty("--reverse-angle", `${-angle}deg`);
+          });
+        });
+      });
+    </script>
   </head>
   <body>
     <header class="navbar">
@@ -79,81 +99,125 @@
       </div>
     </header>
 
+    <section class="hero-section">
+      <div class="hero-container">
+        <h1>
+          Scalable Education and Data Solutions.<br />Built on Google Sheets.
+        </h1>
+
+        <div class="hero-body">
+          <p>
+            Whether you're looking for a custom competency-based learning
+            system, a dashboard to visualize your existing data, or need the
+            Google Sheets you already use transformed into a sustainable and
+            scalable data management system, xSoTec can help. Iterate and
+            develop ideas quickly, integrate data from anywhere, and create
+            innovative school, district, and state-wide solutions unique to your
+            organization.
+          </p>
+
+          <div class="video-wrapper-small">
+            <iframe
+              src="https://www.youtube.com/embed/Hz509Z8AuE4"
+              title="xSoTec System Demo"
+              frameborder="0"
+              allow="
+                accelerometer;
+                autoplay;
+                clipboard-write;
+                encrypted-media;
+                gyroscope;
+                picture-in-picture;
+                web-share;
+              "
+              allowfullscreen
+            ></iframe>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <section class="architecture-section">
       <div class="section-container">
         <h1 class="minimal-title text-center">
-          Google Workspace + Our Tools &rarr;<br /><span class="text-glow">
-            Scalable, Automated Systems.</span
-          >
+          Google Sheets + Our Tools &rarr;
+          <span class="text-glow"> Scalable, Automated Systems.</span>
         </h1>
 
         <div class="architecture-diagram">
           <div class="ecosystem-container">
+            <span class="column-eyebrow text-center">Free Google Products</span>
             <div class="ecosystem-ring">
               <div class="satellite-center">
                 <img
                   class="center-img"
-                  src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/30/Google_Sheets_logo_%282014-2020%29.svg/1920px-Google_Sheets_logo_%282014-2020%29.svg.png"
+                  src="media/logos/sheets-logo.png"
                   alt="Google Sheets"
                 />
                 <span>Sheets</span>
               </div>
 
-              <div class="satellite-icon sat-top">
-                <img
-                  src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/01/Google_Docs_logo_%282014-2020%29.svg/60px-Google_Docs_logo_%282014-2020%29.svg.png"
-                  alt="Google Docs"
-                />
+              <div class="satellite-icon">
+                <img src="media/logos/docs.png" alt="Google Docs" />
                 <span>Docs</span>
               </div>
-              <div class="satellite-icon sat-left">
-                <img
-                  src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/5b/Google_Forms_2020_Logo.svg/500px-Google_Forms_2020_Logo.svg.png"
-                  alt="Google Forms"
-                />
+
+              <div class="satellite-icon">
+                <img src="media/logos/forms.png" alt="Google Forms" />
                 <span>Forms</span>
               </div>
-              <div class="satellite-icon sat-right">
-                <img
-                  src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a5/Google_Calendar_icon_%282020%29.svg/960px-Google_Calendar_icon_%282020%29.svg.png"
-                  alt="Google Calendar"
-                />
+
+              <div class="satellite-icon">
+                <img src="media/logos/calendar.png" alt="Google Calendar" />
                 <span>Calendar</span>
               </div>
+
+              <div class="satellite-icon">
+                <img src="media/logos/drive.png" alt="Google Drive" />
+                <span>Drive</span>
+              </div>
             </div>
-            <span class="column-eyebrow text-center">Free Google Products</span>
           </div>
 
           <div class="diagram-arrow">+</div>
 
           <div class="ecosystem-container">
+            <span class="column-eyebrow text-center">xSoTec Tools</span>
             <div class="ecosystem-ring">
               <div class="satellite-center">
                 <img
-                  src="media/cropped-xSoTec-Logo-w-Name-2-300x225.png"
-                  alt="xSoTec Logo"
                   class="center-img"
-                  style="transform: scale(2)"
+                  src="media/logos/sheets-logo.png"
+                  alt="Google Sheets"
                 />
+                <span>Sheets</span>
               </div>
 
-              <div class="satellite-icon sat-top">
-                <img
-                  src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2f/Google_Apps_Script.svg/1280px-Google_Apps_Script.svg.png"
-                  alt="App Script"
-                />
-                <span>App Script Tools</span>
+              <div class="satellite-icon">
+                <img src="media/logos/docs.png" alt="Google Docs" />
+                <span>Docs</span>
               </div>
-              <div class="satellite-icon sat-left">
-                <i class="fa fa-rotate-right" style="color: blue"></i>
-                <span>Agile Development</span>
+
+              <div class="satellite-icon">
+                <img src="media/logos/forms.png" alt="Google Forms" />
+                <span>Forms</span>
               </div>
-              <div class="satellite-icon sat-right">
-                <i class="fa fa-phone" style="color: green"></i>
-                <span>Reliable Support</span>
+
+              <div class="satellite-icon">
+                <img src="media/logos/calendar.png" alt="Google Calendar" />
+                <span>Calendar</span>
+              </div>
+
+              <div class="satellite-icon">
+                <img src="media/logos/slides.png" alt="Google Slides" />
+                <span>Slides</span>
+              </div>
+
+              <div class="satellite-icon">
+                <img src="media/logos/drive.png" alt="Google Drive" />
+                <span>Drive</span>
               </div>
             </div>
-            <span class="column-eyebrow text-center">Our Tools & Services</span>
           </div>
 
           <div class="diagram-arrow transformation-arrow">&rarr;</div>
@@ -229,7 +293,7 @@
           </div>
         </div>
 
-        <div class="value-props-strip">
+        <!-- <div class="value-props-strip">
           <div class="prop-item">Scalable</div>
           <div class="prop-item">Agile Development</div>
           <div class="prop-item">Collaborative</div>
@@ -239,62 +303,7 @@
           </div>
           <div class="prop-item">Cost Savings</div>
           <div class="prop-item">No Hosting Fees</div>
-        </div>
-      </div>
-    </section>
-
-    <section class="hero-section">
-      <div class="hero-container">
-        <img
-          src="media/Partner-Google-for-Education-4-300x104.png"
-          alt="Google for Education Partner"
-          class="partner-badge-img"
-        />
-
-        <span class="hero-badge"
-          >District wide solutions built on Google Sheets</span
-        >
-        <h1>
-          Scalable Education and Data Solutions.<br />Built on Google Sheets.
-        </h1>
-        <p>
-          Whether you're looking for a custom competency-based learning system,
-          a dashboard to visualize your existing data, or need the Google Sheets
-          you already use transformed into a sustainable and scalable data
-          management system, xSoTec can help. Iterate and develop ideas quickly,
-          integrate data from anywhere, and create innovative school, district,
-          and state-wide solutions unique to your organization.
-        </p>
-
-        <div class="video-wrapper">
-          <iframe
-            src="https://www.youtube.com/embed/Hz509Z8AuE4"
-            title="xSoTec System Demo"
-            frameborder="0"
-            allow="
-              accelerometer;
-              autoplay;
-              clipboard-write;
-              encrypted-media;
-              gyroscope;
-              picture-in-picture;
-              web-share;
-            "
-            allowfullscreen
-          ></iframe>
-        </div>
-
-        <div class="media-highlight-block">
-          <img
-            src="media/xSoTec-Venndiagram-300x275.png"
-            alt="Integration, Data Analysis, and Speed Ecosystem"
-            class="venn-diagram-img"
-          />
-        </div>
-
-        <div class="hero-actions">
-          <a href="#contact" class="btn-primary">Learn More</a>
-        </div>
+        </div> -->
       </div>
     </section>
 
@@ -426,31 +435,6 @@
           <li>Competency-Based Learning Gradebooks</li>
           <li>Personalized Learning Systems</li>
         </ul>
-      </div>
-    </section>
-
-    <section id="about" class="story-section">
-      <div class="section-container">
-        <div class="story-content">
-          <h2>Our Story</h2>
-          <p class="lead-text">
-            An information systems start-up using Google Scripts to provide
-            schools and non-profits with accessible and low-cost data
-            management.
-          </p>
-          <p>
-            Following years of work as an educational technology consultant with
-            the School District of Philadelphia and surrounding area, founder
-            Jay Cohen created an information systems start-up using Google
-            Scripts to provide schools and non-profits with accessible and
-            low-cost data management. With a small group of coders and testers,
-            xSoTec spent years developing proprietary scripts that quickly can
-            be applied to an organization, resulting in our two main open-source
-            programs adminConsole and copyScripts. With these scripts, we work
-            directly with schools to create products to help both students and
-            educators around the world.
-          </p>
-        </div>
       </div>
     </section>
 
