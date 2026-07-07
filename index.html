@@ -11,34 +11,45 @@
       href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800;900&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <script>
-      document.addEventListener("DOMContentLoaded", function () {
-        const track = document.getElementById("systemsCarousel");
-        const slides = track.querySelectorAll(".carousel-slide");
-        const slideInterval = 3000;
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    // Grab all pills except the "and much more..." one
+    const pills = document.querySelectorAll('.engine-output-pill:not(.emphasis-pill)');
+    const showcaseImg = document.getElementById('active-system-image');
 
-        function slideLeft() {
-          const firstSlide = track.querySelector(".carousel-slide");
-          const slideWidth = firstSlide.offsetWidth;
-          const gap = parseInt(window.getComputedStyle(track).gap) || 0;
-          const moveDistance = slideWidth + gap;
+    if (!showcaseImg) return; // Failsafe
 
-          track.style.transition = "transform 0.6s ease-in-out";
-          track.style.transform = `translateX(-${moveDistance}px)`;
+    pills.forEach(pill => {
+      pill.addEventListener('click', function() {
+        
+        // 1. Remove active styling from all pills
+        pills.forEach(p => p.classList.remove('active'));
+        
+        // 2. Add active styling to the clicked pill
+        this.classList.add('active');
 
-          setTimeout(() => {
-            track.style.transition = "none";
-            track.appendChild(firstSlide);
-            track.style.transform = "translateX(0)";
-          }, 600);
-        }
+        // 3. Get the new image source and alt text from the HTML data attributes
+        const newSrc = this.getAttribute('data-img');
+        const newAlt = this.getAttribute('data-alt');
 
-        if (slides.length > 2) {
-          setInterval(slideLeft, slideInterval);
-        }
+        // 4. Fade the current image out
+        showcaseImg.classList.add('fade');
+        
+        // 5. Wait for the fade (300ms to match CSS), swap the image, and fade back in
+        setTimeout(() => {
+          showcaseImg.src = newSrc;
+          showcaseImg.alt = newAlt;
+          showcaseImg.classList.remove('fade');
+        }, 300); 
+
       });
-    </script>
+    });
+  });
+</script>
   </head>
   <body>
     <header class="navbar">
@@ -77,10 +88,8 @@
         </h1>
 
         <div class="architecture-diagram">
-          
           <div class="ecosystem-container">
             <div class="ecosystem-ring">
-              
               <div class="satellite-center">
                 <img
                   class="center-img"
@@ -111,7 +120,6 @@
                 />
                 <span>Calendar</span>
               </div>
-
             </div>
             <span class="column-eyebrow text-center">Free Google Products</span>
           </div>
@@ -120,7 +128,6 @@
 
           <div class="ecosystem-container">
             <div class="ecosystem-ring">
-              
               <div class="satellite-center">
                 <img
                   src="media/cropped-xSoTec-Logo-w-Name-2-300x225.png"
@@ -142,10 +149,9 @@
                 <span>Agile Development</span>
               </div>
               <div class="satellite-icon sat-right">
-                <i class="fa fa-phone" style="color:green"></i>
+                <i class="fa fa-phone" style="color: green"></i>
                 <span>Reliable Support</span>
               </div>
-
             </div>
             <span class="column-eyebrow text-center">Our Tools & Services</span>
           </div>
@@ -154,49 +160,71 @@
 
           <div class="diagram-column engine-column">
             <div class="engine-wrapper">
-              <div class="engine-center-title">Customizable, Scalable Systems</div>
+              <div class="engine-center-title">Systems</div>
 
-              <div class="carousel-viewport">
-                <div class="carousel-track" id="systemsCarousel">
-                  
-                  <div class="carousel-slide">
-                    <img src="media/Example-of-Student-Dashboard-Overview-Tab-2-219x300.png" alt="Data Dashboards" class="carousel-img" />
-                    <div class="engine-output-pill">Data Dashboards</div>
-                  </div>
-
-                  <div class="carousel-slide">
-                    <img src="media/unnamed-2-300x278.png" alt="Attendance Systems" class="carousel-img" />
-                    <div class="engine-output-pill">Attendance Systems</div>
-                  </div>
-
-                  <div class="carousel-slide">
-                    <img src="media/Gibson-SS-1-300x300.png" alt="Behavior Systems" class="carousel-img" />
-                    <div class="engine-output-pill">Behavior Systems</div>
-                  </div>
-
-                  <div class="carousel-slide">
-                    <img src="media/Gibson-SS-1-300x300.png" alt="Personal Learning Plans" class="carousel-img" />
-                    <div class="engine-output-pill">Personal Learning Plans</div>
-                  </div>
-
-                  <div class="carousel-slide">
-                    <img src="media/Example-of-Student-Dashboard-Overview-Tab-2-219x300.png" alt="Gradebooks" class="carousel-img" />
-                    <div class="engine-output-pill">Gradebooks</div>
-                  </div>
-
-                  <div class="carousel-slide">
-                    <img src="media/Gibson-SS-1-300x300.png" alt="Goal Reporting" class="carousel-img" />
-                    <div class="engine-output-pill">Goal Reporting</div>
-                  </div>
-
-                  <div class="carousel-slide">
-                    <img src="media/Example-of-Project-Based-Dashboard-300x242.png" alt="Achievement Reports" class="carousel-img" />
-                    <div class="engine-output-pill">Achievement Reports</div>
-                  </div>
-
-                </div>
+              <div class="engine-image-viewer">
+                <img
+                  id="active-system-image"
+                  src="media/Example-of-Student-Dashboard-Overview-Tab-2-219x300.png"
+                  alt="Data Dashboards"
+                  class="showcase-img"
+                />
               </div>
 
+              <div class="engine-outputs-container">
+                <div
+                  class="engine-output-pill active"
+                  data-img="media/Example-of-Student-Dashboard-Overview-Tab-2-219x300.png"
+                  data-alt="Data Dashboards"
+                >
+                  Data Dashboards
+                </div>
+                <div
+                  class="engine-output-pill"
+                  data-img="media/unnamed-2-300x278.png"
+                  data-alt="Attendance Systems"
+                >
+                  Attendance Systems
+                </div>
+                <div
+                  class="engine-output-pill"
+                  data-img="media/Gibson-SS-1-300x300.png"
+                  data-alt="Behavior Systems"
+                >
+                  Behavior Systems
+                </div>
+                <div
+                  class="engine-output-pill"
+                  data-img="media/Gibson-SS-1-300x300.png"
+                  data-alt="Personal Learning Plans"
+                >
+                  Personal Learning Plans
+                </div>
+                <div
+                  class="engine-output-pill"
+                  data-img="media/Example-of-Student-Dashboard-Overview-Tab-2-219x300.png"
+                  data-alt="Gradebooks"
+                >
+                  Gradebooks
+                </div>
+                <div
+                  class="engine-output-pill"
+                  data-img="media/Gibson-SS-1-300x300.png"
+                  data-alt="Goal Reporting"
+                >
+                  Goal Reporting
+                </div>
+                <div
+                  class="engine-output-pill"
+                  data-img="media/Example-of-Project-Based-Dashboard-300x242.png"
+                  data-alt="Achievement Reports"
+                >
+                  Achievement Reports
+                </div>
+                <div class="engine-output-pill emphasis-pill">
+                  and much more...
+                </div>
+              </div>
             </div>
           </div>
         </div>
@@ -206,7 +234,9 @@
           <div class="prop-item">Agile Development</div>
           <div class="prop-item">Collaborative</div>
           <div class="prop-item">Building on what you already have</div>
-          <div class="prop-item">From idea to implementation in 1/10th the time</div>
+          <div class="prop-item">
+            From idea to implementation in 1/10th the time
+          </div>
           <div class="prop-item">Cost Savings</div>
           <div class="prop-item">No Hosting Fees</div>
         </div>
@@ -221,7 +251,9 @@
           class="partner-badge-img"
         />
 
-        <span class="hero-badge">District wide solutions built on Google Sheets</span>
+        <span class="hero-badge"
+          >District wide solutions built on Google Sheets</span
+        >
         <h1>
           Scalable Education and Data Solutions.<br />Built on Google Sheets.
         </h1>
@@ -239,7 +271,15 @@
             src="https://www.youtube.com/embed/Hz509Z8AuE4"
             title="xSoTec System Demo"
             frameborder="0"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share;"
+            allow="
+              accelerometer;
+              autoplay;
+              clipboard-write;
+              encrypted-media;
+              gyroscope;
+              picture-in-picture;
+              web-share;
+            "
             allowfullscreen
           ></iframe>
         </div>
@@ -341,7 +381,9 @@
               workflows into a single, unified, multi-sheet master database
               environment.
             </p>
-            <a href="#contact" class="card-link-white">Explore Cross-Industry Frameworks &rarr;</a>
+            <a href="#contact" class="card-link-white"
+              >Explore Cross-Industry Frameworks &rarr;</a
+            >
           </div>
 
           <div class="commercial-video-content">
@@ -350,7 +392,15 @@
                 src="https://www.youtube.com/embed/Nd479Ahfij4"
                 title="xSoTec Overview Summary"
                 frameborder="0"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share;"
+                allow="
+                  accelerometer;
+                  autoplay;
+                  clipboard-write;
+                  encrypted-media;
+                  gyroscope;
+                  picture-in-picture;
+                  web-share;
+                "
                 allowfullscreen
               ></iframe>
             </div>
@@ -365,7 +415,7 @@
           src="media/xSoTec-Does-300x206.png"
           alt="Does your SIS support your students?"
           class="sis-challenge-img"
-          style="max-width: 260px; margin: 0 auto 32px auto; display: block;"
+          style="max-width: 260px; margin: 0 auto 32px auto; display: block"
         />
 
         <h2>Innovative Schools use xSoTec to Build:</h2>
@@ -439,10 +489,18 @@
           <p><strong>Location:</strong> Philadelphia, PA</p>
         </div>
 
-        <a href="mailto:media@xsotec.com" class="btn-primary" style="margin-top: 20px;">Open Our Dynamic Interest Form</a>
+        <a
+          href="mailto:media@xsotec.com"
+          class="btn-primary"
+          style="margin-top: 20px"
+          >Open Our Dynamic Interest Form</a
+        >
 
         <div class="footer-bottom">
-          <p>&copy; 2026 xSoTec | connecting society and technology. All rights reserved.</p>
+          <p>
+            &copy; 2026 xSoTec | connecting society and technology. All rights
+            reserved.
+          </p>
           <p class="sub-footer">xSoTec, LLC. is part of PhillyParents, LLC.</p>
         </div>
       </div>

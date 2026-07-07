@@ -395,51 +395,82 @@ body {
     letter-spacing: 0.8px;
 }
 
-/* Carousel */
-.carousel-viewport {
+/* Carousel *//* ==========================================================================
+   Interactive Engine Showcase
+   ========================================================================== */
+.engine-image-viewer {
     width: 100%;
-    overflow: hidden;
+    display: flex;
+    height: 250px;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 25px;
     position: relative;
 }
 
-.carousel-track {
-    display: flex;
-    gap: 15px; 
-    will-change: transform;
-}
-
-.carousel-slide {
-    flex: 0 0 calc(50% - 7.5px); 
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: space-between;
-}
-
-.carousel-img {
-    width: 100%;
-    max-height: 350px;
+.showcase-img {
+    max-width: 100%;
+    max-height: 100%;
     object-fit: contain;
     border-radius: 8px;
     border: 1px solid rgba(0, 240, 255, 0.2);
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
-    margin-bottom: 12px;
-    background-color: #000b14; 
+    background-color: #000b14;
+    transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
+}
+
+/* Class applied by JavaScript during image transition */
+.showcase-img.fade {
+    opacity: 0;
+    transform: scale(0.95);
+}
+
+.engine-outputs-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
 }
 
 .engine-output-pill {
-    background: rgba(0, 240, 255, 0.1);
-    border: 1px solid rgba(0, 240, 255, 0.3);
+    background: rgba(0, 240, 255, 0.05);
+    border: 1px solid rgba(0, 240, 255, 0.2);
     padding: 6px 12px;
     border-radius: 30px;
     font-size: 11px;
     font-weight: 700;
+    color: #94a3b8;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    user-select: none;
+}
+
+/* Hover State */
+.engine-output-pill:hover {
+    background: rgba(0, 240, 255, 0.15);
     color: #ffffff;
-    text-align: center;
-    width: 100%;
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
+}
+
+/* Active/Selected State */
+.engine-output-pill.active {
+    background: rgba(0, 240, 255, 0.25);
+    border-color: #00f0ff;
+    color: #ffffff;
+    box-shadow: 0 0 12px rgba(0, 240, 255, 0.2);
+}
+
+.engine-output-pill.emphasis-pill {
+    background: transparent;
+    border-color: transparent;
+    cursor: default;
+    box-shadow: none;
+    color: #475569;
+    font-style: italic;
+}
+
+.engine-output-pill.emphasis-pill:hover {
+    background: transparent;
+    color: #475569;
 }
 
 /* Value Props Matrix */
