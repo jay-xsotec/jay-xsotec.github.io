@@ -201,7 +201,7 @@ body {
 .hero-body p {
   flex: 1.5;
   font-weight: 800;
-  font-size: 48px;
+  font-size: 36px;
   margin-bottom: 0;
 }
 
@@ -251,8 +251,8 @@ body {
 }
 
 .video-wrapper-main-intro {
-  height: 250px;
-  width: 500px;
+  height: 200px;
+  width: 400px;
 }
 .video-wrapper {
   padding-bottom: 56.25%;
@@ -306,7 +306,7 @@ body {
 
 .column-label {
   display: block;
-  font-size: 32px;
+  font-size: 24px;
   font-weight: 800;
   color: #ffffff;
   letter-spacing: 1.25px;
@@ -424,7 +424,7 @@ i {
 
 .tool-item {
   text-align: center;
-  font-size: 15px;
+  font-size: 12px;
   font-weight: 700;
   color: #cbd5e1;
   padding: 5px 10px;
@@ -458,7 +458,7 @@ i {
   border: 1px solid rgba(0, 240, 255, 0.2);
   padding: 8px 16px;
   border-radius: 30px;
-  font-size: 15px;
+  font-size: 12px;
   font-weight: 700;
   color: #cbd5e1;
   cursor: pointer;
