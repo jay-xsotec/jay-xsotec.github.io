@@ -18,7 +18,7 @@
     <script>
       document.addEventListener("DOMContentLoaded", function () {
         const pills = document.querySelectorAll(
-          ".engine-output-pill:not(.emphasis-pill)",
+          ".scalable-systems-output-pill:not(.emphasis-pill)",
         );
 
         pills.forEach((pill) => {
@@ -34,14 +34,14 @@
 
       document.addEventListener("DOMContentLoaded", function () {
         // Select all the rings on the page
-        const rings = document.querySelectorAll(".ecosystem-ring");
+        const rings = document.querySelectorAll(".sheets-ring");
 
         rings.forEach((ring) => {
-          // Find all the satellite icons within this specific ring
-          const satellites = ring.querySelectorAll(".satellite-icon");
-          const total = satellites.length;
+          // Find all the ring icons within this specific ring
+          const rings = ring.querySelectorAll(".ring-icon");
+          const total = rings.length;
 
-          satellites.forEach((sat, index) => {
+          rings.forEach((sat, index) => {
             // Calculate the angle. Subtract 90 degrees so the first item is always at the top
             const angle = index * (360 / total) - 90;
 
@@ -114,145 +114,151 @@
     <section class="architecture-section">
       <div class="section-container">
         <div class="architecture-diagram">
+          <span class="column-label">Google Sheets & Workspace</span>
+          <span class="diagram-arrow">+</span>
+          <span class="column-label">xSoTec<br />Power Tools</span>
+          <span class="diagram-arrow">&rarr;</span>
+          <span class="column-label"
+            >Scalable, Automated Systems for<br />Schools & More</span
+          >
 
-            <span class="column-label">Google Sheets & Workspace</span>
-            <span class="diagram-arrow">+</span>
-            <span class="column-label">xSoTec<br/>Power Tools</span>
-            <span class="diagram-arrow">&rarr;</span>
-            <span class="column-label"
-              >Scalable, Automated Systems for<br/>Schools & More</span
-            >
-
+          <div class="sheets-ring-column">
             <div class="sheets-ring">
+              <div class="ring-center">
+                <img
+                  class="ring-center-img"
+                  src="media/logos/sheets.png"
+                  alt="Google Sheets"
+                />
+                <span>Sheets</span>
+              </div>
 
-              <div class="ecosystem-ring ecosystem-container">
-                <div class="satellite-center">
-                  <img
-                    class="center-img"
-                    src="media/logos/sheets.png"
-                    alt="Google Sheets"
-                  />
-                  <span>Sheets</span>
-                </div>
-  
-                <div class="satellite-icon">
-                  <img src="media/logos/docs.png" alt="Docs" />
-                  <span>Docs</span>
-                </div>
-  
-                <div class="satellite-icon">
-                  <img src="media/logos/forms.png" alt="Forms" />
-                  <span>Forms</span>
-                </div>
-  
-                <div class="satellite-icon">
-                  <img src="media/logos/calendar.png" alt="Calendar" />
-                  <span>Calendar</span>
-                </div>
-  
-                <div class="satellite-icon">
-                  <img src="media/logos/classroom.png" alt="Classroom" />
-                  <span>Classroom</span>
-                </div>
-  
-                <div class="satellite-icon">
-                  <img src="media/logos/gmail.png" alt="Gmail" />
-                  <span>Gmail</span>
-                </div>
-  
-                <div class="satellite-icon">
-                  <img src="media/logos/drive.png" alt="Drive" />
-                  <span>Drive</span>
-                </div>
+              <div class="ring-icon">
+                <img src="media/logos/docs.png" alt="Docs" />
+                <span>Docs</span>
+              </div>
+
+              <div class="ring-icon">
+                <img src="media/logos/forms.png" alt="Forms" />
+                <span>Forms</span>
+              </div>
+
+              <div class="ring-icon">
+                <img src="media/logos/calendar.png" alt="Calendar" />
+                <span>Calendar</span>
+              </div>
+
+              <div class="ring-icon">
+                <img src="media/logos/classroom.png" alt="Classroom" />
+                <span>Classroom</span>
+              </div>
+
+              <div class="ring-icon">
+                <img src="media/logos/gmail.png" alt="Gmail" />
+                <span>Gmail</span>
+              </div>
+
+              <div class="ring-icon">
+                <img src="media/logos/drive.png" alt="Drive" />
+                <span>Drive</span>
               </div>
             </div>
+          </div>
 
-            <div></div>
+          <div></div>
 
-            <div class="">
-              <div class="value-props-strip">
-                <div
-                  class="prop-item"
-                  style="background-color: rgba(55, 155, 155, 0.75)"
-                >
-                  Solutions in days instead of months
-                </div>
-                <div
-                  class="prop-item"
-                  style="background-color: rgba(155, 55, 155, 0.75)"
-                >
-                  Agile Development
-                </div>
-                <div
-                  class="prop-item"
-                  style="background-color: rgba(55, 55, 155, 0.75)"
-                >
-                  Whole-Team Creative Collaboration
-                </div>
-                <div
-                  class="prop-item"
-                  style="background-color: rgba(155, 55, 55, 0.75)"
-                >
-                  No hosting or sharing outside your domain
-                </div>
-                <div
-                  class="prop-item"
-                  style="background-color: rgba(155, 155, 55, 0.75)"
-                >
-                  Built on what you already have
-                </div>
-                <div
-                  class="prop-item"
-                  style="background-color: rgba(55, 155, 55, 0.75)"
-                >
-                  Easily supported & managed by you or us
-                </div>
+          <div class="tool-column">
+            <div
+              class="tool-item"
+              style="background-color: rgba(55, 155, 155, 0.75)"
+            >
+              Solutions in days instead of months
+            </div>
+            <div
+              class="tool-item"
+              style="background-color: rgba(155, 55, 155, 0.75)"
+            >
+              Agile Development
+            </div>
+            <div
+              class="tool-item"
+              style="background-color: rgba(55, 55, 155, 0.75)"
+            >
+              Whole-Team Creative Collaboration
+            </div>
+            <div
+              class="tool-item"
+              style="background-color: rgba(155, 55, 55, 0.75)"
+            >
+              No hosting or sharing outside your domain
+            </div>
+            <div
+              class="tool-item"
+              style="background-color: rgba(155, 155, 55, 0.75)"
+            >
+              Build on what you already have
+            </div>
+            <div
+              class="tool-item"
+              style="background-color: rgba(55, 155, 55, 0.75)"
+            >
+              Easily supported & managed by you or us
+            </div>
+          </div>
+
+          <div></div>
+
+          <div class="scalable-systems-column">
+            <div class="scalable-systems-outputs-container">
+              <div
+                class="scalable-systems-output-pill"
+                data-alt="Data Dashboards"
+              >
+                Data Dashboards
+              </div>
+              <div
+                class="scalable-systems-output-pill"
+                data-alt="Attendance Systems"
+              >
+                Attendance Systems
+              </div>
+              <div
+                class="scalable-systems-output-pill"
+                data-alt="Behavior Systems"
+              >
+                Behavior Systems
+              </div>
+              <div
+                class="scalable-systems-output-pill"
+                data-alt="Personal Learning Plans"
+              >
+                Personal Learning Plans
+              </div>
+              <div class="scalable-systems-output-pill" data-alt="Gradebooks">
+                Gradebooks
+              </div>
+              <div
+                class="scalable-systems-output-pill"
+                data-alt="Goal Reporting"
+              >
+                Goal Reporting
+              </div>
+              <div
+                class="scalable-systems-output-pill"
+                data-alt="Achievement Reports"
+              >
+                Achievement Reports
+              </div>
+              <div
+                class="scalable-systems-output-pill"
+                data-alt="Student Agency"
+              >
+                Student Agency
+              </div>
+              <div class="scalable-systems-output-pill emphasis-pill">
+                and much more...
               </div>
             </div>
-
-            <div></div>
-
-            <div class="">
-              <div class="engine-column">
-                <div class="engine-outputs-container">
-                  <div class="engine-output-pill" data-alt="Data Dashboards">
-                    Data Dashboards
-                  </div>
-                  <div class="engine-output-pill" data-alt="Attendance Systems">
-                    Attendance Systems
-                  </div>
-                  <div class="engine-output-pill" data-alt="Behavior Systems">
-                    Behavior Systems
-                  </div>
-                  <div
-                    class="engine-output-pill"
-                    data-alt="Personal Learning Plans"
-                  >
-                    Personal Learning Plans
-                  </div>
-                  <div class="engine-output-pill" data-alt="Gradebooks">
-                    Gradebooks
-                  </div>
-                  <div class="engine-output-pill" data-alt="Goal Reporting">
-                    Goal Reporting
-                  </div>
-                  <div
-                    class="engine-output-pill"
-                    data-alt="Achievement Reports"
-                  >
-                    Achievement Reports
-                  </div>
-                  <div
-                    class="engine-output-pill"
-                    data-alt="Student Agency"
-                  >
-                    Student Agency
-                  </div>
-                  <div class="engine-output-pill emphasis-pill">
-                    and much more...
-                  </div>
-                </div>
-              </div>
           </div>
         </div>
       </div>
