@@ -1,167 +1,17 @@
 /* ==========================================================================
    Global Reset & Bold Corporate Dark Theme
    ========================================================================== */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-body {
-  font-family:
-    "Plus Jakarta Sans",
-    -apple-system,
-    BlinkMacSystemFont,
-    "Segoe UI",
-    Roboto,
-    sans-serif;
-  background-color: #00467c;
-  color: #ffffff;
-  line-height: 1.6;
-  -webkit-font-smoothing: antialiased;
-  scroll-behavior: smooth;
-}
-
-.text-center {
-  text-align: center;
-}
-
-/* ==========================================================================
-   Navigation Bar
-   ========================================================================== */
-.navbar {
-  background-color: #ffffff;
-  border-bottom: 1px solid #e2e8f0;
-  position: sticky;
-  top: 0;
-  z-index: 3000;
-}
-
-.nav-container {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 12px 4%;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.logo-group {
-  display: flex;
-  align-items: center;
-  gap: 20px;
-}
-
-.nav-logo-img {
-  height: auto;
-  max-height: 45px;
-  display: block;
-}
-
-.nav-links {
-  display: flex;
-  align-items: center;
-}
-
-.nav-links > a,
-.dropdown .dropbtn {
-  text-decoration: none;
-  color: #475569;
-  font-weight: 600;
-  font-size: 14px;
-  margin-left: 36px;
-  background: none;
-  border: none;
-  cursor: pointer;
-  font-family: inherit;
-  padding: 6px 0;
-  display: flex;
-  align-items: center;
-  transition: color 0.15s ease;
-}
-
-.nav-links > a:hover,
-.dropdown:hover .dropbtn,
-.nav-links a.active {
-  color: #0f172a;
-}
-
-.dropdown {
-  position: relative;
-  display: inline-block;
-}
-
-.dropdown-content {
-  display: none;
-  position: absolute;
-  left: 50%;
-  transform: translateX(-50%);
-  background-color: #ffffff;
-  min-width: 240px;
-  box-shadow: 0px 12px 30px rgba(15, 23, 42, 0.08);
-  z-index: 3050;
-  border-radius: 8px;
-  margin-top: 10px;
-  border: 1px solid #e2e8f0;
-  padding: 8px 0;
-}
-
-.dropdown-content a {
-  color: #475569;
-  padding: 12px 20px;
-  text-decoration: none;
-  display: block;
-  font-size: 14px;
-  font-weight: 500;
-  text-align: left;
-  transition:
-    background-color 0.15s ease,
-    color 0.15s ease;
-}
-
-.dropdown-content a:hover {
-  background-color: #f8fafc;
-  color: #0f172a;
-}
-
-.dropdown:hover .dropdown-content {
-  display: block;
-}
-
-.nav-links .btn-cta,
-.btn-primary {
-  background-color: #002b49;
-  color: #ffffff;
-  padding: 10px 22px;
-  border-radius: 6px;
-  font-weight: 700;
-  font-size: 13px;
-  margin-left: 36px;
-  letter-spacing: 0.3px;
-  text-decoration: none;
-  display: inline-block;
-  transition: background-color 0.2s ease;
-}
-
-.nav-links .btn-cta:hover,
-.btn-primary:hover {
-  background-color: #00f0ff;
-  color: #001220;
-}
 
 /* ==========================================================================
    Sections
    ========================================================================== */
-.section-container {
-  max-width: 90%;
-  margin: 0 auto;
-}
-
 /* ==========================================================================
    Hero Section
    ========================================================================== */
 .hero-section {
-  background: linear-gradient(180deg, #001220 0%, #001f36 100%);
+  /* background: linear-gradient(180deg, #001220 0%, #001f36 100%); */
+  margin: 0;
+  max-width: 100% !important;
   padding: 2% 4%;
   text-align: center;
 }
@@ -200,9 +50,8 @@ body {
 /* Make the paragraph take up exactly half the space */
 .hero-body p {
   flex: 1.5;
-  font-weight: 800;
-  font-size: 36px;
   text-align: center;
+  height: 100%;
   margin-bottom: 0;
 }
 
@@ -252,8 +101,8 @@ body {
 }
 
 .video-wrapper-main-intro {
-  height: 200px;
-  width: 400px;
+  height: 250px;
+  width: 500px !important;
 }
 .video-wrapper {
   padding-bottom: 56.25%;
@@ -284,8 +133,12 @@ body {
    Architecture Section (Condensed Framework Layout)
    ========================================================================== */
 .architecture-section {
-  padding: 0px 2% 100px;
-  background-color: #001f36;
+  margin-top: 60px !important;
+  /* padding: 0px 2% 0px; */
+  margin: 0;
+  background-image: linear-gradient(324deg, rgb(6, 147, 227) 0%, rgb(1, 1, 1) 100%);
+  width: 100% !important;
+  max-width: 100% !important;
   border-bottom: 1px solid rgba(255, 255, 255, 0.05);
 }
 
@@ -438,7 +291,7 @@ i {
 /* Scalable, Automated Systems for Schools and More styling */
 
 .scalable-systems-column {
-  background: rgba(255, 255, 155, 0.00);
+  background: rgba(255, 255, 155, 0);
   /* box-shadow: 0 0 40px rgba(200, 240, 255, 0.08); */
   padding: 15px;
   width: 100%;
@@ -463,7 +316,7 @@ i {
   padding: 8px 12px;
   border-radius: 30px;
   font-size: 22px;
-  font-weight:900;
+  font-weight: 900;
   display: flex;
   justify-content: center;
   align-items: center;
