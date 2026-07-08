@@ -17,13 +17,9 @@
     />
     <script>
       document.addEventListener("DOMContentLoaded", function () {
-        // Grab all pills except the "and much more..." one
         const pills = document.querySelectorAll(
           ".engine-output-pill:not(.emphasis-pill)",
         );
-        const showcaseImg = document.getElementById("active-system-image");
-
-        if (!showcaseImg) return; // Failsafe
 
         pills.forEach((pill) => {
           pill.addEventListener("click", function () {
@@ -32,20 +28,6 @@
 
             // 2. Add active styling to the clicked pill
             this.classList.add("active");
-
-            // 3. Get the new image source and alt text from the HTML data attributes
-            const newSrc = this.getAttribute("data-img");
-            const newAlt = this.getAttribute("data-alt");
-
-            // 4. Fade the current image out
-            showcaseImg.classList.add("fade");
-
-            // 5. Wait for the fade (300ms to match CSS), swap the image, and fade back in
-            setTimeout(() => {
-              showcaseImg.src = newSrc;
-              showcaseImg.alt = newAlt;
-              showcaseImg.classList.remove("fade");
-            }, 300);
           });
         });
       });
@@ -102,7 +84,7 @@
     <section class="hero-section">
       <div class="hero-container">
         <h1>
-          Scalable Education and Data Solutions.<br />Built on Google Sheets.
+          Build Better Systems on Google Sheets
         </h1>
 
         <div class="hero-body">
@@ -146,34 +128,44 @@
 
         <div class="architecture-diagram">
           <div class="ecosystem-container">
-            <span class="column-eyebrow text-center">Free Google Products</span>
-            <div class="ecosystem-ring">
+            <span class="column-label">Google Sheets and Workspace</span>
+            <div class="ecosystem-ring engine-column">
               <div class="satellite-center">
                 <img
                   class="center-img"
-                  src="media/logos/sheets-logo.png"
+                  src="media/logos/sheets.png"
                   alt="Google Sheets"
                 />
                 <span>Sheets</span>
               </div>
 
               <div class="satellite-icon">
-                <img src="media/logos/docs.png" alt="Google Docs" />
+                <img src="media/logos/docs.png" alt="Docs" />
                 <span>Docs</span>
               </div>
 
               <div class="satellite-icon">
-                <img src="media/logos/forms.png" alt="Google Forms" />
+                <img src="media/logos/forms.png" alt="Forms" />
                 <span>Forms</span>
               </div>
 
               <div class="satellite-icon">
-                <img src="media/logos/calendar.png" alt="Google Calendar" />
+                <img src="media/logos/calendar.png" alt="Calendar" />
                 <span>Calendar</span>
               </div>
 
               <div class="satellite-icon">
-                <img src="media/logos/drive.png" alt="Google Drive" />
+                <img src="media/logos/classroom.png" alt="Classroom" />
+                <span>Classroom</span>
+              </div>
+
+              <div class="satellite-icon">
+                <img src="media/logos/gmail.png" alt="Gmail" />
+                <span>Gmail</span>
+              </div>
+
+              <div class="satellite-icon">
+                <img src="media/logos/drive.png" alt="Drive" />
                 <span>Drive</span>
               </div>
             </div>
@@ -182,107 +174,58 @@
           <div class="diagram-arrow">+</div>
 
           <div class="ecosystem-container">
-            <span class="column-eyebrow text-center">xSoTec Tools</span>
-            <div class="ecosystem-ring">
-              <div class="satellite-center">
-                <img
-                  class="center-img"
-                  src="media/logos/sheets-logo.png"
-                  alt="Google Sheets"
-                />
-                <span>Sheets</span>
-              </div>
+            <span class="column-label">xSoTec Tools</span>
 
-              <div class="satellite-icon">
-                <img src="media/logos/docs.png" alt="Google Docs" />
-                <span>Docs</span>
-              </div>
+            <div class="value-props-strip engine-column">
+              <!-- <div class="prop-item"></div> -->
 
-              <div class="satellite-icon">
-                <img src="media/logos/forms.png" alt="Google Forms" />
-                <span>Forms</span>
-              </div>
+              <div class="prop-item">Solutions in days instead of months</div>
+              <div class="prop-item">Agile Development</div>
+              <div class="prop-item">Whole-Team Creative Collaboration</div>
+              <div class="prop-item">No hosting or sharing outside your domain</div>
+              <div class="prop-item">Built on what you already have</div>
+              <div class="prop-item">Easily supported & managed by you or us</div>
 
-              <div class="satellite-icon">
-                <img src="media/logos/calendar.png" alt="Google Calendar" />
-                <span>Calendar</span>
+              <!-- <div class="prop-item">Scalable</div>
+              <div class="prop-item">Collaborative</div>
+              <div class="prop-item">Building on what you already have</div>
+              <div class="prop-item">
+                From idea to implementation in 1/10th the time
               </div>
-
-              <div class="satellite-icon">
-                <img src="media/logos/slides.png" alt="Google Slides" />
-                <span>Slides</span>
-              </div>
-
-              <div class="satellite-icon">
-                <img src="media/logos/drive.png" alt="Google Drive" />
-                <span>Drive</span>
-              </div>
+              <div class="prop-item">Cost Savings</div>
+              <div class="prop-item">No Hosting Fees</div> -->
             </div>
           </div>
 
           <div class="diagram-arrow transformation-arrow">&rarr;</div>
 
-          <div class="diagram-column engine-column">
-            <div class="engine-wrapper">
-              <div class="engine-center-title">Systems</div>
+          <div class="ecosystem-container">
+            <span class="column-label">Google Sheets and Workspace</span>
 
-              <div class="engine-image-viewer">
-                <img
-                  id="active-system-image"
-                  src="media/Example-of-Student-Dashboard-Overview-Tab-2-219x300.png"
-                  alt="Data Dashboards"
-                  class="showcase-img"
-                />
-              </div>
-
+            <div class="engine-wrapper engine-column">
               <div class="engine-outputs-container">
-                <div
-                  class="engine-output-pill active"
-                  data-img="media/Example-of-Student-Dashboard-Overview-Tab-2-219x300.png"
-                  data-alt="Data Dashboards"
-                >
+                <div class="engine-output-pill" data-alt="Data Dashboards">
                   Data Dashboards
                 </div>
-                <div
-                  class="engine-output-pill"
-                  data-img="media/unnamed-2-300x278.png"
-                  data-alt="Attendance Systems"
-                >
+                <div class="engine-output-pill" data-alt="Attendance Systems">
                   Attendance Systems
                 </div>
-                <div
-                  class="engine-output-pill"
-                  data-img="media/Gibson-SS-1-300x300.png"
-                  data-alt="Behavior Systems"
-                >
+                <div class="engine-output-pill" data-alt="Behavior Systems">
                   Behavior Systems
                 </div>
                 <div
                   class="engine-output-pill"
-                  data-img="media/Gibson-SS-1-300x300.png"
                   data-alt="Personal Learning Plans"
                 >
                   Personal Learning Plans
                 </div>
-                <div
-                  class="engine-output-pill"
-                  data-img="media/Example-of-Student-Dashboard-Overview-Tab-2-219x300.png"
-                  data-alt="Gradebooks"
-                >
+                <div class="engine-output-pill" data-alt="Gradebooks">
                   Gradebooks
                 </div>
-                <div
-                  class="engine-output-pill"
-                  data-img="media/Gibson-SS-1-300x300.png"
-                  data-alt="Goal Reporting"
-                >
+                <div class="engine-output-pill" data-alt="Goal Reporting">
                   Goal Reporting
                 </div>
-                <div
-                  class="engine-output-pill"
-                  data-img="media/Example-of-Project-Based-Dashboard-300x242.png"
-                  data-alt="Achievement Reports"
-                >
+                <div class="engine-output-pill" data-alt="Achievement Reports">
                   Achievement Reports
                 </div>
                 <div class="engine-output-pill emphasis-pill">
@@ -292,18 +235,6 @@
             </div>
           </div>
         </div>
-
-        <!-- <div class="value-props-strip">
-          <div class="prop-item">Scalable</div>
-          <div class="prop-item">Agile Development</div>
-          <div class="prop-item">Collaborative</div>
-          <div class="prop-item">Building on what you already have</div>
-          <div class="prop-item">
-            From idea to implementation in 1/10th the time
-          </div>
-          <div class="prop-item">Cost Savings</div>
-          <div class="prop-item">No Hosting Fees</div>
-        </div> -->
       </div>
     </section>
 
