@@ -202,6 +202,7 @@ body {
   flex: 1.5;
   font-weight: 800;
   font-size: 36px;
+  text-align: center;
   margin-bottom: 0;
 }
 
@@ -283,7 +284,7 @@ body {
    Architecture Section (Condensed Framework Layout)
    ========================================================================== */
 .architecture-section {
-  padding: 60px 2%;
+  padding: 60px 2% 100px;
   background-color: #001f36;
   border-bottom: 1px solid rgba(255, 255, 255, 0.05);
 }
@@ -320,8 +321,8 @@ body {
 
 .sheets-ring {
   flex-direction: column;
-  width: 300px;
-  height: 300px;
+  width: 250px;
+  height: 250px;
   position: relative;
   border: 2px dashed rgba(34, 197, 94, 0.4);
   border-radius: 50%;
@@ -384,7 +385,7 @@ i {
   align-items: center;
   justify-content: center;
   /* Spins out to the angle, moves out 100px, then spins back to stay upright */
-  transform: rotate(var(--angle)) translate(150px) rotate(var(--reverse-angle));
+  transform: rotate(var(--angle)) translate(125px) rotate(var(--reverse-angle));
   transition: transform 0.2s ease;
   z-index: 10;
   cursor: pointer;
