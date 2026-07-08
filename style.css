@@ -137,7 +137,7 @@ body {
    ========================================================================== */
 .hero-section {
     background: linear-gradient(180deg, #001220 0%, #001f36 100%);
-    padding: 80px 4% 100px 4%;
+    padding: 32px 4% 25px 4%;
     text-align: center;
 }
 
@@ -169,7 +169,7 @@ body {
    ========================================================================== */
 .hero-body {
     display: flex;
-    align-items: center; /* Centers the text and video vertically */
+    align-items: center; /* Vertically centers the text and video as a pair */
     gap: 40px; /* Adds breathing room between the text and video */
     text-align: left; /* Overrides the hero section's center alignment */
 }
@@ -177,13 +177,14 @@ body {
 /* Make the paragraph take up exactly half the space */
 .hero-body p {
     flex: 1.5;
+    font-weight: 800;
+    font-size: 48px;
     margin-bottom: 0; 
 }
 
 .hero-body .video-wrapper-small {
-    flex: 0 0 35%; /* Restricts the video to exactly 35% of the container width */
-    width: 100%; 
-    height: 50%;
+    width: 100%;
+    height: auto;
     margin-bottom: 0; 
 }
 
@@ -198,20 +199,6 @@ body {
         width: 100%;
         margin-top: 30px;
     }
-}
-
-.hero-section h1 {
-    font-size: 52px;
-    font-weight: 800;
-    line-height: 1.15;
-    letter-spacing: -1px;
-    margin-bottom: 48px;
-}
-
-.hero-section p {
-    font-size: 18px;
-    color: #cbd5e1;
-    margin-bottom: 40px;
 }
 
 .media-highlight-block {
@@ -238,6 +225,7 @@ body {
     border: 1px solid rgba(255,255,255,0.1);
 }
 
+.video-wrapper-main-intro {height: 250px; width: 500px}
 .video-wrapper { padding-bottom: 56.25%; max-width: 100%; margin: 0 auto 40px auto; }
 .video-wrapper-small { padding-bottom: 56.25%; margin-bottom: 20px; }
 .video-wrapper-vertical { padding-bottom: 177.77%; max-width: 280px; margin: 0 auto; }
@@ -277,7 +265,7 @@ body {
 
 .architecture-diagram {
     display: flex;
-    align-items: center;
+    align-items: start;
     justify-content: space-between;
     gap: 20px;
     margin: 20px auto; 
@@ -286,22 +274,26 @@ body {
 .diagram-arrow {
     font-size: 38px;
     color: #475569;
-    font-weight: 900;
+    font-weight: 10;
     user-select: none;
-}
-
-.diagram-arrow.transformation-arrow {
     color: #00f0ff;
     text-shadow: 0 0 15px rgba(0, 240, 255, 0.4);
+    display: flex;
 }
 
 .column-label {
     display: block;
-    font-size: 16px;
+    font-size: 32px;
     font-weight: 400;
     color: #ffffff;
     letter-spacing: 1.25px;
     margin-bottom: 25px;
+    text-align: center;
+}
+
+.architecture-content {
+    display: flex;
+    align-items: center;
 }
 
 /* Ecosystem Ring (Google Workspace) Fixed Rigid Layout */
@@ -309,14 +301,13 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
+    width: 240px; /* Equal column width keeps all 3 labels evenly spaced */
     padding: 10px;
+    justify-content: space-between;
 }
 
 .ecosystem-ring {
     position: relative;
-    width: 200px;
-    height: 200px;
     border: 2px dashed rgba(34, 197, 94, 0.4); 
     border-radius: 50%;
     display: flex;
@@ -414,12 +405,31 @@ body {
     z-index: 1;
 }
 
+.engine-wrapper{
+    min-width: 30%;
+    max-width: 30%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
 .engine-column {
     background: linear-gradient(135deg, rgba(0, 43, 73, 0.5) 0%, rgba(0, 11, 20, 0.7) 100%);
-    /* border: 1px solid #00f0ff; */
     box-shadow: 0 0 40px rgba(0, 240, 255, 0.08);
     padding: 15px;
-    max-width: 450px;
+    width: 100%;
+    min-height: 220px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* The orbit ring keeps its own fixed, perfectly circular footprint;
+   this overrides the shared engine-column sizing above. */
+.ecosystem-ring.engine-column {
+    width: 200px;
+    height: 200px;
+    min-height: 0;
 }
 
 .engine-center-title {
@@ -430,8 +440,8 @@ body {
     letter-spacing: 0.8px;
 }
 
-/* Carousel *//* ==========================================================================
-   Interactive Engine Showcase
+/* ==========================================================================
+   Interactive Engine Showcase (Carousel)
    ========================================================================== */
 .engine-image-viewer {
     width: 100%;
@@ -612,7 +622,7 @@ body {
    Responsive Breakpoints
    ========================================================================== */
 @media screen and (max-width: 960px) {
-    .architecture-diagram { flex-direction: column; gap: 30px; }
+    .architecture-diagram { flex-direction: column; align-items: center; gap: 30px; }
     .diagram-arrow { transform: rotate(90deg); margin: 10px 0; }
     .minimal-title { font-size: 34px; }
     .commercial-box-grid { grid-template-columns: 1fr; }
