@@ -1,11 +1,4 @@
 /* ==========================================================================
-   Global Reset & Bold Corporate Dark Theme
-   ========================================================================== */
-
-/* ==========================================================================
-   Sections
-   ========================================================================== */
-/* ==========================================================================
    Hero Section
    ========================================================================== */
 .hero-section {
@@ -50,6 +43,7 @@
 /* Make the paragraph take up exactly half the space */
 .hero-body p {
   flex: 1.5;
+  font-size: 100%;
   text-align: center;
   height: 100%;
   margin-bottom: 0;
@@ -134,7 +128,7 @@
    ========================================================================== */
 .architecture-section {
   margin-top: 60px !important;
-  /* padding: 0px 2% 0px; */
+  padding: 0px 2% 3%;
   margin: 0;
   background-image: linear-gradient(324deg, rgb(6, 147, 227) 0%, rgb(1, 1, 1) 100%);
   width: 100% !important;
@@ -160,7 +154,7 @@
 
 .column-label {
   display: block;
-  font-size: 24px;
+  font-size: 20px;
   font-weight: 800;
   color: #ffffff;
   letter-spacing: 1.25px;
@@ -180,6 +174,7 @@
   position: relative;
   border: 2px dashed rgba(34, 197, 94, 0.4);
   border-radius: 50%;
+  background-image: linear-gradient(35deg, rgba(0, 0, 0, 0.5), rgba(50, 50, 0, 0.5));
   display: flex;
   align-items: center;
   justify-content: center;
@@ -207,8 +202,7 @@
   margin-top: 5px;
 }
 
-.ring-icon img,
-i {
+.ring-icon img {
   width: 24px;
   height: 24px;
   object-fit: contain;
@@ -216,14 +210,6 @@ i {
   position: relative;
   z-index: 2;
   color: black;
-}
-
-.ring-icon i {
-  padding: 0;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 125%;
 }
 
 /* Dynamic Satellite Orbit Positioning */
@@ -252,7 +238,7 @@ i {
   left: 50%;
   transform: translateX(-50%); /* Centers the text */
   margin-top: 6px;
-  font-size: 15px;
+  font-size: 12px;
   font-weight: 700;
   color: #cbd5e1;
   letter-spacing: 0.5px;
@@ -307,6 +293,7 @@ i {
   grid-template-columns: 1fr 1fr;
   flex-wrap: wrap;
   justify-content: center;
+  width: 100%;
   gap: 10px;
 }
 
@@ -315,7 +302,7 @@ i {
   border: 1px solid rgba(0, 240, 255, 0.2);
   padding: 8px 12px;
   border-radius: 30px;
-  font-size: 22px;
+  font-size: 16px;
   font-weight: 900;
   display: flex;
   justify-content: center;
