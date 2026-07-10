@@ -5943,6 +5943,7 @@ a.to-the-top > * {
     height: auto;
     max-height: 56px !important;
     display: block;
+	border: 1px solid gray;
   }
 
   /* HEADER TOGGLES */
