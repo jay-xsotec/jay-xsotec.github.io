@@ -43,7 +43,7 @@
 /* Make the paragraph take up exactly half the space */
 .hero-body p {
   flex: 1.5;
-  font-size: 100%;
+  font-size: 85%;
   text-align: center;
   height: 100%;
   margin-bottom: 0;
@@ -96,7 +96,7 @@
 
 .video-wrapper-main-intro {
   height: 250px;
-  width: 500px !important;
+  width: 400px !important;
 }
 .video-wrapper {
   padding-bottom: 56.25%;
