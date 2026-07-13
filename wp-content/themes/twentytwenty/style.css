@@ -2826,6 +2826,12 @@ h2.entry-title {
 
 /* Block Typography Classes ------------------ */
 
+.layout-text-box {
+  display: flex !important;
+  flex-direction: column;
+  justify-content: center;
+}
+
 .has-text-align-left {
   /*rtl:ignore*/
   text-align: left;
@@ -5943,7 +5949,7 @@ a.to-the-top > * {
     height: auto;
     max-height: 56px !important;
     display: block;
-	border: 1px solid gray;
+    border: 1px solid gray;
   }
 
   /* HEADER TOGGLES */
