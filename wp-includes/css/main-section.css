@@ -1,3 +1,19 @@
+/* Main Section */
+
+.main-section {
+  width: 100% !important;
+  margin: 0;
+  max-width: 100% !important;
+  background-color: rgba(20, 50, 50);
+  color: white;
+}
+
+.main-section h1 {
+  font-size: 38px;
+  width: 100%;
+}
+
+
 /* ==========================================================================
    Hero Section
    ========================================================================== */
